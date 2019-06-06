@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42f405a6-807d-461b-afaa-cfb85ba830c6" name="Default Changelist" comment="" />
+    <list default="true" id="42f405a6-807d-461b-afaa-cfb85ba830c6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../CommandLineGram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CommandLineGram/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/RectPavingCompany.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+            <state relative-caret-position="465">
+              <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/company/RectPavingCompanyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+            <state relative-caret-position="97">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -74,6 +76,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,11 +145,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -160,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RectPavingCompanyTest.testRectPavingOutput">
+  <component name="RunManager" selected="JUnit.RectPavingCompanyTest">
     <configuration name="RectPavingCompany" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.RectPavingCompany" />
       <module name="RectPavingCompany" />
@@ -207,9 +210,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RectPavingCompanyTest" />
         <item itemvalue="JUnit.RectPavingCompanyTest.testRectPavingOutput" />
         <item itemvalue="Application.RectPavingCompany" />
-        <item itemvalue="JUnit.RectPavingCompanyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -227,9 +230,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="RectPavingCompanyTest_testRectPavingOutput - 2019.06.04 at 15h 20m 47s.xml">
-      <configuration name="RectPavingCompanyTest.testRectPavingOutput" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="RectPavingCompanyTest_testRectPavingOutput - 2019.06.04 at 15h 21m 39s.xml">
       <configuration name="RectPavingCompanyTest.testRectPavingOutput" configurationId="JUnit" />
     </history-entry>
@@ -257,12 +257,15 @@
     <history-entry file="RectPavingCompanyTest_testRectPavingOutput - 2019.06.04 at 19h 26m 01s.xml">
       <configuration name="RectPavingCompanyTest.testRectPavingOutput" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RectPavingCompanyTest - 2019.06.04 at 19h 56m 28s.xml">
+      <configuration name="RectPavingCompanyTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="11" y="74" width="1429" height="739" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26387888" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26748377" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -321,8 +324,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/RectPavingCompany.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+        <state relative-caret-position="465">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -331,8 +334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/company/RectPavingCompanyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+        <state relative-caret-position="97">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
