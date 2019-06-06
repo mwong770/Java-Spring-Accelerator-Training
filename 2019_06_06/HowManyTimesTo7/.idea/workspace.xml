@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d28a846-7616-42a1-a9a9-67ab51f9f55b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../2019_06_04/U1M1L1Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_04/U1M1L1Katas/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/CommandLineGram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/CommandLineGram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/RectPavingCompany/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/RectPavingCompany/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/U1M1L2Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/U1M1L2Katas/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0d28a846-7616-42a1-a9a9-67ab51f9f55b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRoll.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+            <state relative-caret-position="105">
+              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -37,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRollBonus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+            <state relative-caret-position="2085">
+              <caret line="146" column="24" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,6 +93,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -112,7 +108,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DiceRollBonus">
+  <component name="RunManager" selected="Application.DiceRoll">
     <configuration name="DiceRoll" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.trilogyed.DiceRoll" />
       <module name="dice" />
@@ -192,8 +188,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DiceRollBonus" />
         <item itemvalue="Application.DiceRoll" />
+        <item itemvalue="Application.DiceRollBonus" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +208,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="22" width="1389" height="739" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2568671" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -224,7 +219,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.9536322" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39876354" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -276,8 +271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRollBonus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="146" column="24" lean-forward="true" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+        <state relative-caret-position="2085">
+          <caret line="146" column="24" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -286,8 +281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRoll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        <state relative-caret-position="105">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
         </state>
       </provider>
     </entry>
