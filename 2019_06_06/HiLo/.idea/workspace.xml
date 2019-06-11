@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="924394ba-d770-42da-a9b1-e8af615d558a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../2019_06_04/U1M1L1Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_04/U1M1L1Katas/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/CommandLineGram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/CommandLineGram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/RectPavingCompany/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/RectPavingCompany/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/U1M1L2Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/U1M1L2Katas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FizzBuzz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FizzBuzz/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FizzBuzz/src/main/java/com/company/FizzBuzz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FizzBuzz/src/main/java/com/company/FizzBuzz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/HiLo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/HiLo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HowManyTimesTo7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HowManyTimesTo7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HowManyTimesTo7/src/main/java/com/trilogyed/DiceRoll.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HowManyTimesTo7/src/main/java/com/trilogyed/DiceRoll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoanCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LoanCalculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoanCalculator/src/main/java/com/company/LoanCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LoanCalculator/src/main/java/com/company/LoanCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeFinder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeFinder/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeFinder/src/main/java/com/company/PrimeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeFinder/src/main/java/com/company/PrimeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByThirteen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByThirteen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/EvenOrOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/EvenOrOdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/FavoriteProgrammingLanguage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/FavoriteProgrammingLanguage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/IsJavaKeyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/IsJavaKeyword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/RangeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/RangeChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/UltimateQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/UltimateQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/YourAgeCan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/YourAgeCan.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/HiLo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+            <state relative-caret-position="105">
+              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,6 +88,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -131,10 +148,10 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -223,13 +240,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="22" width="1389" height="739" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26057908" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26800296" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -283,10 +301,9 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/HiLo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        <state relative-caret-position="105">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
           <folding>
-            <element signature="e#0#1573#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

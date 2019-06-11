@@ -2,7 +2,7 @@
 /**
  * This is a number guessing game.
  * The user must guess a random number.
- * Returns a print statement indicating if the user's guess is too high, too low, or correct,
+ * Displays if the user's guess is too high, too low, or correct,
  * and prints how many tries it took the user to guess the correct number.
  * @params args
  *

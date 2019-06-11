@@ -1,7 +1,7 @@
 
 /**
  * This program asks the user to input a number.
- * Returns a print statement indicating whether the number is even or odd.
+ * Displays whether the number is even or odd.
  * @params args
  *
  */

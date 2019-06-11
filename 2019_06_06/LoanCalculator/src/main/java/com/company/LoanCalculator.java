@@ -1,7 +1,7 @@
 
 /**
  * This is a mortgage payment calculator.
- * Returns a mortgage payment amount given the following:
+ * Displays a mortgage payment amount given the following:
  * - The amount of the mortgage
  * - The term of the mortgage
  * - The annual interest rate of the mortgage

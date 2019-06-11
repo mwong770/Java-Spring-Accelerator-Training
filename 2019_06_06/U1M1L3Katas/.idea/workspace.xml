@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c512ba91-50f9-4b7f-aa1e-deb3fd60cc19" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../2019_06_04/U1M1L1Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_04/U1M1L1Katas/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/CommandLineGram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/CommandLineGram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/RectPavingCompany/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/RectPavingCompany/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/U1M1L2Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/U1M1L2Katas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FizzBuzz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FizzBuzz/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FizzBuzz/src/main/java/com/company/FizzBuzz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FizzBuzz/src/main/java/com/company/FizzBuzz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HiLo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HiLo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HiLo/src/main/java/com/company/HiLo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HiLo/src/main/java/com/company/HiLo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HowManyTimesTo7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HowManyTimesTo7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HowManyTimesTo7/src/main/java/com/trilogyed/DiceRoll.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HowManyTimesTo7/src/main/java/com/trilogyed/DiceRoll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoanCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LoanCalculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoanCalculator/src/main/java/com/company/LoanCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LoanCalculator/src/main/java/com/company/LoanCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeFinder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeFinder/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeFinder/src/main/java/com/company/PrimeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeFinder/src/main/java/com/company/PrimeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/CountByThirteen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/CountByThirteen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/CountByTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/CountByTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/CountTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/CountTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/EvenOrOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/EvenOrOdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/FavoriteProgrammingLanguage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/FavoriteProgrammingLanguage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/IsJavaKeyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/IsJavaKeyword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/RangeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/RangeChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/UltimateQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/UltimateQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/YourAgeCan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/YourAgeCan.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,11 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/AgeAgain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#1655#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -35,20 +47,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/FavoriteProgrammingLanguage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="60">
+              <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/IsJavaKeyword.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/RangeChecker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/UltimateQuestion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#0#841#0" expanded="true" />
+                <element signature="e#0#917#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/company/AllKatasTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/YourAgeCan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="45">
+              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -56,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/EvenOrOdd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="75">
+              <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -65,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountTo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="45">
+              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -74,8 +113,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountByTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#555#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,8 +125,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountByThirteen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#561#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,16 +142,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/company/FavoriteProgrammingLanguage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/AgeAgain.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/RangeChecker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/YourAgeCan.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/UltimateQuestion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/IsJavaKeyword.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/CountByThirteen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/CountByTwo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/CountTo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/EvenOrOdd.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/CountByTwo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/CountByThirteen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/FavoriteProgrammingLanguage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/IsJavaKeyword.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/RangeChecker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/UltimateQuestion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/YourAgeCan.java" />
       </list>
     </option>
   </component>
@@ -129,6 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -188,10 +234,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -344,7 +390,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.21169037" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.21484992" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32921174" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -466,95 +512,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/RangeChecker.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/company/AllKatasTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/AgeAgain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountByThirteen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountByTwo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#555#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountTo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/EvenOrOdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/FavoriteProgrammingLanguage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/IsJavaKeyword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/RangeChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/UltimateQuestion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="67" selection-start-line="23" selection-start-column="67" selection-end-line="23" selection-end-column="67" />
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
-            <element signature="e#0#929#0" expanded="true" />
+            <element signature="e#0#917#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/YourAgeCan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#2767#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/IsJavaKeyword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#1989#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/AgeAgain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#1655#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/FavoriteProgrammingLanguage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#841#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/EvenOrOdd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountTo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountByTwo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/CountByThirteen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/company/AllKatasTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="45">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>

@@ -1,7 +1,7 @@
 
 /**
  * This program asks the user to input a number.
- * Returns numbers from 0 to the user input counting by 13.
+ * Displays numbers from 0 to the user input counting by 13.
  * @params args
  *
  */

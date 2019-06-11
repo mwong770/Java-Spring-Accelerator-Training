@@ -1,7 +1,7 @@
 
 /**
  * This is a virtual dice game.
- * Returns a print statement indicating how many rolls it took to roll the first 7
+ * Displays how many rolls it took to roll the first 7
  * and the total number of 7s rolled out of 100 rolls
  * @params args
  *

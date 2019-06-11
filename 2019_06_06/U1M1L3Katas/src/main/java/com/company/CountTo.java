@@ -1,7 +1,7 @@
 
 /**
  * This program asks the user to input a number.
- * Returns numbers from 0 to the user input.
+ * Displays numbers from 0 to the user input.
  * @params args
  *
  */

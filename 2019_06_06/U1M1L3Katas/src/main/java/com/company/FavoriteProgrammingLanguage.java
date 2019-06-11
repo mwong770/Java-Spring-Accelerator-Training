@@ -1,7 +1,7 @@
 
 /**
  * This program repeatedly asks the user to input a programming language until the user types "Java".
- * Returns an affirmative print statement indicating "Java" is the correct response.
+ * Displays an affirmative statement indicating "Java" is the correct response.
  * @params args
  *
  */

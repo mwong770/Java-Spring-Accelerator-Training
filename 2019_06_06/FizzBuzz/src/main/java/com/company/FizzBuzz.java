@@ -1,6 +1,6 @@
 
 /**
- * Returns numbers 1 to 100 with the following exceptions:
+ * Displays numbers 1 to 100 with the following exceptions:
  * -	If the number is a multiple of 3, prints FIZZ instead of the number.
  * -	If the number is a multiple of 5, prints BUZZ instead of the number.
  * -	If the number is a multiple of 3 and 5, prints FIZZBUZZ instead of the number.

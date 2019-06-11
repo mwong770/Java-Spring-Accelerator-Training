@@ -1,7 +1,7 @@
 
 /**
  * This program asks the user to input his / her age.
- * Returns a print statement indicating activities the user can do based on the inputted age.
+ * Displays activities the user can do based on the inputted age.
  * @params args
  *
  */

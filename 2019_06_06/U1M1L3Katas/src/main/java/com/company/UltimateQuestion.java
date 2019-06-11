@@ -2,7 +2,7 @@
 /**
  * This program asks the user to input a number within a range.
  * The program continues to prompt the user until the user provides the number 42.
- * Returns an affirmative print statement indicating they selected the correct number once they select 42.
+ * Displays an affirmative statement indicating the user selected the correct number once the user selects 42.
  * @params args
  *
  */

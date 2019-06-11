@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d28a846-7616-42a1-a9a9-67ab51f9f55b" name="Default Changelist" comment="" />
+    <list default="true" id="0d28a846-7616-42a1-a9a9-67ab51f9f55b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../FizzBuzz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FizzBuzz/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FizzBuzz/src/main/java/com/company/FizzBuzz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FizzBuzz/src/main/java/com/company/FizzBuzz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HiLo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HiLo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HiLo/src/main/java/com/company/HiLo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HiLo/src/main/java/com/company/HiLo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRoll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRoll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoanCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LoanCalculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoanCalculator/src/main/java/com/company/LoanCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LoanCalculator/src/main/java/com/company/LoanCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeFinder/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeFinder/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PrimeFinder/src/main/java/com/company/PrimeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PrimeFinder/src/main/java/com/company/PrimeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByThirteen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByThirteen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/EvenOrOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/EvenOrOdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/FavoriteProgrammingLanguage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/FavoriteProgrammingLanguage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/IsJavaKeyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/IsJavaKeyword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/RangeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/RangeChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/UltimateQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/UltimateQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/YourAgeCan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/YourAgeCan.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRoll.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+            <state relative-caret-position="45">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -56,8 +77,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRoll.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRollBonus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRoll.java" />
       </list>
     </option>
   </component>
@@ -183,8 +204,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DiceRoll" />
       <item itemvalue="Application.DiceRollBonus" />
+      <item itemvalue="Application.DiceRoll" />
     </list>
     <recent_temporary>
       <list>
@@ -281,8 +302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/trilogyed/DiceRoll.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        <state relative-caret-position="45">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>

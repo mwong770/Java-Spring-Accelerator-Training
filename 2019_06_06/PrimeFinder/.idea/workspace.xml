@@ -2,10 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74705e22-e672-4643-af4c-d335cf61c4f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../2019_06_04/U1M1L1Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_04/U1M1L1Katas/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/CommandLineGram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/CommandLineGram/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/RectPavingCompany/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/RectPavingCompany/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_05/U1M1L2Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_05/U1M1L2Katas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FizzBuzz/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FizzBuzz/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FizzBuzz/src/main/java/com/company/FizzBuzz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FizzBuzz/src/main/java/com/company/FizzBuzz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HiLo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HiLo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HiLo/src/main/java/com/company/HiLo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HiLo/src/main/java/com/company/HiLo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HowManyTimesTo7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HowManyTimesTo7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HowManyTimesTo7/src/main/java/com/trilogyed/DiceRoll.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HowManyTimesTo7/src/main/java/com/trilogyed/DiceRoll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoanCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LoanCalculator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LoanCalculator/src/main/java/com/company/LoanCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LoanCalculator/src/main/java/com/company/LoanCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/PrimeFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/PrimeFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByThirteen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByThirteen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountByTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/CountTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/EvenOrOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/EvenOrOdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/FavoriteProgrammingLanguage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/FavoriteProgrammingLanguage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/IsJavaKeyword.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/IsJavaKeyword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/RangeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/RangeChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/UltimateQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/UltimateQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/YourAgeCan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M1L3Katas/src/main/java/com/company/YourAgeCan.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,22 +36,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/PrimeFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="e#0#849#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/company/PrimeFinderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
+            <state relative-caret-position="315">
               <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
             </state>
           </provider>
@@ -136,6 +149,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -218,9 +232,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1389" height="739" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2568671" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26429102" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -251,17 +264,14 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/PrimeFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#849#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/company/PrimeFinderTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
+        <state relative-caret-position="315">
           <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
         </state>
       </provider>

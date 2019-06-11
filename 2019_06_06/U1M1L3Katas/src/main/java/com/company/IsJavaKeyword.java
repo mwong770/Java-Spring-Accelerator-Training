@@ -1,7 +1,7 @@
 
 /**
  * This program asks the user to input a word.
- * Returns a print statement indicating whether the word is a Java keyword or not.
+ * Displays whether the word is a Java keyword or not.
  * @params args
  *
  */

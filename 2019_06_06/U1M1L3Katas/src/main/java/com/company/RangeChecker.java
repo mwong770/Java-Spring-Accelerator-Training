@@ -2,7 +2,7 @@
 /**
  * This program asks the user to input a number within a range.
  * The program continues to prompt the user until the user provides a number that is in range.
- * Returns the user's number to the console once they select a number in range.
+ * Displays the user's number to the console once they select a number in range.
  * @params args
  *
  */

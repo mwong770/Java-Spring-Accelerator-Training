@@ -1,7 +1,7 @@
 
 /**
  *
- * Returns all the prime numbers from 1 to a number inputted by the user.
+ * Displays all the prime numbers from 1 to a number inputted by the user.
  * @params args
  *
  */
