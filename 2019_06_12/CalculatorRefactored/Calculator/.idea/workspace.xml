@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="66f86fe1-683b-43b3-9ce2-b4edb49a2c41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Calculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Calculator/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Calculator/src/main/java/com/company/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Calculator/target/classes/com/company/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Calculator/target/classes/com/company/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Calculator/target/test-classes/com/company/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Calculator/target/test-classes/com/company/CalculatorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Calculator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="344">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -42,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/company/CalculatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -69,7 +65,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="12" />
-    <option name="y" value="78" />
+    <option name="y" value="22" />
     <option name="width" value="1428" />
     <option name="height" value="798" />
   </component>
@@ -242,10 +238,9 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="78" width="1428" height="798" extended-state="0" />
-    <editor active="true" />
+    <frame x="12" y="22" width="1428" height="798" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2034632" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20634921" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -280,14 +275,14 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/company/CalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="344">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
