@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26eae792-1eae-4ff1-b036-8e7fe549383c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../2019_06_13/MariaWongU1M2L5PBD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_13/MariaWongU1M2L5PBD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_13/U1M2L5Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_13/U1M2L5Katas/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../2019_06_13/UserIO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_13/UserIO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M2L6Katas/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M2L6Katas/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M2L6Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M2L6Katas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U1M2L7Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../U1M2L7Katas/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -112,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/concreteapproach/Circle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="180">
               <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding>
                 <element signature="e#313#314#0" expanded="true" />
@@ -184,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,7 +249,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -283,9 +283,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1611" y="323" width="1032" height="653" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42323232" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.43131313" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -411,16 +410,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/concreteapproach/Square.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/concreteapproach/Circle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="180">
           <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding>
             <element signature="e#313#314#0" expanded="true" />
@@ -428,6 +420,13 @@
             <element signature="e#386#387#0" expanded="true" />
             <element signature="e#422#423#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/concreteapproach/Square.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
