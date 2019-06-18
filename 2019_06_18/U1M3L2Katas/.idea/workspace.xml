@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6520d23-f4fe-4f0c-95b7-33968a2321de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../2019_06_17/U1M2L8PBD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_17/U1M2L8PBD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../U1-M1-Summative-Wong-Maria/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../U1-M1-Summative-Wong-Maria/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../U1-M2-Summative-Wong-Maria/CalculatorObject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../U1-M2-Summative-Wong-Maria/CalculatorObject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../U1-M2-Summative-Wong-Maria/CalculatorObject/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../U1-M2-Summative-Wong-Maria/CalculatorObject/src/main/java/com/company/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LargestCities/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LargestCities/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,16 +17,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="75">
+              <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/company/AppTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -72,6 +69,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,11 +128,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -219,9 +217,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AppTest - 2019.06.17 at 21h 32m 28s.xml">
-      <configuration name="AppTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="AppTest_shouldModifyAndReturnMap - 2019.06.17 at 21h 36m 53s.xml">
       <configuration name="AppTest.shouldModifyAndReturnMap" configurationId="JUnit" />
     </history-entry>
@@ -249,12 +244,15 @@
     <history-entry file="AppTest - 2019.06.17 at 22h 45m 09s.xml">
       <configuration name="AppTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AppTest - 2019.06.17 at 22h 49m 46s.xml">
+      <configuration name="AppTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="24" width="1343" height="798" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19369715" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19677171" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -283,6 +281,13 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Car.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -294,13 +299,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>

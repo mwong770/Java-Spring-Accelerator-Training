@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8c9c32e-7ba8-425d-97c7-ec81e69cd4d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../2019_06_17/U1M2L8PBD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2019_06_17/U1M2L8PBD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../U1-M1-Summative-Wong-Maria/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../U1-M1-Summative-Wong-Maria/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../U1-M2-Summative-Wong-Maria/CalculatorObject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../U1-M2-Summative-Wong-Maria/CalculatorObject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../U1-M2-Summative-Wong-Maria/CalculatorObject/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../U1-M2-Summative-Wong-Maria/CalculatorObject/src/main/java/com/company/Calculator.java" afterDir="false" />
-    </list>
+    <list default="true" id="b8c9c32e-7ba8-425d-97c7-ec81e69cd4d8" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="240">
+              <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -86,7 +81,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -117,9 +111,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -211,7 +207,7 @@
   <component name="ToolWindowManager">
     <frame x="233" y="25" width="1176" height="798" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2936508" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2989418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -259,8 +255,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="240">
+          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
