@@ -2,7 +2,6 @@
  *
  * This class contains a set of methods that does addition, subtraction, multiplication,
  * and division for two int parameters and two double parameters.
- * @params args
  *
  */
 
