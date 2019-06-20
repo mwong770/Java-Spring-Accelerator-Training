@@ -18,10 +18,23 @@ public class Customer {
     public Customer() {
     }
 
-    // only includes first and last name because that may be all the info provided at first
-    public Customer(String firstName, String lastName) {
+    // in case only name and email provided; ex., in person sale
+    public Customer(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
+    }
+
+    // in case all info provided; ex. online sign up form
+    public Customer(String firstName, String lastName, String email, String phoneNumber, Address shippingAddress,
+                    Address billingAddress, boolean isRewardsMember) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.shippingAddress = shippingAddress;
+        this.billingAddress = billingAddress;
+        this.isRewardsMember = isRewardsMember;
     }
 
     public String getFirstName() {
