@@ -1,39 +1,23 @@
 /**
- * Creates an ArrayList with 10 random integers.
- * Prompts the user for an integer, then displays a message
- * indicating if the integer is present in the list or not.
+ * Creates and displays an ArrayList with 10 random integers.
+ * Finds and displays the largest value in the ArrayList and its index number(s).
  *
  * @params args
  */
 
-//ADD COMMENTS TO SUMMATIVE ************************
-
 package com.company;
 
-/*
-Write a program that creates an ArrayList of Integers.
- Fill the ArrayList with random numbers from 1 to 100.
- Display the values in the ArrayList on the screen. Then use a linear
-  search to find the largest value in the ArrayList, and display that
-   value and its slot number.
- */
-
-//ADD COMMENTS TO SUMMATIVE ************************
-
-
-        import java.util.ArrayList;
-        import java.util.List;
-        import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class LocatingTheLargestValueInAnArrayList {
 
     public static void main(String[] args) {
 
-
         Random randomGenerator = new Random();
 
         List<Integer> nums = new ArrayList<>();
-
 
         for (int i = 0; i < 10; i++) {
             nums.add(randomGenerator.nextInt(100) + 1);
@@ -41,19 +25,38 @@ public class LocatingTheLargestValueInAnArrayList {
 
         System.out.println("ArrayList: " + nums);
 
-        int largest = nums.get(0);
+        int currentLargest = nums.get(0);
 
-        //find all
-        int largestIdx = 0;
+        List<Integer> indexList = new ArrayList<>();
 
+        // if a number larger than currentLargest is found, 
+        // assigns it to currentLargest, empties indexList and adds its index to indexList
+        // if a number equal to currentLargest is found, adds its index to indexList
         for (int i = 0; i < nums.size(); i++) {
-            if (nums.get(i) > largest) {
-                largest = nums.get(i);
-                largestIdx = i;
+            if (nums.get(i) > currentLargest) {
+                currentLargest = nums.get(i);
+                indexList.clear();
+                indexList.add(i);
+            } else if (nums.get(i) == currentLargest) {
+                indexList.add(i);
             }
         }
 
-        System.out.println(largest);
-        System.out.println(largestIdx);
+        // displays the largest number and its index/indices
+        if (indexList.size() == 1) {
+            System.out.println("\nThe largest value is " + currentLargest + ", which is in slot " + indexList.get(0) + ".");
+        } else {
+            System.out.print("\nThe largest value is " + currentLargest + ", which is in slots ");
+            for (int i = 0; i < indexList.size(); i++) {
+                if (i == (indexList.size() - 1)) {
+                    System.out.print(indexList.get(i));
+                } else {
+                    System.out.print(indexList.get(i) + " and ");
+                }
+            }
+            System.out.print(".\n");
+        }
+
     }
+
 }

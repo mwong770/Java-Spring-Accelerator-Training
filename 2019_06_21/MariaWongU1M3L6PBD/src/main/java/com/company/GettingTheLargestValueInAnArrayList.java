@@ -1,35 +1,23 @@
 /**
- * Creates an ArrayList with 10 random integers.
- * Prompts the user for an integer, then displays a message
- * indicating if the integer is present in the list or not.
+ * Creates and displays an ArrayList with 10 random integers.
+ * Finds and displays the largest value in the ArrayList.
  *
  * @params args
  */
 
 package com.company;
 
-        import java.util.ArrayList;
-        import java.util.List;
-        import java.util.Random;
-        import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
-/*
-Write a program that creates an ArrayList which can hold Integers.
-Fill the ArrayList with random numbers from 1 to 100. Display the values
-in the ArrayList on the screen. Then
-
-use a linear search to find the largest
- value in the ArrayList, and display that value.
- */
 public class GettingTheLargestValueInAnArrayList {
 
     public static void main(String[] args) {
 
-
         Random randomGenerator = new Random();
 
         List<Integer> nums = new ArrayList<>();
-
 
         for (int i = 0; i < 10; i++) {
             nums.add(randomGenerator.nextInt(100) + 1);
@@ -47,4 +35,5 @@ public class GettingTheLargestValueInAnArrayList {
 
         System.out.println(largest);
     }
+
 }
