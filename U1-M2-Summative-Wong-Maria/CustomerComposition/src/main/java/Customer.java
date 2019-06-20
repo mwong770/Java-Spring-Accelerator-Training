@@ -1,8 +1,6 @@
 /**
- *
  * This class represents a customer.
  * It has the ability to get and set characteristics of a customer.
- *
  */
 
 public class Customer {
@@ -36,6 +34,8 @@ public class Customer {
         this.billingAddress = billingAddress;
         this.isRewardsMember = isRewardsMember;
     }
+
+    // setters and getters
 
     public String getFirstName() {
         return firstName;

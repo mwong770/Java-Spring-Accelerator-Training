@@ -1,7 +1,5 @@
 /**
- *
  * Returns a day of the week or a day of the month corresponding to an inputted integer.
- *
  */
 
 package com.company;
@@ -11,6 +9,7 @@ public class ConverterIf implements Converter {
     public ConverterIf() {
     }
 
+    // returns month
     public String convertMonth(int monthNumber) {
         if (monthNumber == 1) {
             return "January";
@@ -41,6 +40,7 @@ public class ConverterIf implements Converter {
         }
     }
 
+    // returns day of the week
     public String convertDay(int dayNumber) {
         if (dayNumber == 1) {
             return "Sunday";

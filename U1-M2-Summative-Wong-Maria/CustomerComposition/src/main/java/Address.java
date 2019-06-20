@@ -1,8 +1,6 @@
 /**
- *
  * This class represents an address.
  * It has the ability to get and set characteristics of an address.
- *
  */
 
 public class Address {
@@ -12,6 +10,8 @@ public class Address {
     private String city;
     private String state;
     private String zipCode;
+
+    // constructors
 
     public Address() {
     }
@@ -23,6 +23,8 @@ public class Address {
         this.state = state;
         this.zipCode = zipCode;
     }
+
+    // setters and getters
 
     public String getStreet1() {
         return street1;

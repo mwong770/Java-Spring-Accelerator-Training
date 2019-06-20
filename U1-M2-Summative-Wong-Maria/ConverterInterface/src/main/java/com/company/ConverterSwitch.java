@@ -1,7 +1,5 @@
 /**
- *
  * Returns a day of the week or a day of the month corresponding to an inputted integer.
- *
  */
 
 package com.company;
@@ -11,8 +9,9 @@ public class ConverterSwitch implements Converter {
     public ConverterSwitch() {
     }
 
+    // returns month
     public String convertMonth(int monthNumber) {
-        switch(monthNumber) {
+        switch (monthNumber) {
             case 1:
                 return "January";
             case 2:
@@ -42,8 +41,9 @@ public class ConverterSwitch implements Converter {
         }
     }
 
+    // returns day of the week
     public String convertDay(int dayNumber) {
-        switch(dayNumber) {
+        switch (dayNumber) {
             case 1:
                 return "Sunday";
             case 2:

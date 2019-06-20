@@ -1,37 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05653310-ec98-44c7-a7d1-b5a25a8d2d7f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/CalculatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/CalculatorApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="e0f0be08-0da2-44d1-aeb9-c591dae8f287" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/Calculator.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/GettingTheLargestValueInAnArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+            <state relative-caret-position="90">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/CalculatorApplication.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/company/LocatingTheLargestValueInAnArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+            <state relative-caret-position="114">
+              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#1373#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,90 +48,96 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/Calculator.java" />
-        <option value="$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/CalculatorApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/GettingTheLargestValueInAnArrayList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/LocatingTheLargestValueInAnArrayList.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="24" />
-    <option name="y" value="98" />
-    <option name="width" value="1400" />
-    <option name="height" value="600" />
+    <option name="x" value="167" />
+    <option name="y" value="22" />
+    <option name="width" value="1104" />
+    <option name="height" value="798" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
+              <item name="mariawongu1m3l6pbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MariaWongU1M3L6PBD" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
-              <item name="CalculatorObject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
-              <item name="CalculatorObject" type="462c0819:PsiDirectoryNode" />
+              <item name="mariawongu1m3l6pbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MariaWongU1M3L6PBD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
-              <item name="CalculatorObject" type="462c0819:PsiDirectoryNode" />
+              <item name="mariawongu1m3l6pbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MariaWongU1M3L6PBD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
-              <item name="CalculatorObject" type="462c0819:PsiDirectoryNode" />
+              <item name="mariawongu1m3l6pbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MariaWongU1M3L6PBD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
-              <item name="CalculatorObject" type="462c0819:PsiDirectoryNode" />
+              <item name="mariawongu1m3l6pbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MariaWongU1M3L6PBD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
-              <item name="CalculatorObject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -142,19 +157,19 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="05653310-ec98-44c7-a7d1-b5a25a8d2d7f" name="Default Changelist" comment="" />
-      <created>1560989249693</created>
+      <changelist id="e0f0be08-0da2-44d1-aeb9-c591dae8f287" name="Default Changelist" comment="" />
+      <created>1561054999722</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1560989249693</updated>
+      <updated>1561054999722</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="24" y="98" width="1400" height="600" extended-state="0" />
+    <frame x="167" y="22" width="1104" height="798" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26288658" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2542373" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -175,29 +190,35 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/Calculator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/GettingTheLargestValueInAnArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        <state relative-caret-position="90">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/CalculatorApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/LocatingTheLargestValueInAnArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+        <state relative-caret-position="114">
+          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#1373#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

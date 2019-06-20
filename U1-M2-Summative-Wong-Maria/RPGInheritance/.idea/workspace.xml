@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b06fdb8-f63e-41c8-8343-261950e55b98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CalculatorObject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorObject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalculatorObject/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorObject/src/main/java/com/company/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalculatorObject/src/main/java/com/company/CalculatorApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorObject/src/main/java/com/company/CalculatorApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ConverterInterface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ConverterInterface/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterIf.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterIf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterSwitch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../CustomerComposition/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerComposition/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerComposition/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerComposition/src/main/java/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerComposition/src/main/java/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerComposition/src/main/java/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../IceCreamClassDesign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../IceCreamClassDesign/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPGInheritance.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Constable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Constable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Farmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Farmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/Warrior.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Farmer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -40,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Constable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="300">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -52,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Warrior.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+            <state relative-caret-position="300">
+              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -64,10 +75,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Character.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state relative-caret-position="555">
+              <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#2214#2215#0" expanded="true" />
+                <element signature="e#2241#2242#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,11 +104,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/company/Position.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/Characters.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/Play.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/TestSetup.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/company/Warrior.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/Constable.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/Farmer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/Warrior.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/company/Character.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/company/TestSetup.java" />
       </list>
     </option>
   </component>
@@ -111,8 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -150,6 +161,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,7 +282,7 @@
     <frame x="20" y="36" width="1420" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20682149" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20972423" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -307,18 +320,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state relative-caret-position="555">
+          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#2214#2215#0" expanded="true" />
+            <element signature="e#2241#2242#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Constable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="300">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -327,8 +342,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Farmer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -337,8 +352,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Warrior.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        <state relative-caret-position="300">
+          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
