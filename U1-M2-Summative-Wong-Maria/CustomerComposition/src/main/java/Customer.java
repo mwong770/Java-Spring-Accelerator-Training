@@ -15,6 +15,15 @@ public class Customer {
     private Address billingAddress;
     private boolean isRewardsMember;
 
+    public Customer() {
+    }
+
+    // only includes first and last name because that may be all the info provided at first
+    public Customer(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getFirstName() {
         return firstName;
     }

@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbb2e4b4-1e08-488b-8fcb-4db5a576d9ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/2019_06_13/MariaWongU1M2L5PBD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2019_06_13/MariaWongU1M2L5PBD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2019_06_13/U1M2L5Katas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2019_06_13/U1M2L5Katas/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2019_06_13/UserIO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2019_06_13/UserIO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CalculatorObject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CalculatorObject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CalculatorObject/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CalculatorObject/src/main/java/com/company/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/src/main/java/com/company/ConverterIf.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/src/main/java/com/company/ConverterIf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/src/main/java/com/company/ConverterSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/src/main/java/com/company/ConverterSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/src/main/java/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/src/main/java/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/src/main/java/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/IceCreamClassDesign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/IceCreamClassDesign/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/RPGInheritance.iml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +35,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -62,16 +71,13 @@
   <component name="ToolWindowManager">
     <frame x="265" y="22" width="1175" height="798" extended-state="0" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24977934" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2541924" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -79,14 +85,17 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
 </project>

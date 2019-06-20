@@ -8,6 +8,9 @@ package com.company;
 
 public class ConverterSwitch implements Converter {
 
+    public ConverterSwitch() {
+    }
+
     public String convertMonth(int monthNumber) {
         switch(monthNumber) {
             case 1:

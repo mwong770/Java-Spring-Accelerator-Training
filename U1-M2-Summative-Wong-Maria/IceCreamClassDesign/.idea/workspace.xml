@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3df07f44-b44e-4320-a860-6c1383f30a5d" name="Default Changelist" comment="" />
+    <list default="true" id="3df07f44-b44e-4320-a860-6c1383f30a5d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../CalculatorObject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorObject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CalculatorObject/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorObject/src/main/java/com/company/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ConverterInterface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ConverterInterface/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterIf.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterIf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ConverterInterface/src/main/java/com/company/ConverterSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerComposition/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerComposition/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerComposition/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerComposition/src/main/java/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomerComposition/src/main/java/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerComposition/src/main/java/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPGInheritance/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RPGInheritance/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPGInheritance/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RPGInheritance/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPGInheritance/RPGInheritance.iml" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +36,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/IceCreamShop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
+            <state relative-caret-position="624">
               <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -45,36 +58,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/company/IceCreamFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-591">
+            <state relative-caret-position="624">
               <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#860#861#0" expanded="true" />
-                <element signature="e#916#917#0" expanded="true" />
-                <element signature="e#948#949#0" expanded="true" />
-                <element signature="e#998#999#0" expanded="true" />
-                <element signature="e#1026#1027#0" expanded="true" />
-                <element signature="e#1074#1075#0" expanded="true" />
-                <element signature="e#1112#1113#0" expanded="true" />
-                <element signature="e#1171#1172#0" expanded="true" />
-                <element signature="e#1209#1210#0" expanded="true" />
-                <element signature="e#1268#1269#0" expanded="true" />
-                <element signature="e#1296#1297#0" expanded="true" />
-                <element signature="e#1347#1348#0" expanded="true" />
-                <element signature="e#1378#1379#0" expanded="true" />
-                <element signature="e#1430#1431#0" expanded="true" />
-                <element signature="e#1459#1460#0" expanded="true" />
-                <element signature="e#1509#1510#0" expanded="true" />
-                <element signature="e#1537#1538#0" expanded="true" />
-                <element signature="e#1585#1586#0" expanded="true" />
-                <element signature="e#1647#1648#0" expanded="true" />
-                <element signature="e#1705#1706#0" expanded="true" />
-                <element signature="e#1766#1767#0" expanded="true" />
-                <element signature="e#1830#1831#0" expanded="true" />
-                <element signature="e#1856#1857#0" expanded="true" />
-                <element signature="e#1910#1911#0" expanded="true" />
-                <element signature="e#2152#2153#0" expanded="true" />
-                <element signature="e#2190#2191#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,6 +151,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
@@ -244,7 +232,7 @@
     <frame x="50" y="26" width="1390" height="793" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19362018" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19955489" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -306,43 +294,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/IceCreamFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-591">
+        <state relative-caret-position="624">
           <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1026#1027#0" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-            <element signature="e#1268#1269#0" expanded="true" />
-            <element signature="e#1296#1297#0" expanded="true" />
-            <element signature="e#1347#1348#0" expanded="true" />
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-            <element signature="e#1509#1510#0" expanded="true" />
-            <element signature="e#1537#1538#0" expanded="true" />
-            <element signature="e#1585#1586#0" expanded="true" />
-            <element signature="e#1647#1648#0" expanded="true" />
-            <element signature="e#1705#1706#0" expanded="true" />
-            <element signature="e#1766#1767#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-            <element signature="e#1856#1857#0" expanded="true" />
-            <element signature="e#1910#1911#0" expanded="true" />
-            <element signature="e#2152#2153#0" expanded="true" />
-            <element signature="e#2190#2191#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/company/IceCreamShop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
+        <state relative-caret-position="624">
           <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />

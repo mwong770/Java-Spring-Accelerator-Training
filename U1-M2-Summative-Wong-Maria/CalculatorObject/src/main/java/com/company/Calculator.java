@@ -9,6 +9,9 @@ package com.company;
 
 public class Calculator {
 
+    public Calculator() {
+    }
+
     // int methods
 
     public int add(int a, int b) {

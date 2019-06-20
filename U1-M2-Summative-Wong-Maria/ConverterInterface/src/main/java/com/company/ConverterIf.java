@@ -8,6 +8,9 @@ package com.company;
 
 public class ConverterIf implements Converter {
 
+    public ConverterIf() {
+    }
+
     public String convertMonth(int monthNumber) {
         if (monthNumber == 1) {
             return "January";
