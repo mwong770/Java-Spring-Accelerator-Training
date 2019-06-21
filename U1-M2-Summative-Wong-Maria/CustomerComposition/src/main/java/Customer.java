@@ -17,6 +17,7 @@ public class Customer {
     }
 
     // in case only name and email provided; ex., in person sale
+    // initializes (sets internal state of) objects created by instantiating the class
     public Customer(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -24,6 +25,7 @@ public class Customer {
     }
 
     // in case all info provided; ex. online sign up form
+    // initializes (sets internal state of) objects created by instantiating the class
     public Customer(String firstName, String lastName, String email, String phoneNumber, Address shippingAddress,
                     Address billingAddress, boolean isRewardsMember) {
         this.firstName = firstName;

@@ -16,6 +16,7 @@ public class Character {
 
     // constructor
 
+    // initializes (sets internal state of) objects created by instantiating the class
     public Character(String name, int strength, int health, int stamina, int speed, int attackPower) {
         this.name = name;
         this.strength = strength;

@@ -16,6 +16,7 @@ public class Address {
     public Address() {
     }
 
+    // initializes (sets internal state of) objects created by instantiating the class
     public Address(String street1, String street2, String city, String state, String zipCode) {
         this.street1 = street1;
         this.street2 = street2;
