@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbb2e4b4-1e08-488b-8fcb-4db5a576d9ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CalculatorObject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CalculatorObject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CalculatorObject/src/main/java/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CalculatorObject/src/main/java/com/company/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/src/main/java/com/company/ConverterIf.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/src/main/java/com/company/ConverterIf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/src/main/java/com/company/ConverterSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/ConverterInterface/src/main/java/com/company/ConverterSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/src/main/java/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/src/main/java/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/CustomerComposition/src/main/java/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/IceCreamClassDesign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/IceCreamClassDesign/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/RPGInheritance/RPGInheritance.iml" beforeDir="false" />
-    </list>
+    <list default="true" id="dbb2e4b4-1e08-488b-8fcb-4db5a576d9ce" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +22,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Maria_Wong_JavaS1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Maria_Wong_JavaS1" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -71,7 +68,7 @@
   <component name="ToolWindowManager">
     <frame x="265" y="22" width="1175" height="798" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2541924" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25860548" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />

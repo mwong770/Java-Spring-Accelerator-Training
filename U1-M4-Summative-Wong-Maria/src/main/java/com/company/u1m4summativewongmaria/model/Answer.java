@@ -8,6 +8,11 @@ public class Answer {
     private String question;
     private String answer;
 
+    // constructor
+
+    public Answer() {
+    }
+
     // getters and setters
 
     public String getQuestion() {

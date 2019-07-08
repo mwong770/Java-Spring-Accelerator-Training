@@ -13,7 +13,7 @@ public class Definition {
     public Definition() {
     }
 
-    // used to facilitate initialization of objects to store in memory
+    // used to facilitate initialization of objects' instance variables
     // using just setters to create 10 Definition objects would have been a lot of code
     public Definition(String word, String definition) {
         this.word = word;

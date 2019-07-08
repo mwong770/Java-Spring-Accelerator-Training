@@ -20,6 +20,10 @@ public class QuoteOfDayService {
     // list to store Quote objects
     private static List<Quote> quotes = new ArrayList<>();
 
+    // constructor
+    public QuoteOfDayService() {
+    }
+
     /**
      *  stores Quote objects into a list after initialization
      */

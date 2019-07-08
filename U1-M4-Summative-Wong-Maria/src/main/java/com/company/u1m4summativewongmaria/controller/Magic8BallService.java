@@ -17,6 +17,10 @@ public class Magic8BallService {
     // list to store possible answers
     private static List<String> answers = new ArrayList<>();
 
+    // constructor
+    public Magic8BallService() {
+    }
+
     /**
      *  stores answer options into a list after initialization
      */

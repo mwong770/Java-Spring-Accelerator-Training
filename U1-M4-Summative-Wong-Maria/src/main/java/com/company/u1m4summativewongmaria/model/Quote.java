@@ -13,7 +13,7 @@ public class Quote {
     public Quote() {
     }
 
-    // used to facilitate initialization of objects to store in memory
+    // used to facilitate initialization of objects' instance variables
     // using just setters to create 10 Quote objects would have been a lot of code
     public Quote(String author, String quote) {
         this.author = author;

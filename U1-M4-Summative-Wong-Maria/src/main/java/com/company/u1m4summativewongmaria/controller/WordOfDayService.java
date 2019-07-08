@@ -20,6 +20,10 @@ public class WordOfDayService {
     // list to store Definition objects
     private static List<Definition> definitions = new ArrayList<>();
 
+    // constructor
+    public WordOfDayService() {
+    }
+
     /**
      *  stores Definition objects into a list after initialization
      */
