@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info: 
+  title: Random Item Generator
+  description: A simple service that returns a random quote, word defintion, and answer to a question
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+    description: Local dev server
+paths:
+  /quote:
+    get:
+      summary: Returns a random quote 
+      responses:
+        '200':
+          description: A Quote object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Quote'
+  /word:
+    get:
+      summary: Returns a random word definition
+      responses:
+        '200':
+          description: A Definition object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Definition'
+  /magic:
+    post:
+      summary: Inputs a question
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Answer'
+      responses:
+        '200':
+          description: An Answer object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+components:
+  schemas:
+    Quote:
+      properties:
+        Author:
+          type: string
+        Quote:
+          type: string
+      required: 
+        - Author
+        - Quote
+    Definition:
+      properties:
+        Word:
+          type: string
+        Definition:
+          type: string
+      required: 
+        - Word
+        - Definition
+    Answer:
+      properties:
+        Question:
+          type: string
+        Answer:
+          type: string
+      required: 
+        - Question
+        - Answer
+
+       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+              

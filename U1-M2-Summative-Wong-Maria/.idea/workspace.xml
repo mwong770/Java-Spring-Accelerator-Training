@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05653310-ec98-44c7-a7d1-b5a25a8d2d7f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../2019_06_21/MariaWongU1M3L6PBD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2019_06_21/MariaWongU1M3L6PBD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerComposition/src/main/java/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerComposition/src/main/java/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomerComposition/src/main/java/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerComposition/src/main/java/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPGInheritance/src/main/java/com/company/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/RPGInheritance/src/main/java/com/company/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CalculatorObject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CalculatorObject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConverterInterface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ConverterInterface/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerComposition/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerComposition/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IceCreamClassDesign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/IceCreamClassDesign/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RPGInheritance/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RPGInheritance/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
+            <state relative-caret-position="45">
               <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -30,7 +31,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/CalculatorApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="150">
               <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -47,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConverterInterface/src/main/java/com/company/ConverterIf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
+            <state>
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -55,10 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ConverterInterface/src/main/java/com/company/ConverterSwitch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="404">
+              <caret line="40" column="9" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="40" selection-end-column="9" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -89,13 +91,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CustomerComposition/src/main/java/Address.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="270">
               <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RPGInheritance/src/main/java/com/company/Character.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -135,13 +137,57 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
               <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
+              <item name="ConverterInterface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
+              <item name="ConverterInterface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
+              <item name="ConverterInterface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
+              <item name="ConverterInterface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
+              <item name="ConverterInterface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="U1-M2-Summative-Wong-Maria" type="462c0819:PsiDirectoryNode" />
+              <item name="ConverterInterface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="U1-M2-Summative-Wong-Maria" type="b2602c69:ProjectViewProjectNode" />
@@ -192,6 +238,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -227,7 +274,7 @@
     <frame x="24" y="98" width="1400" height="600" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26656848" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27025038" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -257,7 +304,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
+        <state relative-caret-position="45">
           <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -267,7 +314,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CalculatorObject/src/main/java/com/company/CalculatorApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="150">
           <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -279,15 +326,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ConverterInterface/src/main/java/com/company/ConverterIf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConverterInterface/src/main/java/com/company/ConverterSwitch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -314,7 +352,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CustomerComposition/src/main/java/Address.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="270">
           <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
         </state>
       </provider>
@@ -323,6 +361,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConverterInterface/src/main/java/com/company/ConverterSwitch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="40" selection-end-column="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
