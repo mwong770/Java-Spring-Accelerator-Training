@@ -1,6 +1,7 @@
 package com.company.u1m4summativewongmaria.controller;
 
 import com.company.u1m4summativewongmaria.model.Answer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
