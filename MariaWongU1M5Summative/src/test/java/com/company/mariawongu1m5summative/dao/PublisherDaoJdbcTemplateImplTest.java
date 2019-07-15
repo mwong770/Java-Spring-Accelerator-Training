@@ -40,14 +40,13 @@ public class PublisherDaoJdbcTemplateImplTest {
     }
 
 
-
     // tests addPublisher(), getPublisher() and deletePublisher()
     @Test
     public void addGetDeletePublisher() {
 
         // creates and adds a publisher to the db
         Publisher publisher = new Publisher();
-        publisher.setName("Mathews");
+        publisher.setName("DX Publishing");
         publisher.setStreet("Read Blvd.");
         publisher.setCity("New Orleans");
         publisher.setState("LA");
@@ -80,7 +79,7 @@ public class PublisherDaoJdbcTemplateImplTest {
 
         // adds two publishers to the db
         Publisher publisher = new Publisher();
-        publisher.setName("McKenzie");
+        publisher.setName("Readers Press");
         publisher.setStreet("Adams St.");
         publisher.setCity("New Orleans");
         publisher.setState("LA");
@@ -91,7 +90,7 @@ public class PublisherDaoJdbcTemplateImplTest {
         PublisherDao.addPublisher(publisher);
 
         publisher = new Publisher();
-        publisher.setName("Parker");
+        publisher.setName("Black Publications");
         publisher.setStreet("Reese Blvd.");
         publisher.setCity("Huntersville");
         publisher.setState("NC");
@@ -115,7 +114,7 @@ public class PublisherDaoJdbcTemplateImplTest {
 
         // adds a publisher to the db
         Publisher publisher = new Publisher();
-        publisher.setName("Rodriguez");
+        publisher.setName("ELI Magazine");
         publisher.setStreet("Sturdivant St.");
         publisher.setCity("Cary");
         publisher.setState("NC");
@@ -140,6 +139,5 @@ public class PublisherDaoJdbcTemplateImplTest {
         assertEquals(publisher, publisher2);
 
     }
-
 
 }

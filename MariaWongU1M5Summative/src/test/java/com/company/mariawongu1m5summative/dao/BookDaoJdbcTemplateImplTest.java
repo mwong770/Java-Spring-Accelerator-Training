@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -62,20 +63,20 @@ public class BookDaoJdbcTemplateImplTest {
 
         // adds author to populate foreign key in book
         Author author = new Author();
-        author.setFirstName("Daniel");
-        author.setLastName("Mathews");
-        author.setStreet("Read Blvd.");
+        author.setFirstName("Thomas");
+        author.setLastName("McKenzie");
+        author.setStreet("Adams St.");
         author.setCity("New Orleans");
         author.setState("LA");
-        author.setPostalCode("70114");
-        author.setPhone("1-504-382-5729");
-        author.setEmail("mathews@yahoo.com");
+        author.setPostalCode("70043");
+        author.setPhone("1-504-635-2847");
+        author.setEmail("mckenzie@yahoo.com");
 
         author = AuthorDao.addAuthor(author);
 
         // adds publisher to populate foreign key in book
         Publisher publisher = new Publisher();
-        publisher.setName("Mathews");
+        publisher.setName("DX Publishing");
         publisher.setStreet("Read Blvd.");
         publisher.setCity("New Orleans");
         publisher.setState("LA");
@@ -89,10 +90,10 @@ public class BookDaoJdbcTemplateImplTest {
         Book book = new Book();
         book.setAuthorId(author.getAuthorId());
         book.setPublisherId(publisher.getPublisherId());
-        book.setPrice(4.63);
-        book.setIsbn("New Orleans");
+        book.setPrice(new BigDecimal("4.63"));
+        book.setIsbn("978-13-601970-1");
         book.setPublishDate(LocalDate.of(2018, 1, 28));
-        book.setTitle("70114");
+        book.setTitle("The Dark Side");
 
         book = BookDao.addBook(book);
 
@@ -134,13 +135,13 @@ public class BookDaoJdbcTemplateImplTest {
 
         // adds publisher to populate foreign key in book
         Publisher publisher = new Publisher();
-        publisher.setName("Mathews");
-        publisher.setStreet("Read Blvd.");
+        publisher.setName("Readers Press");
+        publisher.setStreet("Adams St.");
         publisher.setCity("New Orleans");
         publisher.setState("LA");
-        publisher.setPostalCode("70114");
-        publisher.setPhone("1-504-382-5729");
-        publisher.setEmail("mathews@yahoo.com");
+        publisher.setPostalCode("70043");
+        publisher.setPhone("1-504-635-2847");
+        publisher.setEmail("mckenzie@yahoo.com");
 
         publisher = PublisherDao.addPublisher(publisher);
 
@@ -148,20 +149,20 @@ public class BookDaoJdbcTemplateImplTest {
         Book book = new Book();
         book.setAuthorId(author.getAuthorId());
         book.setPublisherId(publisher.getPublisherId());
-        book.setPrice(4.63);
-        book.setIsbn("New Orleans");
-        book.setPublishDate(LocalDate.of(2018, 1, 28));
-        book.setTitle("70114");
+        book.setPrice(new BigDecimal("14.60"));
+        book.setIsbn("934-17-385762-3");
+        book.setPublishDate(LocalDate.of(2016, 3, 20));
+        book.setTitle("Another Afternoon");
 
         BookDao.addBook(book);
 
         book = new Book();
         book.setAuthorId(author.getAuthorId());
         book.setPublisherId(publisher.getPublisherId());
-        book.setPrice(27.00);
-        book.setIsbn("88886656");
-        book.setPublishDate(LocalDate.of(2018, 1, 28));
-        book.setTitle("hgkjhg");
+        book.setPrice(new BigDecimal("27.00"));
+        book.setIsbn("472-64-947255-4");
+        book.setPublishDate(LocalDate.of(2009, 3, 23));
+        book.setTitle("When You're Not Home");
 
         BookDao.addBook(book);
 
@@ -179,26 +180,26 @@ public class BookDaoJdbcTemplateImplTest {
 
         // adds author to populate foreign key in book
         Author author = new Author();
-        author.setFirstName("Daniel");
-        author.setLastName("Mathews");
-        author.setStreet("Read Blvd.");
-        author.setCity("New Orleans");
-        author.setState("LA");
-        author.setPostalCode("70114");
-        author.setPhone("1-504-382-5729");
-        author.setEmail("mathews@yahoo.com");
+        author.setFirstName("Cristina");
+        author.setLastName("Rodriguez");
+        author.setStreet("Sturdivant St.");
+        author.setCity("Cary");
+        author.setState("NC");
+        author.setPostalCode("27511");
+        author.setPhone("1-919-725-1749");
+        author.setEmail("rodriguez@yahoo.com");
 
         author = AuthorDao.addAuthor(author);
 
         // adds publisher to populate foreign key in book
         Publisher publisher = new Publisher();
-        publisher.setName("Mathews");
-        publisher.setStreet("Read Blvd.");
-        publisher.setCity("New Orleans");
-        publisher.setState("LA");
-        publisher.setPostalCode("70114");
-        publisher.setPhone("1-504-382-5729");
-        publisher.setEmail("mathews@yahoo.com");
+        publisher.setName("ELI Magazine");
+        publisher.setStreet("Sturdivant St.");
+        publisher.setCity("Cary");
+        publisher.setState("NC");
+        publisher.setPostalCode("27511");
+        publisher.setPhone("1-919-725-1749");
+        publisher.setEmail("rodriguez@yahoo.com");
 
         publisher = PublisherDao.addPublisher(publisher);
 
@@ -206,15 +207,15 @@ public class BookDaoJdbcTemplateImplTest {
         Book book = new Book();
         book.setAuthorId(author.getAuthorId());
         book.setPublisherId(publisher.getPublisherId());
-        book.setPrice(4.63);
-        book.setIsbn("New Orleans");
+        book.setPrice(new BigDecimal("43.00"));
+        book.setIsbn("368-24-193654-2");
         book.setPublishDate(LocalDate.of(2018, 1, 28));
-        book.setTitle("70114");
+        book.setTitle("A Look at New Orleans");
 
         book = BookDao.addBook(book);
 
         // updates the above book info
-        book.setPrice(21.00);
+        book.setPrice(new BigDecimal("24.00"));
 
         // updates the book in the db with the new info
         BookDao.updateBook(book);
@@ -232,14 +233,14 @@ public class BookDaoJdbcTemplateImplTest {
 
         // adds two different authors
         Author author = new Author();
-        author.setFirstName("Thomas");
-        author.setLastName("McKenzie");
-        author.setStreet("Adams St.");
+        author.setFirstName("Jaqueline");
+        author.setLastName("Randol");
+        author.setStreet("Peace St.");
         author.setCity("New Orleans");
         author.setState("LA");
         author.setPostalCode("70043");
-        author.setPhone("1-504-635-2847");
-        author.setEmail("mckenzie@yahoo.com");
+        author.setPhone("1-504-468-2585");
+        author.setEmail("randol@yahoo.com");
 
         AuthorDao.addAuthor(author);
 
@@ -257,13 +258,13 @@ public class BookDaoJdbcTemplateImplTest {
 
         // add publisher to populate foreign key in book
         Publisher publisher = new Publisher();
-        publisher.setName("Mathews");
-        publisher.setStreet("Read Blvd.");
-        publisher.setCity("New Orleans");
-        publisher.setState("LA");
-        publisher.setPostalCode("70114");
-        publisher.setPhone("1-504-382-5729");
-        publisher.setEmail("mathews@yahoo.com");
+        publisher.setName("Black Publications");
+        publisher.setStreet("Reese Blvd.");
+        publisher.setCity("Huntersville");
+        publisher.setState("NC");
+        publisher.setPostalCode("28078");
+        publisher.setPhone("1-919-604-8438");
+        publisher.setEmail("parker@yahoo.com");
 
         publisher = PublisherDao.addPublisher(publisher);
 
@@ -271,10 +272,10 @@ public class BookDaoJdbcTemplateImplTest {
         Book book = new Book();
         book.setAuthorId(author.getAuthorId());
         book.setPublisherId(publisher.getPublisherId());
-        book.setPrice(12.50);
-        book.setIsbn("aaaaaaaaaaa");
+        book.setPrice(new BigDecimal("12.50"));
+        book.setIsbn("235-27-284752-5");
         book.setPublishDate(LocalDate.of(2018, 1, 28));
-        book.setTitle("70114");
+        book.setTitle("Stop!");
 
         BookDao.addBook(book);
 
@@ -282,10 +283,10 @@ public class BookDaoJdbcTemplateImplTest {
         book = new Book();
         book.setAuthorId(author.getAuthorId());
         book.setPublisherId(publisher.getPublisherId());
-        book.setPrice(4.63);
-        book.setIsbn("bbbbbbbbbb");
+        book.setPrice(new BigDecimal("38.00"));
+        book.setIsbn("248-64-739502-6");
         book.setPublishDate(LocalDate.of(2009, 12, 1));
-        book.setTitle("70114");
+        book.setTitle("A Piece of Heaven");
 
         BookDao.addBook(book);
 
@@ -293,10 +294,10 @@ public class BookDaoJdbcTemplateImplTest {
         book = new Book();
         book.setAuthorId(author2.getAuthorId());
         book.setPublisherId(publisher.getPublisherId());
-        book.setPrice(21.00);
-        book.setIsbn("cccccccc");
+        book.setPrice(new BigDecimal("21.00"));
+        book.setIsbn("278-94-385037-3");
         book.setPublishDate(LocalDate.of(1999, 1, 3));
-        book.setTitle("70114");
+        book.setTitle("Dogs or Cats");
 
         BookDao.addBook(book);
 

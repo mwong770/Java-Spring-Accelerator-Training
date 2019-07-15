@@ -141,5 +141,4 @@ public class AuthorDaoJdbcTemplateImplTest {
         assertEquals(author, author2);
     }
 
-
 }

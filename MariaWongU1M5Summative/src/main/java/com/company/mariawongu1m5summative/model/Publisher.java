@@ -3,7 +3,7 @@ package com.company.mariawongu1m5summative.model;
 import java.util.Objects;
 
 // Model object
-// Contains getters and setters to store data retrieved using PublisherDao class
+// Stores data retrieved using PublisherDao class
 public class Publisher {
 
     private int publisherId;

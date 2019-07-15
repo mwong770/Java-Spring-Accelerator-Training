@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-// Data Access Object concrete class - implements the PublisherDAO interface
+// Implements the PublisherDAO interface
 // Inserts, modifies and queries data from book_store db
 @Repository
 public class PublisherDaoJdbcTemplateImpl implements PublisherDao{
@@ -36,8 +36,8 @@ public class PublisherDaoJdbcTemplateImpl implements PublisherDao{
 
     // constructor
 
-    // constructor injection - tells Spring to create an instance of JdbcTemplate and
-    // pass it into our constructor when our class is instantiated
+    // tells Spring to create an instance of JdbcTemplate and pass it into our
+    // constructor when our class is instantiated (constructor injection)
     @Autowired
     public PublisherDaoJdbcTemplateImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -91,7 +91,7 @@ public class PublisherDaoJdbcTemplateImpl implements PublisherDao{
                 publisher.getPhone(),
                 publisher.getEmail());
 
-        // returns AUTO_INCREMENT id of the last row we just inserted
+        // returns id of the last row we just inserted
         int id = jdbcTemplate.queryForObject("select last_insert_id()", Integer.class);
 
         publisher.setPublisherId(id);

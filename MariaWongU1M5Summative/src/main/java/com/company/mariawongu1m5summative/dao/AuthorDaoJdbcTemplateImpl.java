@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-// Data Access Object concrete class - implements the AuthorDAO interface
+// Implements the AuthorDAO interface
 // Inserts, modifies and queries data from book_store db
 @Repository
 public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
@@ -36,8 +36,8 @@ public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
 
     // constructor
 
-    // constructor injection - tells Spring to create an instance of JdbcTemplate and
-    // pass it into our constructor when our class is instantiated
+    // tells Spring to create an instance of JdbcTemplate and pass it into our
+    // constructor when our class is instantiated (constructor injection)
     @Autowired
     public AuthorDaoJdbcTemplateImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -46,8 +46,8 @@ public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
     // implementations of method declarations in AuthorDao
 
     /**
-     * gets one author by the id passed in
      *
+     * gets one author by the id passed in
      * @param id
      * @return Author object
      */
@@ -64,8 +64,8 @@ public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
     }
 
     /**
-     * gets all authors in the db
      *
+     * gets all authors in the db
      * @return list of Author objects
      */
     @Override
@@ -74,8 +74,8 @@ public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
     }
 
     /**
-     * adds a new author to the db
      *
+     * adds a new author to the db
      * @param author
      * @return Author with an id
      */
@@ -91,7 +91,7 @@ public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
                 author.getPhone(),
                 author.getEmail());
 
-        // returns AUTO_INCREMENT id of the last row we just inserted
+        // returns id of the last row we just inserted
         int id = jdbcTemplate.queryForObject("select last_insert_id()", Integer.class);
 
         author.setAuthorId(id);
@@ -100,8 +100,8 @@ public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
     }
 
     /**
-     * updates an author with new data passed in
      *
+     * updates an author with new data passed in
      * @param author
      */
     @Override
@@ -119,8 +119,8 @@ public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
     }
 
     /**
-     * deletes the author with the id passed in
      *
+     * deletes the author with the id passed in
      * @param id
      */
     @Override
@@ -129,8 +129,8 @@ public class AuthorDaoJdbcTemplateImpl implements AuthorDao {
     }
 
     /**
-     * maps column names obtained from ResultSet to the Author object via setters and returns it
      *
+     * maps column names obtained from ResultSet to the Author object via setters and returns it
      * @param rs
      * @param rowNum
      * @return Author object

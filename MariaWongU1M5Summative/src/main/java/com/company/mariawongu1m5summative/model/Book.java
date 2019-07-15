@@ -1,10 +1,11 @@
 package com.company.mariawongu1m5summative.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
 // Model object
-// Contains getters and setters to store data retrieved using BookDao class
+// Stores data retrieved using BookDao class
 public class Book {
 
     private int bookId;
@@ -19,7 +20,7 @@ public class Book {
 
     private int publisherId;
 
-    private double price;
+    private BigDecimal price;
 
     // getters and setters
 
@@ -71,11 +72,11 @@ public class Book {
         this.publisherId = publisherId;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -89,7 +90,7 @@ public class Book {
         return getBookId() == book.getBookId() &&
                 getAuthorId() == book.getAuthorId() &&
                 getPublisherId() == book.getPublisherId() &&
-                Double.compare(book.getPrice(), getPrice()) == 0 &&
+                getPrice().equals(book.getPrice()) &&
                 getIsbn().equals(book.getIsbn()) &&
                 getPublishDate().equals(book.getPublishDate()) &&
                 getTitle().equals(book.getTitle());

@@ -10,10 +10,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-// Data Access Object concrete class - implements the BookDAO interface
+// Implements the BookDAO interface
 // Inserts, modifies and queries data from book_store db
 @Repository
-public class BookDaoJdbcTemplateImpl implements BookDao{
+public class BookDaoJdbcTemplateImpl implements BookDao {
 
     // Prepared statement strings
 
@@ -39,8 +39,8 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
 
     // constructor
 
-    // constructor injection - tells Spring to create an instance of JdbcTemplate and
-    // pass it into our constructor when our class is instantiated
+    // tells Spring to create an instance of JdbcTemplate and pass it into our
+    // constructor when our class is instantiated (constructor injection)
     @Autowired
     public BookDaoJdbcTemplateImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -49,8 +49,8 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
     // implementations of method declarations in BookDao
 
     /**
-     *
      * gets one book by the id passed in
+     *
      * @param id
      * @return Book object
      */
@@ -67,8 +67,8 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
     }
 
     /**
-     *
      * gets all books in the db
+     *
      * @return list of Book objects
      */
     @Override
@@ -77,8 +77,8 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
     }
 
     /**
-     *
      * adds a new book to the db
+     *
      * @param book
      * @return Book with an id
      */
@@ -92,7 +92,7 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
                 book.getPublisherId(),
                 book.getPrice());
 
-        // returns AUTO_INCREMENT id of the last row we just inserted
+        // returns id of the last row we just inserted
         int id = jdbcTemplate.queryForObject("select last_insert_id()", Integer.class);
 
         book.setBookId(id);
@@ -101,8 +101,8 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
     }
 
     /**
-     *
      * updates a book with new data passed in
+     *
      * @param book
      */
     @Override
@@ -115,12 +115,11 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
                 book.getPublisherId(),
                 book.getPrice(),
                 book.getBookId());
-
     }
 
     /**
-     *
      * deletes the book with the id passed in
+     *
      * @param id
      */
     @Override
@@ -134,8 +133,8 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
     }
 
     /**
-     *
      * maps column names obtained from ResultSet to the Book object via setters and returns it
+     *
      * @param rs
      * @param rowNum
      * @return Book object
@@ -149,7 +148,7 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
         book.setAuthorId(rs.getInt("author_id"));
         book.setTitle(rs.getString("title"));
         book.setPublisherId(rs.getInt("publisher_id"));
-        book.setPrice(rs.getDouble("price"));
+        book.setPrice(rs.getBigDecimal("price"));
         return book;
     }
 
