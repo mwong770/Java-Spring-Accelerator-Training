@@ -1,6 +1,6 @@
 package com.company.mariawongu1m5summative.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 // Model object
@@ -11,7 +11,7 @@ public class Book {
 
     private String isbn;
 
-    private Date publishDate;
+    private LocalDate publishDate;
 
     private int authorId;
 
@@ -39,11 +39,11 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public Date getPublishDate() {
+    public LocalDate getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Date publishDate) {
+    public void setPublishDate(LocalDate publishDate) {
         this.publishDate = publishDate;
     }
 

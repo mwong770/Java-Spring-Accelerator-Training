@@ -11,9 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -93,11 +91,7 @@ public class BookDaoJdbcTemplateImplTest {
         book.setPublisherId(publisher.getPublisherId());
         book.setPrice(4.63);
         book.setIsbn("New Orleans");
-        try {
-            book.setPublishDate(new SimpleDateFormat("dd/MM/yyyy").parse("28/01/2018"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        book.setPublishDate(LocalDate.of(2018, 1, 28));
         book.setTitle("70114");
 
         book = BookDao.addBook(book);
@@ -156,11 +150,7 @@ public class BookDaoJdbcTemplateImplTest {
         book.setPublisherId(publisher.getPublisherId());
         book.setPrice(4.63);
         book.setIsbn("New Orleans");
-        try {
-            book.setPublishDate(new SimpleDateFormat("dd/MM/yyyy").parse("28/01/2018"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        book.setPublishDate(LocalDate.of(2018, 1, 28));
         book.setTitle("70114");
 
         BookDao.addBook(book);
@@ -170,11 +160,7 @@ public class BookDaoJdbcTemplateImplTest {
         book.setPublisherId(publisher.getPublisherId());
         book.setPrice(27.00);
         book.setIsbn("88886656");
-        try {
-            book.setPublishDate(new SimpleDateFormat("dd/MM/yyyy").parse("28/01/2018"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        book.setPublishDate(LocalDate.of(2018, 1, 28));
         book.setTitle("hgkjhg");
 
         BookDao.addBook(book);
@@ -222,11 +208,7 @@ public class BookDaoJdbcTemplateImplTest {
         book.setPublisherId(publisher.getPublisherId());
         book.setPrice(4.63);
         book.setIsbn("New Orleans");
-        try {
-            book.setPublishDate(new SimpleDateFormat("dd/MM/yyyy").parse("28/01/2018"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        book.setPublishDate(LocalDate.of(2018, 1, 28));
         book.setTitle("70114");
 
         book = BookDao.addBook(book);
@@ -291,11 +273,7 @@ public class BookDaoJdbcTemplateImplTest {
         book.setPublisherId(publisher.getPublisherId());
         book.setPrice(12.50);
         book.setIsbn("aaaaaaaaaaa");
-        try {
-            book.setPublishDate(new SimpleDateFormat("dd/MM/yyyy").parse("28/01/2018"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        book.setPublishDate(LocalDate.of(2018, 1, 28));
         book.setTitle("70114");
 
         BookDao.addBook(book);
@@ -306,11 +284,7 @@ public class BookDaoJdbcTemplateImplTest {
         book.setPublisherId(publisher.getPublisherId());
         book.setPrice(4.63);
         book.setIsbn("bbbbbbbbbb");
-        try {
-            book.setPublishDate(new SimpleDateFormat("dd/MM/yyyy").parse("12/01/2009"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        book.setPublishDate(LocalDate.of(2009, 12, 1));
         book.setTitle("70114");
 
         BookDao.addBook(book);
@@ -321,11 +295,7 @@ public class BookDaoJdbcTemplateImplTest {
         book.setPublisherId(publisher.getPublisherId());
         book.setPrice(21.00);
         book.setIsbn("cccccccc");
-        try {
-            book.setPublishDate(new SimpleDateFormat("dd/MM/yyyy").parse("03/01/1999"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        book.setPublishDate(LocalDate.of(1999, 1, 3));
         book.setTitle("70114");
 
         BookDao.addBook(book);

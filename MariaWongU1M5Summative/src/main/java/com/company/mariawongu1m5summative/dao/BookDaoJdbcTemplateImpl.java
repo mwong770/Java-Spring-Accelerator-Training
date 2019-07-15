@@ -145,7 +145,7 @@ public class BookDaoJdbcTemplateImpl implements BookDao{
         Book book = new Book();
         book.setBookId(rs.getInt("book_id"));
         book.setIsbn(rs.getString("isbn"));
-        book.setPublishDate(rs.getDate("publish_date"));
+        book.setPublishDate(rs.getDate("publish_date").toLocalDate());
         book.setAuthorId(rs.getInt("author_id"));
         book.setTitle(rs.getString("title"));
         book.setPublisherId(rs.getInt("publisher_id"));
