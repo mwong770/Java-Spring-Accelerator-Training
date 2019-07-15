@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbb2e4b4-1e08-488b-8fcb-4db5a576d9ce" name="Default Changelist" comment="" />
+    <list default="true" id="dbb2e4b4-1e08-488b-8fcb-4db5a576d9ce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/Mariawongu1m5summativeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/dao/AuthorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/dao/AuthorDaoJdbcTemplateImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/dao/BookDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/dao/BookDaoJdbcTemplateImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/dao/PublisherDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/dao/PublisherDaoJdbcTemplateImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/model/Author.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/java/com/company/mariawongu1m5summative/model/Publisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/test/java/com/company/mariawongu1m5summative/Mariawongu1m5summativeApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/test/java/com/company/mariawongu1m5summative/dao/AuthorDaoJdbcTemplateImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/test/java/com/company/mariawongu1m5summative/dao/BookDaoJdbcTemplateImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/test/java/com/company/mariawongu1m5summative/dao/PublisherDaoJdbcTemplateImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MariaWongU1M5Summative/src/test/resources/application.properties" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +47,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -35,6 +58,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -68,7 +93,7 @@
   <component name="ToolWindowManager">
     <frame x="265" y="22" width="1175" height="798" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25860548" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26301855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
