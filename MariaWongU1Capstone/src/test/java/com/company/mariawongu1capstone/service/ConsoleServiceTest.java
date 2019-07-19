@@ -21,6 +21,8 @@ import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 
+// USE MOCKS ********************
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class ConsoleServiceTest {

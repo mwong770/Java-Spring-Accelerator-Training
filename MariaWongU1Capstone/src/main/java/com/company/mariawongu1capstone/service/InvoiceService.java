@@ -12,10 +12,11 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-// ***** NEED TO SET PROCESSING AND STATE FEES PROGRAMMATICALLY ******
+// USE MOCKS ********************
 
 @Component
 public class InvoiceService {
@@ -43,6 +44,8 @@ public class InvoiceService {
 
     public InvoiceViewModel saveInvoice(InvoiceViewModel invoiceViewModel) {
 
+        invoiceViewModel = calculateTotal(invoiceViewModel);
+
         Invoice invoice = new Invoice();
         invoice.setName(invoiceViewModel.getName());
         invoice.setStreet(invoiceViewModel.getStreet());
@@ -64,13 +67,17 @@ public class InvoiceService {
         invoice = invoiceDao.addInvoice(invoice);
         invoiceViewModel.setInvoiceId(invoice.getInvoiceId());
 
-        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
-        return modelWithItem;
+//        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
+//        return modelWithItem;
+
+        invoiceViewModel = getItemDetails(invoiceViewModel);
+        return invoiceViewModel;
     }
 
     public InvoiceViewModel calculateTotal(InvoiceViewModel invoiceViewModel) {
 
-        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
+//        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
+        invoiceViewModel = getItemDetails(invoiceViewModel);
 
         MathContext mc = new MathContext(2);
 
@@ -78,29 +85,26 @@ public class InvoiceService {
         // **** though look into setScale(0) ****
         BigDecimal quantityAsDecimal = new BigDecimal(invoiceViewModel.getQuantity()).setScale(2);
 
-        BigDecimal subtotal = invoiceViewModel.getUnitPrice().multiply(quantityAsDecimal, mc);
+        //200.0000
+        BigDecimal subtotal = (invoiceViewModel.getUnitPrice().multiply(quantityAsDecimal)).setScale(2, RoundingMode.HALF_UP);
         BigDecimal taxRate = salesTaxRateDao.getSalesTaxRate(invoiceViewModel.getState());
         BigDecimal processingFee = processingFeeDao.getProcessingFee(invoiceViewModel.getItemType());
         BigDecimal additionalFee = new BigDecimal(00).setScale(2);
         if (invoiceViewModel.getQuantity() > 10) {
-            additionalFee = new BigDecimal(15.49).setScale(2);
+            additionalFee = new BigDecimal(15.49).setScale(2, RoundingMode.HALF_UP);
+            processingFee = processingFee.add(additionalFee).setScale(2, RoundingMode.HALF_UP);
         }
-        BigDecimal total = (subtotal.multiply(taxRate, mc)).add(processingFee).add(additionalFee);
+        BigDecimal total = (subtotal.multiply(taxRate, mc)).add(processingFee).add(subtotal).setScale(2, RoundingMode.HALF_UP);
 
         invoiceViewModel.setSubtotal(subtotal);             //
-        invoiceViewModel.setTax(subtotal.multiply(taxRate, mc));                       //
+        invoiceViewModel.setTax((subtotal.multiply(taxRate)).setScale(2, RoundingMode.HALF_UP));                       //
         invoiceViewModel.setProcessingFee(processingFee);   //
         invoiceViewModel.setTotal(total);                   //
 
-        return modelWithItem;
+//        return modelWithItem;
+        return invoiceViewModel;
 
     }
-
-    //    1. Sales tax applies only to the cost of the items.
-//        2. Sales tax does not apply to any processing fees for an invoice.
-//        3. The processing fee is applied only once per order regardless of the number of items in the order unless the number of items on the order is greater than 10 in which case an *additional* processing fee of $15.49 is applied to the order.
-//        4. The order process logic must properly update the quantity on hand for the item in the order.
-//                */
 
     public InvoiceViewModel getItemDetails(InvoiceViewModel invoiceViewModel) {
 
@@ -154,6 +158,8 @@ public class InvoiceService {
 
     public void updateInvoice(InvoiceViewModel invoiceViewModel) {
 
+        invoiceViewModel = calculateTotal(invoiceViewModel);
+
         Invoice invoice = new Invoice();
         invoice.setInvoiceId(invoiceViewModel.getInvoiceId());
         invoice.setName(invoiceViewModel.getName());
@@ -200,7 +206,16 @@ public class InvoiceService {
         invoiceViewModel.setProcessingFee(invoice.getProcessingFee());
         invoiceViewModel.setTotal(invoice.getTotal());
 
-        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
-        return modelWithItem;
+        invoiceViewModel = getItemDetails(invoiceViewModel);
+
+//        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
+//        return modelWithItem;
+        return invoiceViewModel;
     }
 }
+
+//    1. Sales tax applies only to the cost of the items.
+//        2. Sales tax does not apply to any processing fees for an invoice.
+//        3. The processing fee is applied only once per order regardless of the number of items in the order unless the number of items on the order is greater than 10 in which case an *additional* processing fee of $15.49 is applied to the order.
+//        4. The order process logic must properly update the quantity on hand for the item in the order.
+//                */

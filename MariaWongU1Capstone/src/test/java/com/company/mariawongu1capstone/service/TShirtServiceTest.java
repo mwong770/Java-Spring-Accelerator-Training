@@ -18,6 +18,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+// USE MOCKS ********************
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class TShirtServiceTest {
