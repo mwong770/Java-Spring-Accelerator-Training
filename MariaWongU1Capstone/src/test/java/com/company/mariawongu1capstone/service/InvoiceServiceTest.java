@@ -6,6 +6,7 @@ import com.company.mariawongu1capstone.model.Game;
 import com.company.mariawongu1capstone.model.Invoice;
 import com.company.mariawongu1capstone.model.TShirt;
 import com.company.mariawongu1capstone.viewmodel.ConsoleViewModel;
+import com.company.mariawongu1capstone.viewmodel.GameViewModel;
 import com.company.mariawongu1capstone.viewmodel.InvoiceViewModel;
 import org.junit.Before;
 import org.junit.Test;
@@ -92,8 +93,6 @@ public class InvoiceServiceTest {
 
         consoleVM = consoleService.saveConsole(consoleVM);
 
-        int itemId = consoleVM.getConsoleId();
-
         // create invoice view model
         InvoiceViewModel invoiceVM = new InvoiceViewModel();
 
@@ -103,7 +102,7 @@ public class InvoiceServiceTest {
         invoiceVM.setState("AZ");
         invoiceVM.setZipCode("12345");
         invoiceVM.setItemType("Consoles");
-        invoiceVM.setItemId(itemId);
+        invoiceVM.setItemId(consoleVM.getConsoleId());
         invoiceVM.setUnitPrice(new BigDecimal(50.00).setScale(2));
         invoiceVM.setQuantity(2);
         invoiceVM.setSubtotal(new BigDecimal(100.00).setScale(2));
@@ -127,6 +126,28 @@ public class InvoiceServiceTest {
     @Test
     public void findAllInvoices() {
 
+        ConsoleViewModel consoleVM = new ConsoleViewModel();
+
+        consoleVM.setModel("model 1");
+        consoleVM.setManufacturer("manufacturer 1");
+        consoleVM.setMemoryAmount("lots of memory");
+        consoleVM.setProcessor("best processor");
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+        consoleVM.setQuantity(10);
+
+        consoleVM = consoleService.saveConsole(consoleVM);
+
+        GameViewModel gameVM = new GameViewModel();
+
+        gameVM.setTitle("title 1");
+        gameVM.setEsrbRating("rating 1");
+        gameVM.setDescription("my first game");
+        gameVM.setPrice(new BigDecimal(100.00).setScale(2));
+        gameVM.setStudio("studio 1");
+        gameVM.setQuantity(10);
+
+        gameVM = gameService.saveGame(gameVM);
+
         InvoiceViewModel invoiceVM = new InvoiceViewModel();
 
         invoiceVM.setName("John");
@@ -135,7 +156,7 @@ public class InvoiceServiceTest {
         invoiceVM.setState("AZ");
         invoiceVM.setZipCode("12345");
         invoiceVM.setItemType("Consoles");
-        invoiceVM.setItemId(0);
+        invoiceVM.setItemId(consoleVM.getConsoleId());
         invoiceVM.setUnitPrice(new BigDecimal(50.00).setScale(2));
         invoiceVM.setQuantity(2);
         invoiceVM.setSubtotal(new BigDecimal(100.00).setScale(2));
@@ -153,7 +174,7 @@ public class InvoiceServiceTest {
         invoiceVM.setState("TX");
         invoiceVM.setZipCode("67890");
         invoiceVM.setItemType("Games");
-        invoiceVM.setItemId(1);
+        invoiceVM.setItemId(gameVM.getGameId());
         invoiceVM.setUnitPrice(new BigDecimal(250.00).setScale(2));
         invoiceVM.setQuantity(1);
         invoiceVM.setSubtotal(new BigDecimal(250.00).setScale(2));
@@ -175,6 +196,17 @@ public class InvoiceServiceTest {
     @Test
     public void updateInvoice() {
 
+        ConsoleViewModel consoleVM = new ConsoleViewModel();
+
+        consoleVM.setModel("model 1");
+        consoleVM.setManufacturer("manufacturer 1");
+        consoleVM.setMemoryAmount("lots of memory");
+        consoleVM.setProcessor("best processor");
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+        consoleVM.setQuantity(10);
+
+        consoleVM = consoleService.saveConsole(consoleVM);
+
         InvoiceViewModel invoiceVM = new InvoiceViewModel();
 
         invoiceVM.setName("John");
@@ -183,7 +215,7 @@ public class InvoiceServiceTest {
         invoiceVM.setState("AZ");
         invoiceVM.setZipCode("12345");
         invoiceVM.setItemType("Consoles");
-        invoiceVM.setItemId(0);
+        invoiceVM.setItemId(consoleVM.getConsoleId());
         invoiceVM.setUnitPrice(new BigDecimal(50.00).setScale(2));
         invoiceVM.setQuantity(2);
         invoiceVM.setSubtotal(new BigDecimal(100.00).setScale(2));
@@ -210,6 +242,17 @@ public class InvoiceServiceTest {
     @Test
     public void removeInvoice() {
 
+        ConsoleViewModel consoleVM = new ConsoleViewModel();
+
+        consoleVM.setModel("model 1");
+        consoleVM.setManufacturer("manufacturer 1");
+        consoleVM.setMemoryAmount("lots of memory");
+        consoleVM.setProcessor("best processor");
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+        consoleVM.setQuantity(10);
+
+        consoleVM = consoleService.saveConsole(consoleVM);
+
         InvoiceViewModel invoiceVM = new InvoiceViewModel();
 
         invoiceVM.setName("John");
@@ -218,7 +261,7 @@ public class InvoiceServiceTest {
         invoiceVM.setState("AZ");
         invoiceVM.setZipCode("12345");
         invoiceVM.setItemType("Consoles");
-        invoiceVM.setItemId(0);
+        invoiceVM.setItemId(consoleVM.getConsoleId());
         invoiceVM.setUnitPrice(new BigDecimal(50.00).setScale(2));
         invoiceVM.setQuantity(2);
         invoiceVM.setSubtotal(new BigDecimal(100.00).setScale(2));

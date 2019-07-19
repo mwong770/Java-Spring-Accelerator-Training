@@ -12,12 +12,10 @@ public class InvoiceViewModel {
     private String state;
     private String zipCode;
 
-
     private String itemType;
     private int itemId;
 
     private Object item;
-
 
     private BigDecimal unitPrice;
     private int quantity;
