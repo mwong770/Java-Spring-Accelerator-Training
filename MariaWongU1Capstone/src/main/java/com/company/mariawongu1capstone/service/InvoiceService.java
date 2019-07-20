@@ -5,7 +5,6 @@ import com.company.mariawongu1capstone.model.Console;
 import com.company.mariawongu1capstone.model.Game;
 import com.company.mariawongu1capstone.model.Invoice;
 import com.company.mariawongu1capstone.model.TShirt;
-import com.company.mariawongu1capstone.viewmodel.ConsoleViewModel;
 import com.company.mariawongu1capstone.viewmodel.InvoiceViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -45,6 +44,7 @@ public class InvoiceService {
     public InvoiceViewModel saveInvoice(InvoiceViewModel invoiceViewModel) {
 
         invoiceViewModel = calculateTotal(invoiceViewModel);
+        amendQuantityInDB(invoiceViewModel.getItemType(), invoiceViewModel.getItemId(), invoiceViewModel.getQuantity(), "subtract");
 
         Invoice invoice = new Invoice();
         invoice.setName(invoiceViewModel.getName());
@@ -55,20 +55,17 @@ public class InvoiceService {
         invoice.setItemType(invoiceViewModel.getItemType());
         invoice.setItemId(invoiceViewModel.getItemId());
 
-        invoice.setUnitPrice(invoiceViewModel.getUnitPrice());           //
+        invoice.setUnitPrice(invoiceViewModel.getUnitPrice());
 
         invoice.setQuantity(invoiceViewModel.getQuantity());
 
-        invoice.setSubtotal(invoiceViewModel.getSubtotal());             //
-        invoice.setTax(invoiceViewModel.getTax());                       //
-        invoice.setProcessingFee(invoiceViewModel.getProcessingFee());   //
-        invoice.setTotal(invoiceViewModel.getTotal());                   //
+        invoice.setSubtotal(invoiceViewModel.getSubtotal());
+        invoice.setTax(invoiceViewModel.getTax());
+        invoice.setProcessingFee(invoiceViewModel.getProcessingFee());
+        invoice.setTotal(invoiceViewModel.getTotal());
 
         invoice = invoiceDao.addInvoice(invoice);
         invoiceViewModel.setInvoiceId(invoice.getInvoiceId());
-
-//        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
-//        return modelWithItem;
 
         invoiceViewModel = getItemDetails(invoiceViewModel);
         return invoiceViewModel;
@@ -76,7 +73,6 @@ public class InvoiceService {
 
     public InvoiceViewModel calculateTotal(InvoiceViewModel invoiceViewModel) {
 
-//        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
         invoiceViewModel = getItemDetails(invoiceViewModel);
 
         MathContext mc = new MathContext(2);
@@ -85,7 +81,6 @@ public class InvoiceService {
         // **** though look into setScale(0) ****
         BigDecimal quantityAsDecimal = new BigDecimal(invoiceViewModel.getQuantity()).setScale(2);
 
-        //200.0000
         BigDecimal subtotal = (invoiceViewModel.getUnitPrice().multiply(quantityAsDecimal)).setScale(2, RoundingMode.HALF_UP);
         BigDecimal taxRate = salesTaxRateDao.getSalesTaxRate(invoiceViewModel.getState());
         BigDecimal processingFee = processingFeeDao.getProcessingFee(invoiceViewModel.getItemType());
@@ -96,12 +91,11 @@ public class InvoiceService {
         }
         BigDecimal total = (subtotal.multiply(taxRate, mc)).add(processingFee).add(subtotal).setScale(2, RoundingMode.HALF_UP);
 
-        invoiceViewModel.setSubtotal(subtotal);             //
-        invoiceViewModel.setTax((subtotal.multiply(taxRate)).setScale(2, RoundingMode.HALF_UP));                       //
-        invoiceViewModel.setProcessingFee(processingFee);   //
-        invoiceViewModel.setTotal(total);                   //
+        invoiceViewModel.setSubtotal(subtotal);
+        invoiceViewModel.setTax((subtotal.multiply(taxRate)).setScale(2, RoundingMode.HALF_UP));
+        invoiceViewModel.setProcessingFee(processingFee);
+        invoiceViewModel.setTotal(total);
 
-//        return modelWithItem;
         return invoiceViewModel;
 
     }
@@ -135,6 +129,65 @@ public class InvoiceService {
         return invoiceViewModel;
     }
 
+    // ADD TEST FOR THIS **************************
+    // TEST IF THROWS ERROR **************************
+    public void amendQuantityInDB(String itemType, int itemId, int quantity, String action) {
+        System.out.println(itemType + ", " + itemId + ", " + quantity + ", " + action);
+        Object item;
+        switch (itemType) {
+            case "Consoles":
+                Console cItem = consoleDao.getConsole(itemId);
+                if (action == "subtract") {
+                    if (quantity <= cItem.getQuantity()) {
+                        cItem.setQuantity(cItem.getQuantity() - quantity);
+                        consoleDao.updateConsole(cItem);
+                    } else {
+                        // throw error - we don't have that many items ??
+                    }
+                } else if (action == "add") {
+                    cItem.setQuantity(cItem.getQuantity() + quantity);
+                    consoleDao.updateConsole(cItem);
+                } else {
+                    // throw error - server error - invalid action programmatically ???
+                }
+                break;
+            case "Games":
+                Game gItem = gameDao.getGame(itemId);
+                if (action == "subtract") {
+                    if (quantity <= gItem.getQuantity()) {
+                        gItem.setQuantity(gItem.getQuantity() - quantity);
+                        gameDao.updateGame(gItem);
+                    } else {
+                        // throw error - we don't have that many items ??
+                    }
+                } else if (action == "add") {
+                    gItem.setQuantity(gItem.getQuantity() + quantity);
+                    gameDao.updateGame(gItem);
+                } else {
+                    // throw error - server error - invalid action programmatically ???
+                }
+                break;
+            case "T-Shirts":
+                TShirt tItem = tShirtDao.getTShirt(itemId);
+                if (action == "subtract") {
+                    if (quantity <= tItem.getQuantity()) {
+                        tItem.setQuantity(tItem.getQuantity() - quantity);
+                        tShirtDao.updateTShirt(tItem);
+                    } else {
+                        // throw error - we don't have that many items ??
+                    }
+                } else if (action == "add") {
+                    tItem.setQuantity(tItem.getQuantity() + quantity);
+                    tShirtDao.updateTShirt(tItem);
+                } else {
+                    // throw error - server error - invalid action programmatically ???
+                }
+                break;
+            default:
+                throw new IllegalArgumentException("You must select a valid item type.");
+        }
+    }
+
     public InvoiceViewModel findInvoice(int id) {
         Invoice invoice = invoiceDao.getInvoice(id);
         if(invoice == null )
@@ -159,6 +212,19 @@ public class InvoiceService {
     public void updateInvoice(InvoiceViewModel invoiceViewModel) {
 
         invoiceViewModel = calculateTotal(invoiceViewModel);
+
+        String action;
+        int quantity;
+        int originalQuantity = invoiceDao.getInvoice(invoiceViewModel.getInvoiceId()).getQuantity();
+        if (originalQuantity < invoiceViewModel.getQuantity()) {
+            action = "subtract";
+            quantity = invoiceViewModel.getQuantity() - originalQuantity;
+        } else {
+            action = "add";
+            quantity = originalQuantity - invoiceViewModel.getQuantity();
+        }
+
+        amendQuantityInDB(invoiceViewModel.getItemType(), invoiceViewModel.getItemId(), quantity, action);
 
         Invoice invoice = new Invoice();
         invoice.setInvoiceId(invoiceViewModel.getInvoiceId());
@@ -208,14 +274,6 @@ public class InvoiceService {
 
         invoiceViewModel = getItemDetails(invoiceViewModel);
 
-//        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
-//        return modelWithItem;
         return invoiceViewModel;
     }
 }
-
-//    1. Sales tax applies only to the cost of the items.
-//        2. Sales tax does not apply to any processing fees for an invoice.
-//        3. The processing fee is applied only once per order regardless of the number of items in the order unless the number of items on the order is greater than 10 in which case an *additional* processing fee of $15.49 is applied to the order.
-//        4. The order process logic must properly update the quantity on hand for the item in the order.
-//                */

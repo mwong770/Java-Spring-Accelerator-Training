@@ -109,51 +109,7 @@ public class InvoiceServiceTest {
 
         assertEquals(invoiceVM, fromService);
 
-        // checks item details inserted corrected when saving invoice
-//        assertEquals(console.toString(), invoiceVM.getItem().toString());
-//        assertEquals(new BigDecimal(100.00).setScale(2), invoiceVM.getUnitPrice());
-
-        // checks calculations done properly when saving invoice
-//        assertEquals(new BigDecimal(200.00).setScale(2), invoiceVM.getSubtotal());
-//      setTax
-//        assertEquals(new BigDecimal(200.00).setScale(2), invoiceVM.getSubtotal());
-//      setProcessingFee
-        //assertEquals(new BigDecimal(200.00).setScale(2), invoiceVM.getSubtotal());
-//      setTotal
-        //assertEquals(new BigDecimal(200.00).setScale(2), invoiceVM.getSubtotal());
-
     }
-
-//    @Test
-//    public void calculateTotal() {
-//
-//        Console consoleVM = new Console();
-//
-//        consoleVM.setModel("model 1");
-//        consoleVM.setManufacturer("manufacturer 1");
-//        consoleVM.setMemoryAmount("lots of memory");
-//        consoleVM.setProcessor("best processor");
-//        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
-//        consoleVM.setQuantity(10);
-//
-//        // this will get turned into a mock
-//        consoleVM = consoleDao.addConsole(consoleVM);
-//
-//        InvoiceViewModel invoiceVM = new InvoiceViewModel();
-//
-//        invoiceVM.setName("John");
-//        invoiceVM.setStreet("John's street");
-//        invoiceVM.setCity("John's city");
-//        invoiceVM.setState("AZ");
-//        invoiceVM.setZipCode("12345");
-//        invoiceVM.setItemType("Consoles");
-//        invoiceVM.setItemId(consoleVM.getConsoleId());
-//        invoiceVM.setQuantity(2);
-//
-//        invoiceVM = invoiceService.calculateTotal(invoiceVM);
-//
-//
-//    }
 
     //public List<InvoiceViewModel> findAllInvoices() {
     @Test
@@ -190,12 +146,7 @@ public class InvoiceServiceTest {
         invoiceVM.setZipCode("12345");
         invoiceVM.setItemType("Consoles");
         invoiceVM.setItemId(consoleVM.getConsoleId());
-//        invoiceVM.setUnitPrice(new BigDecimal(50.00).setScale(2));
         invoiceVM.setQuantity(2);
-//        invoiceVM.setSubtotal(new BigDecimal(100.00).setScale(2));
-//        invoiceVM.setTax(new BigDecimal(5.00).setScale(2));
-//        invoiceVM.setProcessingFee(new BigDecimal(10.00).setScale(2));
-//        invoiceVM.setTotal(new BigDecimal(115.00).setScale(2));
 
         invoiceVM = invoiceService.saveInvoice(invoiceVM);
 
@@ -208,12 +159,7 @@ public class InvoiceServiceTest {
         invoiceVM.setZipCode("67890");
         invoiceVM.setItemType("Games");
         invoiceVM.setItemId(gameVM.getGameId());
-//        invoiceVM.setUnitPrice(new BigDecimal(250.00).setScale(2));
         invoiceVM.setQuantity(1);
-//        invoiceVM.setSubtotal(new BigDecimal(250.00).setScale(2));
-//        invoiceVM.setTax(new BigDecimal(10.00).setScale(2));
-//        invoiceVM.setProcessingFee(new BigDecimal(20.00).setScale(2));
-//        invoiceVM.setTotal(new BigDecimal(280.00).setScale(2));
 
         invoiceVM = invoiceService.saveInvoice(invoiceVM);
 
@@ -247,12 +193,7 @@ public class InvoiceServiceTest {
         invoiceVM.setZipCode("12345");
         invoiceVM.setItemType("Consoles");
         invoiceVM.setItemId(consoleVM.getConsoleId());
-//        invoiceVM.setUnitPrice(new BigDecimal(50.00).setScale(2));
         invoiceVM.setQuantity(2);
-//        invoiceVM.setSubtotal(new BigDecimal(100.00).setScale(2));
-//        invoiceVM.setTax(new BigDecimal(5.00).setScale(2));
-//        invoiceVM.setProcessingFee(new BigDecimal(10.00).setScale(2));
-//        invoiceVM.setTotal(new BigDecimal(115.00).setScale(2));
 
         invoiceVM = invoiceService.saveInvoice(invoiceVM);
 
@@ -391,39 +332,93 @@ public class InvoiceServiceTest {
         assertEquals(new BigDecimal(1278.48).setScale(2, RoundingMode.HALF_UP), invoiceVMWithAddedFee.getTotal().setScale(2, RoundingMode.HALF_UP));
 
     }
-/*
-public InvoiceViewModel calculateTotal(InvoiceViewModel invoiceViewModel) {
 
-//        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
-        invoiceViewModel = getItemDetails(invoiceViewModel);
+    @Test
+    public void amendQuantityInDB() {
 
-        MathContext mc = new MathContext(2);
+        ConsoleViewModel consoleVM = new ConsoleViewModel();
 
-        // **** don't make data type a decimal to prevent data entry of decimal, want integer ****
-        // **** though look into setScale(0) ****
-        BigDecimal quantityAsDecimal = new BigDecimal(invoiceViewModel.getQuantity()).setScale(2);
+        consoleVM.setModel("model x");
+        consoleVM.setManufacturer("manufacturer x");
+        consoleVM.setMemoryAmount("x memory");
+        consoleVM.setProcessor("x processor");
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+        consoleVM.setQuantity(10);
 
-        BigDecimal subtotal = invoiceViewModel.getUnitPrice().multiply(quantityAsDecimal, mc);
-        BigDecimal taxRate = salesTaxRateDao.getSalesTaxRate(invoiceViewModel.getState());
-        BigDecimal processingFee = processingFeeDao.getProcessingFee(invoiceViewModel.getItemType());
-        BigDecimal additionalFee = new BigDecimal(00).setScale(2);
-        if (invoiceViewModel.getQuantity() > 10) {
-            additionalFee = new BigDecimal(15.49).setScale(2);
-        }
-        BigDecimal total = (subtotal.multiply(taxRate, mc)).add(processingFee).add(additionalFee);
+        consoleVM = consoleService.saveConsole(consoleVM);
 
-        invoiceViewModel.setSubtotal(subtotal);             //
-        invoiceViewModel.setTax(subtotal.multiply(taxRate, mc));                       //
-        invoiceViewModel.setProcessingFee(processingFee);   //
-        invoiceViewModel.setTotal(total);                   //
+        invoiceService.amendQuantityInDB("Consoles", consoleVM.getConsoleId(), 10, "add");
 
-//        return modelWithItem;
-        return invoiceViewModel;
+        int newQuantity = consoleDao.getConsole(consoleVM.getConsoleId()).getQuantity();
 
+        assertEquals(20, newQuantity);
+
+        invoiceService.amendQuantityInDB("Consoles", consoleVM.getConsoleId(), 5, "subtract");
+
+        newQuantity = consoleDao.getConsole(consoleVM.getConsoleId()).getQuantity();
+
+        assertEquals(15, newQuantity);
+        
     }
 
-*/
-
+    /*
+        public void amendQuantityInDB(String itemType, int itemId, int quantity, String action) {
+        System.out.println(itemType + ", " + itemId + ", " + quantity + ", " + action);
+        Object item;
+        switch (itemType) {
+            case "Consoles":
+                Console cItem = consoleDao.getConsole(itemId);
+                if (action == "subtract") {
+                    if (quantity <= cItem.getQuantity()) {
+                        cItem.setQuantity(cItem.getQuantity() - quantity);
+                        consoleDao.updateConsole(cItem);
+                    } else {
+                        // throw error - we don't have that many items ??
+                    }
+                } else if (action == "add") {
+                    cItem.setQuantity(cItem.getQuantity() + quantity);
+                    consoleDao.updateConsole(cItem);
+                } else {
+                    // throw error - server error - invalid action programmatically ???
+                }
+                break;
+            case "Games":
+                Game gItem = gameDao.getGame(itemId);
+                if (action == "subtract") {
+                    if (quantity <= gItem.getQuantity()) {
+                        gItem.setQuantity(gItem.getQuantity() - quantity);
+                        gameDao.updateGame(gItem);
+                    } else {
+                        // throw error - we don't have that many items ??
+                    }
+                } else if (action == "add") {
+                    gItem.setQuantity(gItem.getQuantity() + quantity);
+                    gameDao.updateGame(gItem);
+                } else {
+                    // throw error - server error - invalid action programmatically ???
+                }
+                break;
+            case "T-Shirts":
+                TShirt tItem = tShirtDao.getTShirt(itemId);
+                if (action == "subtract") {
+                    if (quantity <= tItem.getQuantity()) {
+                        tItem.setQuantity(tItem.getQuantity() - quantity);
+                        tShirtDao.updateTShirt(tItem);
+                    } else {
+                        // throw error - we don't have that many items ??
+                    }
+                } else if (action == "add") {
+                    tItem.setQuantity(tItem.getQuantity() + quantity);
+                    tShirtDao.updateTShirt(tItem);
+                } else {
+                    // throw error - server error - invalid action programmatically ???
+                }
+                break;
+            default:
+                throw new IllegalArgumentException("You must select a valid item type.");
+        }
+    }
+     */
 
     //public void removeInvoice(int id) {
     @Test
@@ -449,12 +444,7 @@ public InvoiceViewModel calculateTotal(InvoiceViewModel invoiceViewModel) {
         invoiceVM.setZipCode("12345");
         invoiceVM.setItemType("Consoles");
         invoiceVM.setItemId(consoleVM.getConsoleId());
-//        invoiceVM.setUnitPrice(new BigDecimal(50.00).setScale(2));
         invoiceVM.setQuantity(2);
-//        invoiceVM.setSubtotal(new BigDecimal(100.00).setScale(2));
-//        invoiceVM.setTax(new BigDecimal(5.00).setScale(2));
-//        invoiceVM.setProcessingFee(new BigDecimal(10.00).setScale(2));
-//        invoiceVM.setTotal(new BigDecimal(115.00).setScale(2));
 
         invoiceVM = invoiceService.saveInvoice(invoiceVM);
 
@@ -470,69 +460,5 @@ public InvoiceViewModel calculateTotal(InvoiceViewModel invoiceViewModel) {
 
     }
 
-
 }
-/*
-public InvoiceViewModel calculateTotal(InvoiceViewModel invoiceViewModel) {
 
-//        InvoiceViewModel modelWithItem = getItemDetails(invoiceViewModel);
-        invoiceViewModel = getItemDetails(invoiceViewModel);
-
-        MathContext mc = new MathContext(2);
-
-        // **** don't make data type a decimal to prevent data entry of decimal, want integer ****
-        // **** though look into setScale(0) ****
-        BigDecimal quantityAsDecimal = new BigDecimal(invoiceViewModel.getQuantity()).setScale(2);
-
-        BigDecimal subtotal = invoiceViewModel.getUnitPrice().multiply(quantityAsDecimal, mc);
-        BigDecimal taxRate = salesTaxRateDao.getSalesTaxRate(invoiceViewModel.getState());
-        BigDecimal processingFee = processingFeeDao.getProcessingFee(invoiceViewModel.getItemType());
-        BigDecimal additionalFee = new BigDecimal(00).setScale(2);
-        if (invoiceViewModel.getQuantity() > 10) {
-            additionalFee = new BigDecimal(15.49).setScale(2);
-        }
-        BigDecimal total = (subtotal.multiply(taxRate, mc)).add(processingFee).add(additionalFee);
-
-        invoiceViewModel.setSubtotal(subtotal);             //
-        invoiceViewModel.setTax(subtotal.multiply(taxRate, mc));                       //
-        invoiceViewModel.setProcessingFee(processingFee);   //
-        invoiceViewModel.setTotal(total);                   //
-
-//        return modelWithItem;
-        return invoiceViewModel;
-
-    }
-
-*/
-/*
-
-    public InvoiceViewModel getItemDetails(InvoiceViewModel invoiceViewModel) {
-
-        Object item;
-        BigDecimal price = new BigDecimal(0).setScale(2);
-        switch (invoiceViewModel.getItemType()) {
-            case "Consoles":
-                Console cItem = consoleDao.getConsole(invoiceViewModel.getItemId());
-                price = cItem.getPrice();
-                item = cItem;
-                break;
-            case "Games":
-                Game gItem = gameDao.getGame(invoiceViewModel.getItemId());
-                price = gItem.getPrice();
-                item = gItem;
-                break;
-            case "T-Shirts":
-                TShirt tItem = tShirtDao.getTShirt(invoiceViewModel.getItemId());
-                price = tItem.getPrice();
-                item = tItem;
-                break;
-            default:
-                throw new IllegalArgumentException("You must select a valid item type.");
-        }
-        invoiceViewModel.setItem(item);
-        invoiceViewModel.setUnitPrice(price);
-
-        return invoiceViewModel;
-    }
-
- */
