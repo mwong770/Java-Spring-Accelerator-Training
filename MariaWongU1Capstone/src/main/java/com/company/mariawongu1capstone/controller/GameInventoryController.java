@@ -55,43 +55,22 @@ public class GameInventoryController {
         return gameService.findAllGames();
     }
 
-    //List<Game> findGamesByStudio(String studio);
     @RequestMapping(value="/games/studios/{studio}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<GameViewModel> findGamesByStudio(@PathVariable String studio) {
         return gameService.findGamesByStudio(studio);
     }
 
-    //List<Game> findGamesByEsrbRating(String esrbRating);
     @RequestMapping(value="/games/ratings/{esrbRating}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<GameViewModel> findGamesByEsrbRating(@PathVariable String esrbRating) {
         return gameService.findGamesByEsrbRating(esrbRating);
     }
 
-    //List<Game> findGamesByTitle(String title);
     @RequestMapping(value="/games/titles/{title}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<GameViewModel> findGamesByTitle(@PathVariable String title) {
         return gameService.findGamesByTitle(title);
     }
 }
-/*
-Game addGame(Game game);
 
-    Game getGame(int id);
-
-    List<Game> getAllGames();
-
-    void updateGame(Game game);
-
-    void deleteGame(int id);
-
-    // additional methods
-
-    List<Game> findGamesByStudio(String studio);
-
-    List<Game> findGamesByEsrbRating(String esrbRating);
-
-    List<Game> findGamesByTitle(String title);
- */

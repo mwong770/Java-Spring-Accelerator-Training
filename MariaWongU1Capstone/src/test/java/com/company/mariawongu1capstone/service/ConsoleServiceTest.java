@@ -2,89 +2,44 @@ package com.company.mariawongu1capstone.service;
 
 import com.company.mariawongu1capstone.dao.*;
 import com.company.mariawongu1capstone.model.Console;
-import com.company.mariawongu1capstone.model.Game;
-import com.company.mariawongu1capstone.model.Invoice;
-import com.company.mariawongu1capstone.model.TShirt;
 import com.company.mariawongu1capstone.viewmodel.ConsoleViewModel;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.doReturn;
 
-// USE MOCKS ********************
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
 public class ConsoleServiceTest {
 
-    @Autowired
     ConsoleService consoleService;
-    @Autowired
-    GameService gameService;
-    @Autowired
-    InvoiceService invoiceService;
-    @Autowired
-    TShirtService tShirtService;
 
-    @Autowired
     ConsoleDao consoleDao;
-    @Autowired
-    GameDao gameDao;
-    @Autowired
-    InvoiceDao invoiceDao;
-    @Autowired
-    TShirtDao tShirtDao;
-    @Autowired
-    ProcessingFeeDao processingFeeDao;
-    @Autowired
-    SalesTaxRateDao salesTaxRateDao;
 
-    // clear console, game, invoice, and tshirt tables in database
     @Before
     public void setUp() throws Exception {
 
-        List<Console> consoles = consoleDao.getAllConsoles();
-        for (Console c : consoles) {
-            consoleDao.deleteConsole(c.getConsoleId());
-        }
+        // Configures mock objects
+        setUpConsoleDaoMock();
 
-        List<Game> games = gameDao.getAllGames();
-        for (Game g : games) {
-            gameDao.deleteGame(g.getGameId());
-        }
+        // Passes mock objects
+        consoleService = new ConsoleService(consoleDao);
 
-        List<Invoice> invoices = invoiceDao.getAllInvoices();
-        for (Invoice i : invoices) {
-            invoiceDao.deleteInvoice(i.getInvoiceId());
-        }
-
-        List<TShirt> tShirts = tShirtDao.getAllTShirts();
-        for (TShirt t : tShirts) {
-            tShirtDao.deleteTShirt(t.gettShirtId());
-        }
     }
 
-    //public ConsoleViewModel saveConsole(ConsoleViewModel consoleViewModel) {
-    //public ConsoleViewModel findConsoleById(int id) {
     @Test
     public void saveFindConsole() {
 
         ConsoleViewModel consoleVM = new ConsoleViewModel();
 
-        consoleVM.setModel("model 1");
-        consoleVM.setManufacturer("manufacturer 1");
-        consoleVM.setMemoryAmount("lots of memory");
-        consoleVM.setProcessor("best processor");
+        consoleVM.setModel("Switch");
+        consoleVM.setManufacturer("Nintendo");
+        consoleVM.setMemoryAmount("4GB");
+        consoleVM.setProcessor("NVIDIA");
         consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
         consoleVM.setQuantity(10);
 
@@ -92,35 +47,33 @@ public class ConsoleServiceTest {
 
         ConsoleViewModel fromService  = consoleService.findConsoleById(consoleVM.getConsoleId());
         assertEquals(consoleVM, fromService);
-//        assertEquals(consoleVM.toString(), fromService.toString());
 
     }
 
-    //public List<Console> findAllConsoles() {
     @Test
     public void findAllConsoles() {
 
         ConsoleViewModel consoleVM = new ConsoleViewModel();
 
-        consoleVM.setModel("model 1");
-        consoleVM.setManufacturer("manufacturer 1");
-        consoleVM.setMemoryAmount("lots of memory");
-        consoleVM.setProcessor("best processor");
+        consoleVM.setModel("Switch");
+        consoleVM.setManufacturer("Nintendo");
+        consoleVM.setMemoryAmount("4GB");
+        consoleVM.setProcessor("NVIDIA");
         consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
         consoleVM.setQuantity(10);
 
-        consoleVM = consoleService.saveConsole(consoleVM);
+        consoleService.saveConsole(consoleVM);
 
         consoleVM = new ConsoleViewModel();
 
-        consoleVM.setModel("model 2");
-        consoleVM.setManufacturer("manufacturer 2");
-        consoleVM.setMemoryAmount("little memory");
-        consoleVM.setProcessor("worst processor");
-        consoleVM.setPrice(new BigDecimal(50.00).setScale(2));
-        consoleVM.setQuantity(1);
+        consoleVM.setModel("XBox One X");
+        consoleVM.setManufacturer("Microsoft");
+        consoleVM.setMemoryAmount("1 TB");
+        consoleVM.setProcessor("8 Core AMD");
+        consoleVM.setPrice(new BigDecimal(362.00).setScale(2));
+        consoleVM.setQuantity(100);
 
-        consoleVM = consoleService.saveConsole(consoleVM);
+        consoleService.saveConsole(consoleVM);
 
         List<ConsoleViewModel> fromService = consoleService.findAllConsoles();
 
@@ -128,105 +81,182 @@ public class ConsoleServiceTest {
 
     }
 
-    //public void updateConsole(ConsoleViewModel consoleViewModel) {
+    // FIND OUT IF THESE CAN BE TESTED NOW THAT WE ARE USING MOCKS *******************
+
+//    @Test
+//    public void updateConsole() {
+//
+//        ConsoleViewModel consoleVM = new ConsoleViewModel();
+//
+//        consoleVM.setModel("Switch");
+//        consoleVM.setManufacturer("Nintendo");
+//        consoleVM.setMemoryAmount("4GB");
+//        consoleVM.setProcessor("NVIDIA");
+//        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+//        consoleVM.setQuantity(10);
+//
+//        consoleVM = consoleService.saveConsole(consoleVM);
+//
+//        consoleVM.setPrice(new BigDecimal(150.00).setScale(2));
+//        consoleVM.setQuantity(30);
+//
+//        consoleService.updateConsole(consoleVM);
+//
+//        ConsoleViewModel fromService  = consoleService.findConsoleById(consoleVM.getConsoleId());
+//        assertEquals(new BigDecimal(150.00).setScale(2), fromService.getPrice());
+//        assertEquals(30, fromService.getQuantity());
+//
+//    }
+
+//    @Test
+//    public void removeConsole() {
+//
+//        ConsoleViewModel consoleVM = new ConsoleViewModel();
+//        consoleVM.setModel("XBox One X");
+//        consoleVM.setManufacturer("Microsoft");
+//        consoleVM.setMemoryAmount("1 TB");
+//        consoleVM.setProcessor("8 Core AMD");
+//        consoleVM.setPrice(new BigDecimal(362.00).setScale(2));
+//        consoleVM.setQuantity(100);
+//
+//        consoleService.saveConsole(consoleVM);
+//
+//        List<ConsoleViewModel> fromService = consoleService.findAllConsoles();
+//
+//        assertEquals(1, fromService.size());
+//
+//        consoleService.removeConsole(fromService.get(0).getConsoleId());
+//
+//        fromService = consoleService.findAllConsoles();
+//
+//        assertEquals(0, fromService.size());
+//
+//    }
+
     @Test
-    public void updateConsole() {
+    public void findConsolesByManufacturer() {
 
         ConsoleViewModel consoleVM = new ConsoleViewModel();
-
-        consoleVM.setModel("model 1");
-        consoleVM.setManufacturer("manufacturer 1");
-        consoleVM.setMemoryAmount("lots of memory");
-        consoleVM.setProcessor("best processor");
+        consoleVM.setModel("Switch");
+        consoleVM.setManufacturer("Nintendo");
+        consoleVM.setMemoryAmount("4GB");
+        consoleVM.setProcessor("NVIDIA");
         consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
         consoleVM.setQuantity(10);
 
-        consoleVM = consoleService.saveConsole(consoleVM);
-
-        consoleVM.setPrice(new BigDecimal(150.00).setScale(2));
-        consoleVM.setQuantity(30);
-
-        consoleService.updateConsole(consoleVM);
-
-        ConsoleViewModel fromService  = consoleService.findConsoleById(consoleVM.getConsoleId());
-        assertEquals(new BigDecimal(150.00).setScale(2), fromService.getPrice());
-        assertEquals(30, fromService.getQuantity());
-
-    }
-
-
-    //public void removeConsole(int id) {
-    @Test
-    public void removeConsole() {
-
-        ConsoleViewModel consoleVM = new ConsoleViewModel();
-        consoleVM.setModel("model 3");
-        consoleVM.setManufacturer("manufacturer 3");
-        consoleVM.setMemoryAmount("moderate memory");
-        consoleVM.setProcessor("moderate processor");
-        consoleVM.setPrice(new BigDecimal(70.00).setScale(2));
-        consoleVM.setQuantity(4);
-
-        consoleVM = consoleService.saveConsole(consoleVM);
-
-        List<ConsoleViewModel> fromService = consoleService.findAllConsoles();
-
-        assertEquals(1, fromService.size());
-
-        consoleService.removeConsole(fromService.get(0).getConsoleId());
-
-        fromService = consoleService.findAllConsoles();
-
-        assertEquals(0, fromService.size());
-
-    }
-
-
-//    //public List<ConsoleViewModel> findConsolesByManufacturer(String manufacturer) {
-    @Test
-    public void findConsolesByManufacturer()
-    {
-
-        ConsoleViewModel consoleVM = new ConsoleViewModel();
-        consoleVM.setModel("model 1");
-        consoleVM.setManufacturer("Manufacturer 1");
-        consoleVM.setMemoryAmount("lots of memory");
-        consoleVM.setProcessor("best processor");
-        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
-        consoleVM.setQuantity(10);
-
-        consoleVM = consoleService.saveConsole(consoleVM);
+        consoleService.saveConsole(consoleVM);
 
         consoleVM = new ConsoleViewModel();
-        consoleVM.setModel("model 2");
-        consoleVM.setManufacturer("Manufacturer 2");
-        consoleVM.setMemoryAmount("little memory");
-        consoleVM.setProcessor("worse processor");
-        consoleVM.setPrice(new BigDecimal(1.00).setScale(2));
-        consoleVM.setQuantity(1);
+        consoleVM.setModel("XBox One X");
+        consoleVM.setManufacturer("Microsoft");
+        consoleVM.setMemoryAmount("1 TB");
+        consoleVM.setProcessor("8 Core AMD");
+        consoleVM.setPrice(new BigDecimal(362.00).setScale(2));
+        consoleVM.setQuantity(100);
 
-        consoleVM = consoleService.saveConsole(consoleVM);
+        consoleService.saveConsole(consoleVM);
 
         consoleVM = new ConsoleViewModel();
-        consoleVM.setModel("model 3");
-        consoleVM.setManufacturer("Manufacturer 1");
-        consoleVM.setMemoryAmount("medium memory");
-        consoleVM.setProcessor("medium processor");
-        consoleVM.setPrice(new BigDecimal(50.00).setScale(2));
-        consoleVM.setQuantity(5);
+        consoleVM.setModel("2DS XL");
+        consoleVM.setManufacturer("Nintendo");
+        consoleVM.setMemoryAmount("4GB");
+        consoleVM.setProcessor("Quad-Core");
+        consoleVM.setPrice(new BigDecimal(189.00).setScale(2));
+        consoleVM.setQuantity(100);
 
-        consoleVM = consoleService.saveConsole(consoleVM);
+        consoleService.saveConsole(consoleVM);
 
-        List<ConsoleViewModel> cList = consoleService.findConsolesByManufacturer("Manufacturer 1");
+        List<ConsoleViewModel> cList = consoleService.findConsolesByManufacturer("Nintendo");
         assertEquals(2,cList.size());
-        assertEquals("Manufacturer 1", cList.get(0).getManufacturer());
+        assertEquals("Nintendo", cList.get(0).getManufacturer());
 
-        cList = consoleService.findConsolesByManufacturer("Manufacturer 2");
+        cList = consoleService.findConsolesByManufacturer("Microsoft");
         assertEquals(1,cList.size());
-        assertEquals("Manufacturer 2", cList.get(0).getManufacturer());
+        assertEquals("Microsoft", cList.get(0).getManufacturer());
 
-        cList = consoleService.findConsolesByManufacturer("Unknown Manufacturer");
+        cList = consoleService.findConsolesByManufacturer("Sony");
         assertEquals(0,cList.size());
+
+    }
+
+    // Helper method
+
+    public void setUpConsoleDaoMock() {
+
+        consoleDao = mock(ConsoleDaoJdbcTemplateImpl.class);
+
+        Console console = new Console();
+        console.setModel("Switch");
+        console.setManufacturer("Nintendo");
+        console.setMemoryAmount("4GB");
+        console.setProcessor("NVIDIA");
+        console.setPrice(new BigDecimal(100.00).setScale(2));
+        console.setQuantity(10);
+
+        Console console2 = new Console();
+        console2.setConsoleId(1);
+        console2.setModel("Switch");
+        console2.setManufacturer("Nintendo");
+        console2.setMemoryAmount("4GB");
+        console2.setProcessor("NVIDIA");
+        console2.setPrice(new BigDecimal(100.00).setScale(2));
+        console2.setQuantity(10);
+
+        Console console3 = new Console();
+        console3.setModel("XBox One X");
+        console3.setManufacturer("Microsoft");
+        console3.setMemoryAmount("1 TB");
+        console3.setProcessor("8 Core AMD");
+        console3.setPrice(new BigDecimal(362.00).setScale(2));
+        console3.setQuantity(100);
+
+        Console console4 = new Console();
+        console4.setConsoleId(2);
+        console4.setModel("XBox One X");
+        console4.setManufacturer("Microsoft");
+        console4.setMemoryAmount("1 TB");
+        console4.setProcessor("8 Core AMD");
+        console4.setPrice(new BigDecimal(362.00).setScale(2));
+        console4.setQuantity(100);
+
+        Console console5 = new Console();
+        console5.setModel("2DS XL");
+        console5.setManufacturer("Nintendo");
+        console5.setMemoryAmount("4GB");
+        console5.setProcessor("Quad-Core");
+        console5.setPrice(new BigDecimal(189.00).setScale(2));
+        console5.setQuantity(100);
+
+        Console console6 = new Console();
+        console6.setConsoleId(3);
+        console6.setModel("2DS XL");
+        console6.setManufacturer("Nintendo");
+        console6.setMemoryAmount("4GB");
+        console6.setProcessor("Quad-Core");
+        console6.setPrice(new BigDecimal(189.00).setScale(2));
+        console6.setQuantity(100);
+
+        List<Console> consolesList = new ArrayList<>();
+        consolesList.add(console2);
+        consolesList.add(console4);
+
+        List<Console> nintendoList = new ArrayList<>();
+        nintendoList.add(console2);
+        nintendoList.add(console6);
+
+        List<Console> microsoftList = new ArrayList<>();
+        microsoftList.add(console4);
+
+        List<Console> emptyList = new ArrayList<>();
+
+        doReturn(console2).when(consoleDao).addConsole(console);
+        doReturn(console4).when(consoleDao).addConsole(console3);
+        doReturn(console6).when(consoleDao).addConsole(console5);
+        doReturn(console2).when(consoleDao).getConsole(1);
+        doReturn(consolesList).when(consoleDao).getAllConsoles();
+        doReturn(nintendoList).when(consoleDao).findConsolesByManufacturer("Nintendo");
+        doReturn(microsoftList).when(consoleDao).findConsolesByManufacturer("Microsoft");
+        doReturn(emptyList).when(consoleDao).findConsolesByManufacturer("Sony");
 
     }
 

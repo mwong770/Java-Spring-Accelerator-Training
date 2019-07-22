@@ -9,31 +9,15 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-// USE MOCKS ********************
-
 @Component
 public class ConsoleService {
 
     ConsoleDao consoleDao;
-    GameDao gameDao;
-    InvoiceDao invoiceDao;
-    ProcessingFeeDao processingFeeDao;
-    SalesTaxRateDao salesTaxRateDao;
-    TShirtDao tShirtDao;
 
     @Autowired
-    public ConsoleService(ConsoleDao consoleDao, GameDao gameDao, InvoiceDao invoiceDao, ProcessingFeeDao processingFeeDao, SalesTaxRateDao salesTaxRateDao, TShirtDao tShirtDao) {
+    public ConsoleService(ConsoleDao consoleDao) {
         this.consoleDao = consoleDao;
-        this.gameDao = gameDao;
-        this.invoiceDao = invoiceDao;
-        this.processingFeeDao = processingFeeDao;
-        this.salesTaxRateDao = salesTaxRateDao;
-        this.tShirtDao = tShirtDao;
     }
-
-    //
-    // Console API
-    //
 
     public ConsoleViewModel saveConsole(ConsoleViewModel consoleViewModel) {
         Console console = new Console();

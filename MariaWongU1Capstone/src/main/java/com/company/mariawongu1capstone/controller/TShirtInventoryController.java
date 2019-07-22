@@ -55,14 +55,12 @@ public class TShirtInventoryController {
         return tShirtService.findAllTShirts();
     }
 
-    //List<TShirt> findTShirtsByColor(String color);
     @RequestMapping(value="/tshirts/colors/{color}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<TShirtViewModel> findTShirtsByColor(@PathVariable String color) {
         return tShirtService.findTShirtsByColor(color);
     }
 
-    //List<TShirt> findTShirtsBySize(String size);
     @RequestMapping(value="/tshirts/sizes/{size}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<TShirtViewModel> findTShirtsBySize(@PathVariable String size) {
@@ -71,20 +69,4 @@ public class TShirtInventoryController {
 
 
 }
-/*
-TShirt addTShirt(TShirt tShirt);
 
-    TShirt getTShirt(int id);
-
-    List<TShirt> getAllTShirts();
-
-    void updateTShirt(TShirt tShirt);
-
-    void deleteTShirt(int id);
-
-    // additional methods
-
-    List<TShirt> findTShirtsByColor(String color);
-
-    List<TShirt> findTShirtsBySize(String size);
- */

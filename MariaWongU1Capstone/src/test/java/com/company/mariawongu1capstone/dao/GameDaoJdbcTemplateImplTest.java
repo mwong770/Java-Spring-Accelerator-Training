@@ -53,9 +53,9 @@ public class GameDaoJdbcTemplateImplTest {
 
     }
 
-    // USE ANOTHER @BEFORE TO PLACE REPEATED GAME CREATES FROM THE LAST THREE METHODS
+    // USE ANOTHER @BEFORE TO PLACE REPEATED GAME CREATES FROM THE LAST THREE METHODS ****
 
-    // USER @AFTER TO CLEAR VARIABLES OUT
+    // USER @AFTER TO CLEAR VARIABLES OUT ****
 
     @Test
     public void addGetDeleteGame() {
@@ -110,7 +110,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 1");
         game.setQuantity(10);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         game = new Game();
         game.setTitle("title 2");
@@ -120,7 +120,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 2");
         game.setQuantity(40);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         List<Game> gList = gameDao.getAllGames();
         assertEquals(2, gList.size());
@@ -137,7 +137,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 1");
         game.setQuantity(10);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         game = new Game();
         game.setTitle("title 2");
@@ -147,7 +147,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 2");
         game.setQuantity(40);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         game = new Game();
         game.setTitle("title 3");
@@ -157,7 +157,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 2");
         game.setQuantity(50);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         List<Game> gList = gameDao.findGamesByStudio("Studio 1");
         assertEquals(1, gList.size());
@@ -181,7 +181,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 1");
         game.setQuantity(10);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         game = new Game();
         game.setTitle("title 2");
@@ -191,7 +191,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 2");
         game.setQuantity(40);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         game = new Game();
         game.setTitle("title 3");
@@ -201,7 +201,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 2");
         game.setQuantity(50);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         List<Game> gList = gameDao.findGamesByEsrbRating("rating 1");
         assertEquals(2, gList.size());
@@ -225,7 +225,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 1");
         game.setQuantity(10);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         game = new Game();
         game.setTitle("title 2");
@@ -235,7 +235,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 2");
         game.setQuantity(40);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         game = new Game();
         game.setTitle("title 3");
@@ -245,7 +245,7 @@ public class GameDaoJdbcTemplateImplTest {
         game.setStudio("studio 2");
         game.setQuantity(50);
 
-        game = gameDao.addGame(game);
+        gameDao.addGame(game);
 
         List<Game> gList = gameDao.findGamesByTitle("title 1");
         assertEquals(1, gList.size());

@@ -9,31 +9,15 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-// USE MOCKS ********************
-
 @Component
 public class TShirtService {
 
-    ConsoleDao consoleDao;
-    GameDao gameDao;
-    InvoiceDao invoiceDao;
-    ProcessingFeeDao processingFeeDao;
-    SalesTaxRateDao salesTaxRateDao;
     TShirtDao tShirtDao;
 
     @Autowired
-    public TShirtService(ConsoleDao consoleDao, GameDao gameDao, InvoiceDao invoiceDao, ProcessingFeeDao processingFeeDao, SalesTaxRateDao salesTaxRateDao, TShirtDao tShirtDao) {
-        this.consoleDao = consoleDao;
-        this.gameDao = gameDao;
-        this.invoiceDao = invoiceDao;
-        this.processingFeeDao = processingFeeDao;
-        this.salesTaxRateDao = salesTaxRateDao;
+    public TShirtService(TShirtDao tShirtDao) {
         this.tShirtDao = tShirtDao;
     }
-
-    //
-    // TShirt API
-    //
 
     public TShirtViewModel saveTShirt(TShirtViewModel tShirtViewModel) {
         TShirt tShirt = new TShirt();

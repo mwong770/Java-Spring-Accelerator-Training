@@ -127,7 +127,7 @@ public class InvoiceDaoJdbcTemplateImplTest {
         invoice.setProcessingFee(new BigDecimal(10.00).setScale(2));
         invoice.setTotal(new BigDecimal(115.00).setScale(2));
 
-        invoice = invoiceDao.addInvoice(invoice);
+        invoiceDao.addInvoice(invoice);
 
         invoice = new Invoice();
         invoice.setName("Mary");
@@ -144,7 +144,7 @@ public class InvoiceDaoJdbcTemplateImplTest {
         invoice.setProcessingFee(new BigDecimal(20.00).setScale(2));
         invoice.setTotal(new BigDecimal(280.00).setScale(2));
 
-        invoice = invoiceDao.addInvoice(invoice);
+        invoiceDao.addInvoice(invoice);
 
         List<Invoice> iList = invoiceDao.getAllInvoices();
         assertEquals(2, iList.size());

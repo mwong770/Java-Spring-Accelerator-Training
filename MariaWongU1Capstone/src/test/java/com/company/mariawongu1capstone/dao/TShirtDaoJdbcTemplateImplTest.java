@@ -102,7 +102,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(55.00).setScale(2));
         tShirt.setQuantity(10);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        tShirtDao.addTShirt(tShirt);
 
         tShirt = new TShirt();
         tShirt.setSize("small");
@@ -111,7 +111,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(15.00).setScale(2));
         tShirt.setQuantity(2);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        tShirtDao.addTShirt(tShirt);
 
         List<TShirt> tList = tShirtDao.getAllTShirts();
         assertEquals(2, tList.size());
@@ -127,7 +127,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(55.00).setScale(2));
         tShirt.setQuantity(10);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        tShirtDao.addTShirt(tShirt);
 
         tShirt = new TShirt();
         tShirt.setSize("small");
@@ -136,7 +136,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(15.00).setScale(2));
         tShirt.setQuantity(2);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        tShirtDao.addTShirt(tShirt);
 
         tShirt = new TShirt();
         tShirt.setSize("medium");
@@ -145,7 +145,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(10.00).setScale(2));
         tShirt.setQuantity(4);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        tShirtDao.addTShirt(tShirt);
 
         List<TShirt> tList = tShirtDao.findTShirtsByColor("blue");
         assertEquals(2, tList.size());
@@ -168,7 +168,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(55.00).setScale(2));
         tShirt.setQuantity(10);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        tShirtDao.addTShirt(tShirt);
 
         tShirt = new TShirt();
         tShirt.setSize("small");
@@ -177,7 +177,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(15.00).setScale(2));
         tShirt.setQuantity(2);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        tShirtDao.addTShirt(tShirt);
 
         tShirt = new TShirt();
         tShirt.setSize("large");
@@ -186,7 +186,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(10.00).setScale(2));
         tShirt.setQuantity(4);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        tShirtDao.addTShirt(tShirt);
 
         List<TShirt> tList = tShirtDao.findTShirtsBySize("large");
         assertEquals(2, tList.size());

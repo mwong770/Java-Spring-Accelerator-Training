@@ -109,7 +109,7 @@ public class ConsoleDaoJdbcTemplateImplTest {
         console.setPrice(new BigDecimal(100.00).setScale(2));
         console.setQuantity(10);
 
-        console = consoleDao.addConsole(console);
+        consoleDao.addConsole(console);
 
         console = new Console();
         console.setModel("model 2");
@@ -119,7 +119,7 @@ public class ConsoleDaoJdbcTemplateImplTest {
         console.setPrice(new BigDecimal(1.00).setScale(2));
         console.setQuantity(1);
 
-        console = consoleDao.addConsole(console);
+        consoleDao.addConsole(console);
 
         List<Console> cList = consoleDao.getAllConsoles();
         assertEquals(2, cList.size());
@@ -136,7 +136,7 @@ public class ConsoleDaoJdbcTemplateImplTest {
         console.setPrice(new BigDecimal(100.00).setScale(2));
         console.setQuantity(10);
 
-        console = consoleDao.addConsole(console);
+        consoleDao.addConsole(console);
 
         console = new Console();
         console.setModel("model 2");
@@ -146,7 +146,7 @@ public class ConsoleDaoJdbcTemplateImplTest {
         console.setPrice(new BigDecimal(1.00).setScale(2));
         console.setQuantity(1);
 
-        console = consoleDao.addConsole(console);
+        consoleDao.addConsole(console);
 
         console = new Console();
         console.setModel("model 3");
@@ -156,7 +156,7 @@ public class ConsoleDaoJdbcTemplateImplTest {
         console.setPrice(new BigDecimal(50.00).setScale(2));
         console.setQuantity(5);
 
-        console = consoleDao.addConsole(console);
+        consoleDao.addConsole(console);
 
         List<Console> cList = consoleDao.findConsolesByManufacturer("Manufacturer 1");
         assertEquals(2,cList.size());
@@ -170,15 +170,3 @@ public class ConsoleDaoJdbcTemplateImplTest {
     }
 
 }
-
-/*
-    Console addConsole(Console console);
-    Console getConsole(int id);
-    void deleteConsole(int id);
-
-    void updateConsole(Console console);
-
-    List<Console> getAllConsoles();
-
-    List<Console> findConsolesByManufacturer(String manufacturer);
- */

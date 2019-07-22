@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbb2e4b4-1e08-488b-8fcb-4db5a576d9ce" name="Default Changelist" comment="" />
+    <list default="true" id="dbb2e4b4-1e08-488b-8fcb-4db5a576d9ce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/controller/ConsoleInventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/controller/ConsoleInventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/controller/GameInventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/controller/GameInventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/controller/InvoiceInventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/controller/InvoiceInventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/controller/TShirtInventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/controller/TShirtInventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/dao/ProcessingFeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/dao/ProcessingFeeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/dao/SalesTaxRateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/dao/SalesTaxRateDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/dao/SalesTaxRateDaoJdbcTemplateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/dao/SalesTaxRateDaoJdbcTemplateImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/service/ConsoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/service/ConsoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/service/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/service/InvoiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/service/TShirtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/main/java/com/company/mariawongu1capstone/service/TShirtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/ConsoleDaoJdbcTemplateImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/ConsoleDaoJdbcTemplateImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/GameDaoJdbcTemplateImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/GameDaoJdbcTemplateImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/InvoiceDaoJdbcTemplateImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/InvoiceDaoJdbcTemplateImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/ProcessingFeeDaoJdbcTemplateImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/ProcessingFeeDaoJdbcTemplateImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/TShirtDaoJdbcTemplateImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/dao/TShirtDaoJdbcTemplateImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/service/ConsoleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/service/ConsoleServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/service/GameServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/service/GameServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/service/InvoiceServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/service/InvoiceServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/service/TShirtServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU1Capstone/src/test/java/com/company/mariawongu1capstone/service/TShirtServiceTest.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +89,7 @@
   <component name="ToolWindowManager">
     <frame x="265" y="25" width="1175" height="798" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2674316" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27184466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />

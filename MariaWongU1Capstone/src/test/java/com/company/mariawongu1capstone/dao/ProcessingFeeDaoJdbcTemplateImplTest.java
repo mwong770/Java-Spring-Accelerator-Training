@@ -53,8 +53,6 @@ public class ProcessingFeeDaoJdbcTemplateImplTest {
         }
     }
 
-    //ProcessingFee getProcessingFee(String productType);
-
     @Test
     public void getProcessingFee() {
 
@@ -63,23 +61,6 @@ public class ProcessingFeeDaoJdbcTemplateImplTest {
 
         fee = processingFeeDao.getProcessingFee("Games");
         assertEquals(new BigDecimal(1.49).setScale(2, RoundingMode.HALF_UP), fee);
-//
-//        ProcessingFee row = processingFeeDao.getProcessingFee("Consoles");
-//
-//        BigDecimal fee = row.getFee();
-//
-//        assertEquals(new BigDecimal(14.99).setScale(2, RoundingMode.HALF_UP), fee);
-//
-//
-//        row = processingFeeDao.getProcessingFee("Games");
-//
-//        fee = row.getFee();
-//
-//        assertEquals(new BigDecimal(1.49).setScale(2, RoundingMode.HALF_UP), fee);
 
-
-//        assertEquals(0, fee);
     }
-
-
 }

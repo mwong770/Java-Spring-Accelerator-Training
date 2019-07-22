@@ -15,8 +15,6 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-// USE MOCKS ********************
-
 @Component
 public class InvoiceService {
 
@@ -36,10 +34,6 @@ public class InvoiceService {
         this.salesTaxRateDao = salesTaxRateDao;
         this.tShirtDao = tShirtDao;
     }
-
-    //
-    // Invoice API
-    //
 
     public InvoiceViewModel saveInvoice(InvoiceViewModel invoiceViewModel) {
 
@@ -67,7 +61,7 @@ public class InvoiceService {
         invoice = invoiceDao.addInvoice(invoice);
         invoiceViewModel.setInvoiceId(invoice.getInvoiceId());
 
-        invoiceViewModel = getItemDetails(invoiceViewModel);
+        //invoiceViewModel = getItemDetails(invoiceViewModel);
         return invoiceViewModel;
     }
 
@@ -77,8 +71,6 @@ public class InvoiceService {
 
         MathContext mc = new MathContext(2);
 
-        // **** don't make data type a decimal to prevent data entry of decimal, want integer ****
-        // **** though look into setScale(0) ****
         BigDecimal quantityAsDecimal = new BigDecimal(invoiceViewModel.getQuantity()).setScale(2);
 
         BigDecimal subtotal = (invoiceViewModel.getUnitPrice().multiply(quantityAsDecimal)).setScale(2, RoundingMode.HALF_UP);
@@ -129,10 +121,9 @@ public class InvoiceService {
         return invoiceViewModel;
     }
 
-    // ADD TEST FOR THIS **************************
-    // TEST IF THROWS ERROR **************************
+
     public void amendQuantityInDB(String itemType, int itemId, int quantity, String action) {
-        System.out.println(itemType + ", " + itemId + ", " + quantity + ", " + action);
+
         Object item;
         switch (itemType) {
             case "Consoles":

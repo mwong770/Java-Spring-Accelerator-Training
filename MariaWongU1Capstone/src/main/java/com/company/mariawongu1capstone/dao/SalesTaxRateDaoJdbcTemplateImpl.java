@@ -30,7 +30,6 @@ public class SalesTaxRateDaoJdbcTemplateImpl implements SalesTaxRateDao {
     @Override
     public BigDecimal getSalesTaxRate(String state) {
         try {
-//            return jdbcTemplate.queryForObject(SELECT_STATE_TAX_RATE_SQL, this::mapRowToSalesTaxRate, state);
             SalesTaxRate row =  jdbcTemplate.queryForObject(SELECT_STATE_TAX_RATE_SQL, this::mapRowToSalesTaxRate, state);
             return row.getRate();
         } catch (EmptyResultDataAccessException e) {

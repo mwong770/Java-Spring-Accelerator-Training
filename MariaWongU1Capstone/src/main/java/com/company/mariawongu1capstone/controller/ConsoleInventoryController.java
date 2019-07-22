@@ -61,16 +61,3 @@ public class ConsoleInventoryController {
         return consoleService.findConsolesByManufacturer(manufacturer);
     }
 }
-/*
-    Console addConsole(Console console);
-
-    Console getConsole(int id);
-
-    List<Console> getAllConsoles();
-
-    void updateConsole(Console console);
-
-    void deleteConsole(int id);
-
-    List<Console> findConsolesByManufacturer(String manufacturer);
- */

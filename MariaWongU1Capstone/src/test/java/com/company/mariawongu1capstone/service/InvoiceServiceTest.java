@@ -4,164 +4,144 @@ import com.company.mariawongu1capstone.dao.*;
 import com.company.mariawongu1capstone.model.Console;
 import com.company.mariawongu1capstone.model.Game;
 import com.company.mariawongu1capstone.model.Invoice;
-import com.company.mariawongu1capstone.model.TShirt;
 import com.company.mariawongu1capstone.viewmodel.ConsoleViewModel;
 import com.company.mariawongu1capstone.viewmodel.GameViewModel;
 import com.company.mariawongu1capstone.viewmodel.InvoiceViewModel;
+
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
-// USE MOCKS ********************
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
 public class InvoiceServiceTest {
 
-    @Autowired
     ConsoleService consoleService;
-    @Autowired
     GameService gameService;
-    @Autowired
     InvoiceService invoiceService;
-    @Autowired
-    TShirtService tShirtService;
 
-    @Autowired
     ConsoleDao consoleDao;
-    @Autowired
     GameDao gameDao;
-    @Autowired
     InvoiceDao invoiceDao;
-    @Autowired
-    TShirtDao tShirtDao;
-    @Autowired
     ProcessingFeeDao processingFeeDao;
-    @Autowired
     SalesTaxRateDao salesTaxRateDao;
+    TShirtDao tShirtDao;
 
-
-    // clear console, game, invoice, and tshirt tables in database
     @Before
     public void setUp() throws Exception {
 
-        List<Console> consoles = consoleDao.getAllConsoles();
-        for (Console c : consoles) {
-            consoleDao.deleteConsole(c.getConsoleId());
-        }
+        // configure mock objects
+        setUpConsoleDaoMock();
+        setUpGameDaoMock();
+        setUpInvoiceDaoMock();
+        setUpProcessingFeeDaoMock();
+        setUpSalesTaxRateDaoMock();
 
-        List<Game> games = gameDao.getAllGames();
-        for (Game g : games) {
-            gameDao.deleteGame(g.getGameId());
-        }
+        // Passes mock objects
+        gameService = new GameService(gameDao);
+        consoleService = new ConsoleService(consoleDao);
+        invoiceService = new InvoiceService(consoleDao, gameDao, invoiceDao, processingFeeDao, salesTaxRateDao, tShirtDao);
 
-        List<Invoice> invoices = invoiceDao.getAllInvoices();
-        for (Invoice i : invoices) {
-            invoiceDao.deleteInvoice(i.getInvoiceId());
-        }
-
-        List<TShirt> tShirts = tShirtDao.getAllTShirts();
-        for (TShirt t : tShirts) {
-            tShirtDao.deleteTShirt(t.gettShirtId());
-        }
     }
 
     @Test
     public void saveFindInvoice() {
 
+        // create console view model to use id in invoice view model
         ConsoleViewModel consoleVM = new ConsoleViewModel();
-
-        consoleVM.setModel("model 1");
-        consoleVM.setManufacturer("manufacturer 1");
-        consoleVM.setMemoryAmount("lots of memory");
-        consoleVM.setProcessor("best processor");
-        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+        consoleVM.setModel("Switch");
+        consoleVM.setManufacturer("Nintendo");
+        consoleVM.setMemoryAmount("4GB");
+        consoleVM.setProcessor("NVIDIA");
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP));
         consoleVM.setQuantity(10);
 
-        // this will get turned into a mock
         consoleVM = consoleService.saveConsole(consoleVM);
 
         // create invoice view model
         InvoiceViewModel invoiceVM = new InvoiceViewModel();
-
-        invoiceVM.setName("John");
-        invoiceVM.setStreet("John's street");
-        invoiceVM.setCity("John's city");
+        invoiceVM.setName("Terry DoByne");
+        invoiceVM.setStreet("2380 W US Hwy 89");
+        invoiceVM.setCity("Sedona");
         invoiceVM.setState("AZ");
-        invoiceVM.setZipCode("12345");
+        invoiceVM.setZipCode("86336");
         invoiceVM.setItemType("Consoles");
         invoiceVM.setItemId(consoleVM.getConsoleId());
         invoiceVM.setQuantity(2);
 
-        // save invoice adds the item to the view model
-        invoiceVM = invoiceService.saveInvoice(invoiceVM);
+        // save invoice view model
+        invoiceVM = invoiceService.saveInvoice(invoiceVM); // fields get calculated ?
 
-        InvoiceViewModel fromService  = invoiceService.findInvoice(invoiceVM.getInvoiceId());
+        InvoiceViewModel fromService  = invoiceService.findInvoice(invoiceVM.getInvoiceId()); // don't ?
+
+        // Fix-up calculated fields in mock object from service
+//        fromService.setUnitPrice(invoiceVM.getUnitPrice());
+//        fromService.setSubtotal(invoiceVM.getSubtotal());
+//        fromService.setTax(invoiceVM.getTax());
+//        fromService.setProcessingFee(invoiceVM.getProcessingFee());
+//        fromService.setTotal(invoiceVM.getTotal());
 
         assertEquals(invoiceVM, fromService);
 
     }
 
-    //public List<InvoiceViewModel> findAllInvoices() {
     @Test
     public void findAllInvoices() {
 
+        // create console view model to use id in invoice view model
         ConsoleViewModel consoleVM = new ConsoleViewModel();
-
-        consoleVM.setModel("model 1");
-        consoleVM.setManufacturer("manufacturer 1");
-        consoleVM.setMemoryAmount("lots of memory");
-        consoleVM.setProcessor("best processor");
-        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+        consoleVM.setModel("Switch");
+        consoleVM.setManufacturer("Nintendo");
+        consoleVM.setMemoryAmount("4GB");
+        consoleVM.setProcessor("NVIDIA");
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP));
         consoleVM.setQuantity(10);
 
         consoleVM = consoleService.saveConsole(consoleVM);
 
-        GameViewModel gameVM = new GameViewModel();
-
-        gameVM.setTitle("title 1");
-        gameVM.setEsrbRating("rating 1");
-        gameVM.setDescription("my first game");
-        gameVM.setPrice(new BigDecimal(100.00).setScale(2));
-        gameVM.setStudio("studio 1");
-        gameVM.setQuantity(10);
-
-        gameVM = gameService.saveGame(gameVM);
-
+        // create invoice view model
         InvoiceViewModel invoiceVM = new InvoiceViewModel();
-
-        invoiceVM.setName("John");
-        invoiceVM.setStreet("John's street");
-        invoiceVM.setCity("John's city");
+        invoiceVM.setName("Terry DoByne");
+        invoiceVM.setStreet("2380 W US Hwy 89");
+        invoiceVM.setCity("Sedona");
         invoiceVM.setState("AZ");
-        invoiceVM.setZipCode("12345");
+        invoiceVM.setZipCode("86336");
         invoiceVM.setItemType("Consoles");
         invoiceVM.setItemId(consoleVM.getConsoleId());
         invoiceVM.setQuantity(2);
 
-        invoiceVM = invoiceService.saveInvoice(invoiceVM);
+        invoiceService.saveInvoice(invoiceVM);
 
+        // create game view model to use id in invoice view model
+        GameViewModel gameVM = new GameViewModel();
+        gameVM.setTitle("The Legend of Zelda: Link's Awakening");
+        gameVM.setEsrbRating("E");
+        gameVM.setDescription("As Link, explore a reimagined Koholint Island and collect instruments to awaken the Wind Fish to find a way home.");
+        gameVM.setPrice(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP));
+        gameVM.setStudio("Nintendo");
+        gameVM.setQuantity(10);
+
+        gameVM = gameService.saveGame(gameVM);
+
+        // create invoice view model
         invoiceVM = new InvoiceViewModel();
-
-        invoiceVM.setName("Mary");
-        invoiceVM.setStreet("Mary's street");
-        invoiceVM.setCity("Mary's city");
-        invoiceVM.setState("TX");
-        invoiceVM.setZipCode("67890");
+        invoiceVM.setName("Mari Garcia");
+        invoiceVM.setStreet("1000 Sturdivant Street");
+        invoiceVM.setCity("Cary");
+        invoiceVM.setState("NC");
+        invoiceVM.setZipCode("27511");
         invoiceVM.setItemType("Games");
-        invoiceVM.setItemId(gameVM.getGameId());
+        invoiceVM.setItemId(1);
         invoiceVM.setQuantity(1);
 
-        invoiceVM = invoiceService.saveInvoice(invoiceVM);
+        invoiceService.saveInvoice(invoiceVM);
 
         List<InvoiceViewModel> fromService = invoiceService.findAllInvoices();
 
@@ -169,68 +149,26 @@ public class InvoiceServiceTest {
 
     }
 
-    //public void updateInvoice(InvoiceViewModel invoiceViewModel) {
-    @Test
-    public void updateInvoice() {
-
-        ConsoleViewModel consoleVM = new ConsoleViewModel();
-
-        consoleVM.setModel("model 1");
-        consoleVM.setManufacturer("manufacturer 1");
-        consoleVM.setMemoryAmount("lots of memory");
-        consoleVM.setProcessor("best processor");
-        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
-        consoleVM.setQuantity(10);
-
-        consoleVM = consoleService.saveConsole(consoleVM);
-
-        InvoiceViewModel invoiceVM = new InvoiceViewModel();
-
-        invoiceVM.setName("John");
-        invoiceVM.setStreet("John's street");
-        invoiceVM.setCity("John's city");
-        invoiceVM.setState("AZ");
-        invoiceVM.setZipCode("12345");
-        invoiceVM.setItemType("Consoles");
-        invoiceVM.setItemId(consoleVM.getConsoleId());
-        invoiceVM.setQuantity(2);
-
-        invoiceVM = invoiceService.saveInvoice(invoiceVM);
-
-        invoiceVM.setProcessingFee(new BigDecimal(15.00).setScale(2));
-        invoiceVM.setTotal(new BigDecimal(120.00).setScale(2));
-
-        invoiceVM.setStreet("John's new street");
-        invoiceVM.setZipCode("34567");
-
-        invoiceService.updateInvoice(invoiceVM);
-
-        InvoiceViewModel fromService  = invoiceService.findInvoice(invoiceVM.getInvoiceId());
-        assertEquals("John's new street", fromService.getStreet());
-        assertEquals("34567", fromService.getZipCode());
-
-    }
-
     @Test
     public void getItemDetails() {
-        Console console = new Console();
 
-        console.setModel("model 1");
-        console.setManufacturer("manufacturer 1");
-        console.setMemoryAmount("lots of memory");
-        console.setProcessor("best processor");
-        console.setPrice(new BigDecimal(100.00).setScale(2));
+        Console console = new Console();
+        console.setModel("Switch");
+        console.setManufacturer("Nintendo");
+        console.setMemoryAmount("4GB");
+        console.setProcessor("NVIDIA");
+        console.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP));
         console.setQuantity(10);
 
         console = consoleDao.addConsole(console);
 
         InvoiceViewModel invoiceVM = new InvoiceViewModel();
 
-        invoiceVM.setName("John");
-        invoiceVM.setStreet("John's street");
-        invoiceVM.setCity("John's city");
+        invoiceVM.setName("Terry DoByne");
+        invoiceVM.setStreet("2380 W US Hwy 89");
+        invoiceVM.setCity("Sedona");
         invoiceVM.setState("AZ");
-        invoiceVM.setZipCode("12345");
+        invoiceVM.setZipCode("86336");
         invoiceVM.setItemType("Consoles");
         invoiceVM.setItemId(console.getConsoleId());
         invoiceVM.setQuantity(2);
@@ -238,60 +176,58 @@ public class InvoiceServiceTest {
         invoiceVM = invoiceService.getItemDetails(invoiceVM);
 
         assertEquals(console.toString(), invoiceVM.getItem().toString());
-        assertEquals(new BigDecimal(100.00).setScale(2), invoiceVM.getUnitPrice());
+        assertEquals(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP), invoiceVM.getUnitPrice());
 
-        // checks if works for a different item type
+        // Checks if works for a different item type
 
-        TShirt tShirt = new TShirt();
-        tShirt.setSize("small");
-        tShirt.setColor("blue");
-        tShirt.setDescription("my blue shirt");
-        tShirt.setPrice(new BigDecimal(15.00).setScale(2));
-        tShirt.setQuantity(2);
+        Game game = new Game();
+        game.setTitle("The Legend of Zelda: Link's Awakening");
+        game.setEsrbRating("E");
+        game.setDescription("As Link, explore a reimagined Koholint Island and collect instruments to awaken the Wind Fish to find a way home.");
+        game.setPrice(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP));
+        game.setStudio("Nintendo");
+        game.setQuantity(10);
 
-        tShirt = tShirtDao.addTShirt(tShirt);
+        game = gameDao.addGame(game);
 
         InvoiceViewModel invoiceVMWithGame = new InvoiceViewModel();
         invoiceVMWithGame = new InvoiceViewModel();
-        invoiceVMWithGame.setName("Mary");
-        invoiceVMWithGame.setStreet("Mary's street");
-        invoiceVMWithGame.setCity("Mary's city");
-        invoiceVMWithGame.setState("TX");
-        invoiceVMWithGame.setZipCode("67890");
-        invoiceVMWithGame.setItemType("T-Shirts");
-        invoiceVMWithGame.setItemId(tShirt.gettShirtId());
+        invoiceVMWithGame.setName("Mari Garcia");
+        invoiceVMWithGame.setStreet("1000 Sturdivant Street");
+        invoiceVMWithGame.setCity("Cary");
+        invoiceVMWithGame.setState("NC");
+        invoiceVMWithGame.setZipCode("27511");
+        invoiceVMWithGame.setItemType("Games");
+        invoiceVMWithGame.setItemId(game.getGameId());
         invoiceVMWithGame.setQuantity(1);
 
         invoiceVMWithGame = invoiceService.getItemDetails(invoiceVMWithGame);
 
-        assertEquals(tShirt.toString(), invoiceVMWithGame.getItem().toString());
-        assertEquals(new BigDecimal(15.00).setScale(2), invoiceVMWithGame.getUnitPrice());
+        assertEquals(game.toString(), invoiceVMWithGame.getItem().toString());
+        assertEquals(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP), invoiceVMWithGame.getUnitPrice());
     }
 
     @Test
     public void calculateTotal() {
 
-        Console consoleVM = new Console();
+        Console console = new Console();
+        console.setModel("Switch");
+        console.setManufacturer("Nintendo");
+        console.setMemoryAmount("4GB");
+        console.setProcessor("NVIDIA");
+        console.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP));
+        console.setQuantity(10);
 
-        consoleVM.setModel("model 1");
-        consoleVM.setManufacturer("manufacturer 1");
-        consoleVM.setMemoryAmount("lots of memory");
-        consoleVM.setProcessor("best processor");
-        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
-        consoleVM.setQuantity(2);
-
-        // this will get turned into a mock
-        consoleVM = consoleDao.addConsole(consoleVM);
+        console = consoleDao.addConsole(console);
 
         InvoiceViewModel invoiceVM = new InvoiceViewModel();
-
-        invoiceVM.setName("John");
-        invoiceVM.setStreet("John's street");
-        invoiceVM.setCity("John's city");
+        invoiceVM.setName("Terry DoByne");
+        invoiceVM.setStreet("2380 W US Hwy 89");
+        invoiceVM.setCity("Sedona");
         invoiceVM.setState("AZ");
-        invoiceVM.setZipCode("12345");
+        invoiceVM.setZipCode("86336");
         invoiceVM.setItemType("Consoles");
-        invoiceVM.setItemId(consoleVM.getConsoleId());
+        invoiceVM.setItemId(console.getConsoleId());
         invoiceVM.setQuantity(2);
 
         invoiceVM = invoiceService.calculateTotal(invoiceVM);
@@ -299,9 +235,9 @@ public class InvoiceServiceTest {
         // tests quantity below 10
 
         //subtotal (unitPrice * quantity) (100 * 2)
-        assertEquals(new BigDecimal(200.00).setScale(2), invoiceVM.getSubtotal());
+        assertEquals(new BigDecimal(200.00).setScale(2, RoundingMode.HALF_UP), invoiceVM.getSubtotal());
         //tax (subtotal * taxRate AZ) (200 * 0.04 = 8)
-        assertEquals(new BigDecimal(8.00).setScale(2), invoiceVM.getTax());
+        assertEquals(new BigDecimal(8.00).setScale(2, RoundingMode.HALF_UP), invoiceVM.getTax());
         //processing fee for Consoles (0 additional fee)
         assertEquals(new BigDecimal(14.99).setScale(2, RoundingMode.HALF_UP), invoiceVM.getProcessingFee());
         //total (subtotal + tax + processing fee)
@@ -309,13 +245,13 @@ public class InvoiceServiceTest {
 
         InvoiceViewModel invoiceVMWithAddedFee = new InvoiceViewModel();
 
-        invoiceVMWithAddedFee.setName("John");
-        invoiceVMWithAddedFee.setStreet("John's street");
-        invoiceVMWithAddedFee.setCity("John's city");
+        invoiceVMWithAddedFee.setName("Terry DoByne");
+        invoiceVMWithAddedFee.setStreet("2380 W US Hwy 89");
+        invoiceVMWithAddedFee.setCity("Sedona");
         invoiceVMWithAddedFee.setState("AZ");
-        invoiceVMWithAddedFee.setZipCode("12345");
+        invoiceVMWithAddedFee.setZipCode("86336");
         invoiceVMWithAddedFee.setItemType("Consoles");
-        invoiceVMWithAddedFee.setItemId(consoleVM.getConsoleId());
+        invoiceVMWithAddedFee.setItemId(console.getConsoleId());
         invoiceVMWithAddedFee.setQuantity(12);
 
         invoiceVMWithAddedFee = invoiceService.calculateTotal(invoiceVMWithAddedFee);
@@ -323,9 +259,9 @@ public class InvoiceServiceTest {
         // tests quantity above 10
 
         //subtotal (unitPrice * quantity) (100 * 12)
-        assertEquals(new BigDecimal(1200.00).setScale(2), invoiceVMWithAddedFee.getSubtotal());
+        assertEquals(new BigDecimal(1200.00).setScale(2, RoundingMode.HALF_UP), invoiceVMWithAddedFee.getSubtotal());
         //tax (subtotal * taxRate AZ) (1200 * 0.04 = 8)
-        assertEquals(new BigDecimal(48.00).setScale(2), invoiceVMWithAddedFee.getTax());
+        assertEquals(new BigDecimal(48.00).setScale(2, RoundingMode.HALF_UP), invoiceVMWithAddedFee.getTax());
         //processing fee for Consoles (14.99 + 15.49 additional fee = )
         assertEquals(new BigDecimal(30.48).setScale(2, RoundingMode.HALF_UP), invoiceVMWithAddedFee.getProcessingFee().setScale(2, RoundingMode.HALF_UP));
         //total (subtotal + tax + processing fee)
@@ -333,6 +269,9 @@ public class InvoiceServiceTest {
 
     }
 
+    // FIND OUT IF THESE CAN BE TESTED NOW THAT WE ARE USING MOCKS *******************
+
+/*
     @Test
     public void amendQuantityInDB() {
 
@@ -342,7 +281,7 @@ public class InvoiceServiceTest {
         consoleVM.setManufacturer("manufacturer x");
         consoleVM.setMemoryAmount("x memory");
         consoleVM.setProcessor("x processor");
-        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP);
         consoleVM.setQuantity(10);
 
         consoleVM = consoleService.saveConsole(consoleVM);
@@ -361,64 +300,50 @@ public class InvoiceServiceTest {
         
     }
 
+*/
     /*
-        public void amendQuantityInDB(String itemType, int itemId, int quantity, String action) {
-        System.out.println(itemType + ", " + itemId + ", " + quantity + ", " + action);
-        Object item;
-        switch (itemType) {
-            case "Consoles":
-                Console cItem = consoleDao.getConsole(itemId);
-                if (action == "subtract") {
-                    if (quantity <= cItem.getQuantity()) {
-                        cItem.setQuantity(cItem.getQuantity() - quantity);
-                        consoleDao.updateConsole(cItem);
-                    } else {
-                        // throw error - we don't have that many items ??
-                    }
-                } else if (action == "add") {
-                    cItem.setQuantity(cItem.getQuantity() + quantity);
-                    consoleDao.updateConsole(cItem);
-                } else {
-                    // throw error - server error - invalid action programmatically ???
-                }
-                break;
-            case "Games":
-                Game gItem = gameDao.getGame(itemId);
-                if (action == "subtract") {
-                    if (quantity <= gItem.getQuantity()) {
-                        gItem.setQuantity(gItem.getQuantity() - quantity);
-                        gameDao.updateGame(gItem);
-                    } else {
-                        // throw error - we don't have that many items ??
-                    }
-                } else if (action == "add") {
-                    gItem.setQuantity(gItem.getQuantity() + quantity);
-                    gameDao.updateGame(gItem);
-                } else {
-                    // throw error - server error - invalid action programmatically ???
-                }
-                break;
-            case "T-Shirts":
-                TShirt tItem = tShirtDao.getTShirt(itemId);
-                if (action == "subtract") {
-                    if (quantity <= tItem.getQuantity()) {
-                        tItem.setQuantity(tItem.getQuantity() - quantity);
-                        tShirtDao.updateTShirt(tItem);
-                    } else {
-                        // throw error - we don't have that many items ??
-                    }
-                } else if (action == "add") {
-                    tItem.setQuantity(tItem.getQuantity() + quantity);
-                    tShirtDao.updateTShirt(tItem);
-                } else {
-                    // throw error - server error - invalid action programmatically ???
-                }
-                break;
-            default:
-                throw new IllegalArgumentException("You must select a valid item type.");
-        }
+    @Test
+    public void updateInvoice() {
+
+        ConsoleViewModel consoleVM = new ConsoleViewModel();
+
+        consoleVM.setModel("model 1");
+        consoleVM.setManufacturer("manufacturer 1");
+        consoleVM.setMemoryAmount("lots of memory");
+        consoleVM.setProcessor("best processor");
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP);
+        consoleVM.setQuantity(10);
+
+        consoleVM = consoleService.saveConsole(consoleVM);
+
+        InvoiceViewModel invoiceVM = new InvoiceViewModel();
+
+        invoiceVM.setName("John");
+        invoiceVM.setStreet("John's street");
+        invoiceVM.setCity("John's city");
+        invoiceVM.setState("AZ");
+        invoiceVM.setZipCode("12345");
+        invoiceVM.setItemType("Consoles");
+        invoiceVM.setItemId(consoleVM.getConsoleId());
+        invoiceVM.setQuantity(2);
+
+        invoiceVM = invoiceService.saveInvoice(invoiceVM);
+
+        invoiceVM.setProcessingFee(new BigDecimal(15.00).setScale(2, RoundingMode.HALF_UP);
+        invoiceVM.setTotal(new BigDecimal(120.00).setScale(2, RoundingMode.HALF_UP);
+
+        invoiceVM.setStreet("John's new street");
+        invoiceVM.setZipCode("34567");
+
+        invoiceService.updateInvoice(invoiceVM);
+
+        InvoiceViewModel fromService  = invoiceService.findInvoice(invoiceVM.getInvoiceId());
+        assertEquals("John's new street", fromService.getStreet());
+        assertEquals("34567", fromService.getZipCode());
+
     }
-     */
+*/
+    /*
 
     //public void removeInvoice(int id) {
     @Test
@@ -430,7 +355,7 @@ public class InvoiceServiceTest {
         consoleVM.setManufacturer("manufacturer 1");
         consoleVM.setMemoryAmount("lots of memory");
         consoleVM.setProcessor("best processor");
-        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
+        consoleVM.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP);
         consoleVM.setQuantity(10);
 
         consoleVM = consoleService.saveConsole(consoleVM);
@@ -458,6 +383,163 @@ public class InvoiceServiceTest {
 
         assertEquals(0, fromService.size());
 
+    }
+
+     */
+
+    // Helper methods
+
+    public void setUpInvoiceDaoMock() {
+
+        invoiceDao = mock(InvoiceDaoJdbcTemplateImpl.class);
+
+        Invoice invoice = new Invoice();
+        invoice.setName("Terry DoByne");
+        invoice.setStreet("2380 W US Hwy 89");
+        invoice.setCity("Sedona");
+        invoice.setState("AZ");
+        invoice.setZipCode("86336");
+        invoice.setItemType("Consoles");
+        invoice.setItemId(1);
+        invoice.setQuantity(2);
+        invoice.setUnitPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP));
+        invoice.setSubtotal(new BigDecimal(200.00).setScale(2, RoundingMode.HALF_UP));
+        invoice.setTax(new BigDecimal(8.00).setScale(2, RoundingMode.HALF_UP));
+        invoice.setProcessingFee(new BigDecimal(14.99).setScale(2, RoundingMode.HALF_UP));
+        invoice.setTotal(new BigDecimal(222.99).setScale(2, RoundingMode.HALF_UP));
+
+        Invoice invoice2 = new Invoice();
+        invoice2.setInvoiceId(1);
+        invoice2.setName("Terry DoByne");
+        invoice2.setStreet("2380 W US Hwy 89");
+        invoice2.setCity("Sedona");
+        invoice2.setState("AZ");
+        invoice2.setZipCode("86336");
+        invoice2.setItemType("Consoles");
+        invoice2.setItemId(1);
+        invoice2.setQuantity(2);
+        invoice2.setUnitPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP));
+        invoice2.setSubtotal(new BigDecimal(200.00).setScale(2, RoundingMode.HALF_UP));
+        invoice2.setTax(new BigDecimal(8.00).setScale(2, RoundingMode.HALF_UP));
+        invoice2.setProcessingFee(new BigDecimal(14.99).setScale(2, RoundingMode.HALF_UP));
+        invoice2.setTotal(new BigDecimal(222.99).setScale(2, RoundingMode.HALF_UP));
+
+
+        Invoice invoice3 = new Invoice();
+        invoice3.setName("Mari Garcia");
+        invoice3.setStreet("1000 Sturdivant Street");
+        invoice3.setCity("Cary");
+        invoice3.setState("NC");
+        invoice3.setZipCode("27511");
+        invoice3.setItemType("Games");
+        invoice3.setItemId(1);
+        invoice3.setQuantity(1);
+        invoice3.setUnitPrice(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP));
+        invoice3.setSubtotal(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP));
+        invoice3.setTax(new BigDecimal(3.00).setScale(2, RoundingMode.HALF_UP));
+        invoice3.setProcessingFee(new BigDecimal(1.49).setScale(2, RoundingMode.HALF_UP));
+        invoice3.setTotal(new BigDecimal(64.48).setScale(2, RoundingMode.HALF_UP));
+
+        Invoice invoice4 = new Invoice();
+        invoice4.setInvoiceId(2);
+        invoice4.setName("Mari Garcia");
+        invoice4.setStreet("1000 Sturdivant Street");
+        invoice4.setCity("Cary");
+        invoice4.setState("NC");
+        invoice4.setZipCode("27511");
+        invoice4.setItemType("Games");
+        invoice4.setItemId(1);
+        invoice4.setQuantity(1);
+        invoice4.setUnitPrice(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP));
+        invoice4.setSubtotal(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP));
+        invoice4.setTax(new BigDecimal(3.00).setScale(2, RoundingMode.HALF_UP));
+        invoice4.setProcessingFee(new BigDecimal(1.49).setScale(2, RoundingMode.HALF_UP));
+        invoice4.setTotal(new BigDecimal(64.48).setScale(2, RoundingMode.HALF_UP));
+
+        List<Invoice> invoicesList = new ArrayList<>();
+        invoicesList.add(invoice2);
+        invoicesList.add(invoice4);
+
+        doReturn(invoice2).when(invoiceDao).addInvoice(invoice);
+        doReturn(invoice4).when(invoiceDao).addInvoice(invoice3);
+
+       //when(invoiceDao.addInvoice(refEq(invoice, "unitPrice", "subtotal", "tax", "processingFee","total"))).thenReturn(invoice2);
+
+
+        //when(invoiceDao.addInvoice(refEq(invoice3, "unitPrice", "subtotal", "tax", "processingFee","total"))).thenReturn(invoice4);
+        doReturn(invoice2).when(invoiceDao).getInvoice(1);
+        doReturn(invoicesList).when(invoiceDao).getAllInvoices();
+
+    }
+
+    public void setUpConsoleDaoMock() {
+
+        consoleDao = mock(ConsoleDaoJdbcTemplateImpl.class);
+
+        Console console = new Console();
+        console.setModel("Switch");
+        console.setManufacturer("Nintendo");
+        console.setMemoryAmount("4GB");
+        console.setProcessor("NVIDIA");
+        console.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP));
+        console.setQuantity(10);
+
+        Console console2 = new Console();
+        console2.setConsoleId(1);
+        console2.setModel("Switch");
+        console2.setManufacturer("Nintendo");
+        console2.setMemoryAmount("4GB");
+        console2.setProcessor("NVIDIA");
+        console2.setPrice(new BigDecimal(100.00).setScale(2, RoundingMode.HALF_UP));
+        console2.setQuantity(10);
+
+        doReturn(console2).when(consoleDao).addConsole(console);
+        doReturn(console2).when(consoleDao).getConsole(1);
+
+    }
+
+    // Helper method
+
+    public void setUpGameDaoMock() {
+
+        gameDao = mock(GameDaoJdbcTemplateImpl.class);
+
+        Game game = new Game();
+        game.setTitle("The Legend of Zelda: Link's Awakening");
+        game.setEsrbRating("E");
+        game.setDescription("As Link, explore a reimagined Koholint Island and collect instruments to awaken the Wind Fish to find a way home.");
+        game.setPrice(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP));
+        game.setStudio("Nintendo");
+        game.setQuantity(10);
+
+        Game game2 = new Game();
+        game2.setGameId(1);
+        game2.setTitle("The Legend of Zelda: Link's Awakening");
+        game2.setEsrbRating("E");
+        game2.setDescription("As Link, explore a reimagined Koholint Island and collect instruments to awaken the Wind Fish to find a way home.");
+        game2.setPrice(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP));
+        game2.setStudio("Nintendo");
+        game2.setQuantity(10);
+
+        doReturn(game2).when(gameDao).addGame(game);
+        doReturn(game2).when(gameDao).getGame(1);
+
+    }
+
+    public void setUpProcessingFeeDaoMock() {
+
+        processingFeeDao = mock(ProcessingFeeDaoJdbcTemplateImpl.class);
+
+        doReturn(new BigDecimal(14.99).setScale(2, RoundingMode.HALF_UP)).when(processingFeeDao).getProcessingFee("Consoles");
+        doReturn(new BigDecimal(1.49).setScale(2, RoundingMode.HALF_UP)).when(processingFeeDao).getProcessingFee("Games");
+    }
+
+    public void setUpSalesTaxRateDaoMock() {
+
+        salesTaxRateDao = mock(SalesTaxRateDaoJdbcTemplateImpl.class);
+
+        doReturn(new BigDecimal(0.04).setScale(2, RoundingMode.HALF_UP)).when(salesTaxRateDao).getSalesTaxRate("AZ");
+        doReturn(new BigDecimal(0.05).setScale(2, RoundingMode.HALF_UP)).when(salesTaxRateDao).getSalesTaxRate("NC");
     }
 
 }
