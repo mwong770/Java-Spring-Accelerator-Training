@@ -16,13 +16,15 @@ public class TShirtInventoryController {
     @Autowired
     TShirtService tShirtService;
 
-    @RequestMapping(value="/tshirts", method = RequestMethod.POST)
+    // handles requests to add a tshirt
+    @RequestMapping(value = "/tshirts", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public TShirtViewModel createTShirt(@RequestBody @Valid TShirtViewModel tShirt) {
         return tShirtService.saveTShirt(tShirt);
     }
 
-    @RequestMapping(value="/tshirts/{id}", method = RequestMethod.GET)
+    // handles requests to retrieve a tshirt by id
+    @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public TShirtViewModel getTShirt(@PathVariable("id") int itemId) {
         TShirtViewModel item = tShirtService.findTShirtById(itemId);
@@ -31,13 +33,15 @@ public class TShirtInventoryController {
         return item;
     }
 
-    @RequestMapping(value="/tshirts/{id}", method = RequestMethod.DELETE)
+    // handles requests to delete a tshirt by id
+    @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteTShirt(@PathVariable("id") int itemId) {
         tShirtService.removeTShirt(itemId);
     }
 
-    @RequestMapping(value="/tshirts/{id}", method = RequestMethod.PUT)
+    // handles requests to update a tshirt with a matching id
+    @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateTShirt(@PathVariable("id") int itemId, @RequestBody @Valid TShirtViewModel itemViewModel) {
         if (itemViewModel.gettShirtId() == 0)
@@ -48,24 +52,26 @@ public class TShirtInventoryController {
         tShirtService.updateTShirt(itemViewModel);
     }
 
-    @RequestMapping(value="/tshirts", method = RequestMethod.GET)
+    // handles requests to retrieve a list of all tshirts
+    @RequestMapping(value = "/tshirts", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<TShirtViewModel> getAllTShirts() {
         return tShirtService.findAllTShirts();
     }
 
-    @RequestMapping(value="/tshirts/colors/{color}", method = RequestMethod.GET)
+    // handles requests to retrieve a list of tshirts with a matching color
+    @RequestMapping(value = "/tshirts/colors/{color}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<TShirtViewModel> findTShirtsByColor(@PathVariable String color) {
         return tShirtService.findTShirtsByColor(color);
     }
 
-    @RequestMapping(value="/tshirts/sizes/{size}", method = RequestMethod.GET)
+    // handles requests to retrieve a list of tshrts with a matching size
+    @RequestMapping(value = "/tshirts/sizes/{size}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<TShirtViewModel> findTShirtsBySize(@PathVariable String size) {
         return tShirtService.findTShirtsBySize(size);
     }
-
 
 }
 

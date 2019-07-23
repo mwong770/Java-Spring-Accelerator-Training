@@ -5,7 +5,7 @@ import com.company.mariawongu1capstone.model.Console;
 import java.util.Objects;
 
 /**
- * This view is for employees
+ * This view is used for crud and other queries directly about consoles.
  */
 public class ConsoleViewModel extends Console {
 

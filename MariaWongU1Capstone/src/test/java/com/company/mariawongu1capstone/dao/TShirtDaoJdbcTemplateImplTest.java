@@ -54,6 +54,7 @@ public class TShirtDaoJdbcTemplateImplTest {
         }
     }
 
+    // tests addTShirt(), getTShirt() and deleteTShirt()
     @Test
     public void addGetDeleteTShirt() {
         TShirt tShirt = new TShirt();
@@ -66,13 +67,14 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt = tShirtDao.addTShirt(tShirt);
 
         TShirt tShirt1 = tShirtDao.getTShirt(tShirt.gettShirtId());
-        assertEquals(tShirt1,tShirt);
+        assertEquals(tShirt1, tShirt);
 
         tShirtDao.deleteTShirt(tShirt.gettShirtId());
         tShirt1 = tShirtDao.getTShirt(tShirt.gettShirtId());
         assertNull(tShirt1);
     }
 
+    // tests updateTShirt()
     @Test
     public void updateTShirt() {
 
@@ -89,10 +91,11 @@ public class TShirtDaoJdbcTemplateImplTest {
         tShirt.setPrice(new BigDecimal(5.00).setScale(2));
         tShirtDao.updateTShirt(tShirt);
 
-        TShirt tShirt1  = tShirtDao.getTShirt(tShirt.gettShirtId());
-        assertEquals(tShirt1,tShirt);
+        TShirt tShirt1 = tShirtDao.getTShirt(tShirt.gettShirtId());
+        assertEquals(tShirt1, tShirt);
     }
 
+    // tests getAllTShirts()
     @Test
     public void getAllTShirts() {
         TShirt tShirt = new TShirt();
@@ -117,9 +120,9 @@ public class TShirtDaoJdbcTemplateImplTest {
         assertEquals(2, tList.size());
     }
 
+    // tests findTShirtsByColor()
     @Test
-    public void findTShirtsByColor()
-    {
+    public void findTShirtsByColor() {
         TShirt tShirt = new TShirt();
         tShirt.setSize("large");
         tShirt.setColor("black");
@@ -157,10 +160,10 @@ public class TShirtDaoJdbcTemplateImplTest {
         assertEquals(0, tList.size());
 
     }
-    
+
+    // tests findTShirtsBySize()
     @Test
-    public void findTShirtsBySize()
-    {
+    public void findTShirtsBySize() {
         TShirt tShirt = new TShirt();
         tShirt.setSize("large");
         tShirt.setColor("black");
@@ -198,6 +201,5 @@ public class TShirtDaoJdbcTemplateImplTest {
         assertEquals(0, tList.size());
 
     }
-
 
 }

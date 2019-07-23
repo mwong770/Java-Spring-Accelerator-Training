@@ -5,7 +5,7 @@ import com.company.mariawongu1capstone.model.TShirt;
 import java.util.Objects;
 
 /**
- * This view is for employees
+ * This view is used for crud and other queries directly about t-shirts.
  */
 public class TShirtViewModel extends TShirt {
 

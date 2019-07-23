@@ -22,8 +22,8 @@ public class Console {
     @Size(min = 1, max = 20, message = "The size of processor must be between {min} and {max} Characters.")
     private String processor;
 
-    @DecimalMin(value = "0.0", inclusive = true, message="The min value you can enter for price is {value}.")
-    @DecimalMax(value = "999.99", inclusive = true, message="The max value you can enter for price is {value}")
+    @DecimalMin(value = "0.0", inclusive = true, message = "The min value you can enter for price is {value}.")
+    @DecimalMax(value = "999.99", inclusive = true, message = "The max value you can enter for price is {value}")
     private BigDecimal price;
 
     @Min(value = 0, message = "You must select a quantity of at least {value}.")
@@ -111,6 +111,5 @@ public class Console {
     public int hashCode() {
         return Objects.hash(getConsoleId(), getModel(), getManufacturer(), getMemoryAmount(), getProcessor(), getPrice(), getQuantity());
     }
-
 
 }

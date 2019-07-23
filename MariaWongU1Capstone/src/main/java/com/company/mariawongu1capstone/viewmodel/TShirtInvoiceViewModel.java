@@ -3,7 +3,8 @@ package com.company.mariawongu1capstone.viewmodel;
 import java.util.Objects;
 
 /**
- * This view is for customers
+ * This view model is used to display info about the item
+ * purchased on an invoice when a user purchases a tshirt
  */
 public class TShirtInvoiceViewModel {
 
@@ -41,7 +42,7 @@ public class TShirtInvoiceViewModel {
         this.description = description;
     }
 
-    // overriding methods
+    // override methods
 
     @Override
     public boolean equals(Object o) {

@@ -5,7 +5,7 @@ import com.company.mariawongu1capstone.model.Game;
 import java.util.Objects;
 
 /**
- * This view is for employees
+ * This view is used for crud and other queries directly about games.
  */
 public class GameViewModel extends Game {
 

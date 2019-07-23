@@ -27,10 +27,11 @@ public class ProcessingFeeDaoJdbcTemplateImpl implements ProcessingFeeDao {
 
     // implement methods
 
+    // retrieves a processing fee needed to calculate invoice total
     @Override
     public BigDecimal getProcessingFee(String productType) {
         try {
-            ProcessingFee row =  jdbcTemplate.queryForObject(SELECT_PROCESSING_FEE_SQL, this::mapRowToProcessingFee, productType);
+            ProcessingFee row = jdbcTemplate.queryForObject(SELECT_PROCESSING_FEE_SQL, this::mapRowToProcessingFee, productType);
             return row.getFee();
 
         } catch (EmptyResultDataAccessException e) {
@@ -48,4 +49,5 @@ public class ProcessingFeeDaoJdbcTemplateImpl implements ProcessingFeeDao {
 
         return processingFee;
     }
+
 }

@@ -54,6 +54,7 @@ public class InvoiceDaoJdbcTemplateImplTest {
         }
     }
 
+    // tests addInvoice(), getInvoice() and deleteInvoice()
     @Test
     public void addGetDeleteInvoice() {
         Invoice invoice = new Invoice();
@@ -74,13 +75,14 @@ public class InvoiceDaoJdbcTemplateImplTest {
         invoice = invoiceDao.addInvoice(invoice);
 
         Invoice invoice1 = invoiceDao.getInvoice(invoice.getInvoiceId());
-        assertEquals(invoice1,invoice);
+        assertEquals(invoice1, invoice);
 
         invoiceDao.deleteInvoice(invoice.getInvoiceId());
         invoice1 = invoiceDao.getInvoice(invoice.getInvoiceId());
         assertNull(invoice1);
     }
 
+    // tests updateInvoice()
     @Test
     public void updateInvoice() {
 
@@ -106,10 +108,11 @@ public class InvoiceDaoJdbcTemplateImplTest {
         invoice.setTotal(new BigDecimal(130.00).setScale(2));
         invoiceDao.updateInvoice(invoice);
 
-        Invoice invoice1  = invoiceDao.getInvoice(invoice.getInvoiceId());
-        assertEquals(invoice,invoice1);
+        Invoice invoice1 = invoiceDao.getInvoice(invoice.getInvoiceId());
+        assertEquals(invoice, invoice1);
     }
 
+    // tests getAllInvoices()
     @Test
     public void getAllInvoices() {
         Invoice invoice = new Invoice();
@@ -149,6 +152,5 @@ public class InvoiceDaoJdbcTemplateImplTest {
         List<Invoice> iList = invoiceDao.getAllInvoices();
         assertEquals(2, iList.size());
     }
-
 
 }

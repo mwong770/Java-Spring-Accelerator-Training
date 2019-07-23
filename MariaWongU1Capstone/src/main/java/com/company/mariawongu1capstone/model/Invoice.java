@@ -37,7 +37,6 @@ public class Invoice {
     @Min(value = 1, message = "You must supply an item id value of at least {value}.")
     private int itemId;
 
-
     private BigDecimal unitPrice;
 
     @Min(value = 1, message = "You must select a quantity of at least {value}.")
@@ -208,6 +207,5 @@ public class Invoice {
     public int hashCode() {
         return Objects.hash(getInvoiceId(), getName(), getStreet(), getCity(), getState(), getZipCode(), getItemType(), getItemId(), getUnitPrice(), getQuantity(), getSubtotal(), getTax(), getProcessingFee(), getTotal());
     }
-
 
 }

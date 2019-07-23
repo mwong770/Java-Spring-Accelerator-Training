@@ -54,6 +54,7 @@ public class ConsoleDaoJdbcTemplateImplTest {
         }
     }
 
+    // tests addConsole(), getConsole() and deleteConsole()
     @Test
     public void addGetDeleteConsole() {
 
@@ -75,7 +76,7 @@ public class ConsoleDaoJdbcTemplateImplTest {
         assertNull(console1);
     }
 
-
+    // tests updateConsole()
     @Test
     public void updateConsole() {
 
@@ -94,10 +95,11 @@ public class ConsoleDaoJdbcTemplateImplTest {
 
         consoleDao.updateConsole(console);
 
-        Console console1  = consoleDao.getConsole(console.getConsoleId());
+        Console console1 = consoleDao.getConsole(console.getConsoleId());
         assertEquals(console, console1);
     }
 
+    // tests getAllConsoles()
     @Test
     public void getAllConsoles() {
 
@@ -125,9 +127,9 @@ public class ConsoleDaoJdbcTemplateImplTest {
         assertEquals(2, cList.size());
     }
 
+    // tests findConsolesByManufacturer
     @Test
-    public void findConsolesByManufacturer()
-    {
+    public void findConsolesByManufacturer() {
         Console console = new Console();
         console.setModel("model 1");
         console.setManufacturer("Manufacturer 1");
@@ -159,14 +161,15 @@ public class ConsoleDaoJdbcTemplateImplTest {
         consoleDao.addConsole(console);
 
         List<Console> cList = consoleDao.findConsolesByManufacturer("Manufacturer 1");
-        assertEquals(2,cList.size());
+        assertEquals(2, cList.size());
 
         cList = consoleDao.findConsolesByManufacturer("Manufacturer 2");
-        assertEquals(1,cList.size());
+        assertEquals(1, cList.size());
 
         cList = consoleDao.findConsolesByManufacturer("Unknown Manufacturer");
-        assertEquals(0,cList.size());
+        assertEquals(0, cList.size());
 
     }
 
 }
+

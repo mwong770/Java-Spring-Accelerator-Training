@@ -249,7 +249,7 @@ public class InvoiceService {
         if (originalInvoice == null)  {
             throw new IllegalArgumentException("The id provided does not exist.");
         }
-        //int originalQuantity = invoiceDao.getInvoice(invoiceViewModel.getInvoiceId()).getQuantity();
+
         int originalQuantity = originalInvoice.getQuantity();
 
         if (originalQuantity < invoiceViewModel.getQuantity()) {

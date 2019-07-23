@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
+public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -43,6 +43,7 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
 
     // implement methods
 
+    // adds a console to the database
     @Override
     @Transactional
     public Console addConsole(Console console) {
@@ -64,6 +65,7 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
         return console;
     }
 
+    // retrieves a console from the databased based on an id
     @Override
     public Console getConsole(int id) {
         try {
@@ -74,11 +76,13 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
         }
     }
 
+    // retrieves a list of all consoles
     @Override
     public List<Console> getAllConsoles() {
         return jdbcTemplate.query(SELECT_ALL_CONSOLE_SQL, this::mapRowToConsole);
     }
 
+    // updates a console with a matching id
     @Override
     @Transactional
     public void updateConsole(Console console) {
@@ -101,6 +105,7 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
         );
     }
 
+    // deletes a console with a matching id
     @Override
     @Transactional
     public void deleteConsole(int id) {
@@ -113,6 +118,7 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
         jdbcTemplate.update(DELETE_CONSOLE_SQL, id);
     }
 
+    // retrieves a list of consoles with a matching manufacturer
     @Override
     public List<Console> findConsolesByManufacturer(String manufacturer) {
         return jdbcTemplate.query(SELECT_CONSOLE_BY_MANUFACTURER_SQL, this::mapRowToConsole, manufacturer);
@@ -132,4 +138,5 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
 
         return console;
     }
+
 }

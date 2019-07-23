@@ -53,10 +53,8 @@ public class GameDaoJdbcTemplateImplTest {
 
     }
 
-    // USE ANOTHER @BEFORE TO PLACE REPEATED GAME CREATES FROM THE LAST THREE METHODS ****
 
-    // USER @AFTER TO CLEAR VARIABLES OUT ****
-
+    // tests addGame(), getGame() and deleteGame()
     @Test
     public void addGetDeleteGame() {
 
@@ -79,6 +77,7 @@ public class GameDaoJdbcTemplateImplTest {
         assertNull(game1);
     }
 
+    // tests updateGame()
     @Test
     public void updateGame() {
         Game game = new Game();
@@ -96,10 +95,11 @@ public class GameDaoJdbcTemplateImplTest {
         game.setQuantity(100);
         gameDao.updateGame(game);
 
-        Game game1  = gameDao.getGame(game.getGameId());
-        assertEquals(game1,game);
+        Game game1 = gameDao.getGame(game.getGameId());
+        assertEquals(game1, game);
     }
 
+    // tests getAllGames()
     @Test
     public void getAllGames() {
         Game game = new Game();
@@ -126,9 +126,9 @@ public class GameDaoJdbcTemplateImplTest {
         assertEquals(2, gList.size());
     }
 
+    // tests findGamesByStudio()
     @Test
-    public void findGamesByStudio()
-    {
+    public void findGamesByStudio() {
         Game game = new Game();
         game.setTitle("title 1");
         game.setEsrbRating("rating 1");
@@ -170,9 +170,9 @@ public class GameDaoJdbcTemplateImplTest {
 
     }
 
+    // tests findGamesByEsrbRating()
     @Test
-    public void findGamesByEsrbRating()
-    {
+    public void findGamesByEsrbRating() {
         Game game = new Game();
         game.setTitle("title 1");
         game.setEsrbRating("rating 1");
@@ -214,9 +214,9 @@ public class GameDaoJdbcTemplateImplTest {
 
     }
 
+    // tests findGamesByTitle()
     @Test
-    public void findGamesByTitle()
-    {
+    public void findGamesByTitle() {
         Game game = new Game();
         game.setTitle("title 1");
         game.setEsrbRating("rating 1");

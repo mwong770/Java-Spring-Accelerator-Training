@@ -4,6 +4,10 @@ import com.company.mariawongu1capstone.model.Invoice;
 
 import java.util.Objects;
 
+/**
+ * This view is used for crud and other queries directly about invoices.
+ * It includes information about the item purchased.
+ */
 public class InvoiceViewModel extends Invoice {
 
     private Object item;

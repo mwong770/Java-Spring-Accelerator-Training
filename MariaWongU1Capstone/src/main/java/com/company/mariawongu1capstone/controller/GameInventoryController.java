@@ -16,13 +16,15 @@ public class GameInventoryController {
     @Autowired
     GameService gameService;
 
-    @RequestMapping(value="/games", method = RequestMethod.POST)
+    // handles requests to add a game
+    @RequestMapping(value = "/games", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public GameViewModel createGame(@RequestBody @Valid GameViewModel game) {
         return gameService.saveGame(game);
     }
 
-    @RequestMapping(value="/games/{id}", method = RequestMethod.GET)
+    // handles requests to retrieve a game by id
+    @RequestMapping(value = "/games/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public GameViewModel getGame(@PathVariable("id") int itemId) {
         GameViewModel item = gameService.findGameById(itemId);
@@ -31,13 +33,15 @@ public class GameInventoryController {
         return item;
     }
 
-    @RequestMapping(value="/games/{id}", method = RequestMethod.DELETE)
+    // handles requests to delete a game by id
+    @RequestMapping(value = "/games/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteGame(@PathVariable("id") int itemId) {
         gameService.removeGame(itemId);
     }
 
-    @RequestMapping(value="/games/{id}", method = RequestMethod.PUT)
+    // handles requests to update a game with a matching id
+    @RequestMapping(value = "/games/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateGame(@PathVariable("id") int itemId, @RequestBody @Valid GameViewModel itemViewModel) {
         if (itemViewModel.getGameId() == 0)
@@ -48,25 +52,29 @@ public class GameInventoryController {
         gameService.updateGame(itemViewModel);
     }
 
-    @RequestMapping(value="/games", method = RequestMethod.GET)
+    // handles requests to retrieve a list of all games
+    @RequestMapping(value = "/games", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<GameViewModel> getAllGames() {
         return gameService.findAllGames();
     }
 
-    @RequestMapping(value="/games/studios/{studio}", method = RequestMethod.GET)
+    // handles requests to retrieve a list of games with a matching studio
+    @RequestMapping(value = "/games/studios/{studio}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<GameViewModel> findGamesByStudio(@PathVariable String studio) {
         return gameService.findGamesByStudio(studio);
     }
 
-    @RequestMapping(value="/games/ratings/{esrbRating}", method = RequestMethod.GET)
+    // handles requests to retrieve a list of games with a matching rating
+    @RequestMapping(value = "/games/ratings/{esrbRating}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<GameViewModel> findGamesByEsrbRating(@PathVariable String esrbRating) {
         return gameService.findGamesByEsrbRating(esrbRating);
     }
 
-    @RequestMapping(value="/games/titles/{title}", method = RequestMethod.GET)
+    // handles requests to retrieve a list of games with a matching title
+    @RequestMapping(value = "/games/titles/{title}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<GameViewModel> findGamesByTitle(@PathVariable String title) {
         return gameService.findGamesByTitle(title);

@@ -53,6 +53,7 @@ public class ProcessingFeeDaoJdbcTemplateImplTest {
         }
     }
 
+    // tests getProcessingFee()
     @Test
     public void getProcessingFee() {
 

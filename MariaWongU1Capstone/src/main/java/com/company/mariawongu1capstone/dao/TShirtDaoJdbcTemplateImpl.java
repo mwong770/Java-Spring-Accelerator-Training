@@ -46,6 +46,7 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
 
     // implement methods
 
+    // adds a tshirt to the database
     @Override
     @Transactional
     public TShirt addTShirt(TShirt tShirt) {
@@ -64,6 +65,7 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
         return tShirt;
     }
 
+    // retrieves a tshirt with a matching id
     @Override
     public TShirt getTShirt(int id) {
         try {
@@ -74,11 +76,13 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
         }
     }
 
+    // retrieves a list of all tshirts
     @Override
     public List<TShirt> getAllTShirts() {
         return jdbcTemplate.query(SELECT_ALL_TSHIRT_SQL, this::mapRowToTShirt);
     }
 
+    // updates a tshirt with a matching id
     @Override
     @Transactional
     public void updateTShirt(TShirt tShirt) {
@@ -99,6 +103,7 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
         );
     }
 
+    // deletes a tshirt with a matching id
     @Override
     @Transactional
     public void deleteTShirt(int id) {
@@ -110,11 +115,13 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
         jdbcTemplate.update(DELETE_TSHIRT_SQL, id);
     }
 
+    // retrieves a list of tshirts with a matching color
     @Override
     public List<TShirt> findTShirtsByColor(String color) {
         return jdbcTemplate.query(SELECT_TSHIRT_BY_COLOR_SQL, this::mapRowToTShirt, color);
     }
 
+    // retrieves a list of tshirts with a matching size
     @Override
     public List<TShirt> findTShirtsBySize(String size) {
         return jdbcTemplate.query(SELECT_TSHIRT_BY_SIZE_SQL, this::mapRowToTShirt, size);

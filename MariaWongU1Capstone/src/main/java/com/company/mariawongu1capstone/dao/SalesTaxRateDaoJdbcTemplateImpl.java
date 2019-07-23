@@ -27,10 +27,11 @@ public class SalesTaxRateDaoJdbcTemplateImpl implements SalesTaxRateDao {
 
     // implement methods
 
+    // retrieves a sales tax rate needed to calculate invoice total
     @Override
     public BigDecimal getSalesTaxRate(String state) {
         try {
-            SalesTaxRate row =  jdbcTemplate.queryForObject(SELECT_STATE_TAX_RATE_SQL, this::mapRowToSalesTaxRate, state);
+            SalesTaxRate row = jdbcTemplate.queryForObject(SELECT_STATE_TAX_RATE_SQL, this::mapRowToSalesTaxRate, state);
             return row.getRate();
         } catch (EmptyResultDataAccessException e) {
             // if there is no match for this album id, return null
@@ -47,4 +48,5 @@ public class SalesTaxRateDaoJdbcTemplateImpl implements SalesTaxRateDao {
 
         return salesTaxRate;
     }
+
 }

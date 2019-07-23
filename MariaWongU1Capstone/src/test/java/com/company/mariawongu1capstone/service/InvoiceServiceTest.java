@@ -48,6 +48,7 @@ public class InvoiceServiceTest {
 
     }
 
+    // tests saveInvoice and findInvoice()
     @Test
     public void saveFindInvoice() {
 
@@ -76,12 +77,13 @@ public class InvoiceServiceTest {
         // save invoice view model
         invoiceVM = invoiceService.saveInvoice(invoiceVM);
 
-        InvoiceViewModel fromService  = invoiceService.findInvoice(invoiceVM.getInvoiceId());
+        InvoiceViewModel fromService = invoiceService.findInvoice(invoiceVM.getInvoiceId());
 
         assertEquals(invoiceVM, fromService);
 
     }
 
+    // tests findAllInvoices()
     @Test
     public void findAllInvoices() {
 
@@ -139,6 +141,7 @@ public class InvoiceServiceTest {
 
     }
 
+    // tests getItemDetails()
     @Test
     public void getItemDetails() {
 
@@ -213,6 +216,7 @@ public class InvoiceServiceTest {
         assertEquals(new BigDecimal(59.99).setScale(2, RoundingMode.HALF_UP), invoiceVMWithGame.getUnitPrice());
     }
 
+    // tests calculateTotal()
     @Test
     public void calculateTotal() {
 
@@ -289,14 +293,14 @@ public class InvoiceServiceTest {
 
     }
 
-    // Helper methods
+    // Create mocks
 
     public void setUpInvoiceDaoMock() {
 
         invoiceDao = mock(InvoiceDaoJdbcTemplateImpl.class);
 
-        // adds calculations to these mock objects because
-        // InvoiceService.saveInvoice() does calculations before calling invoiceDao.addInvoice()
+        // adds calculations to these mock objects because InvoiceService.saveInvoice()
+        // does calculations before calling invoiceDao.addInvoice()
         Invoice invoice = new Invoice();
         invoice.setName("Terry DoByne");
         invoice.setStreet("2380 W US Hwy 89");
@@ -396,8 +400,6 @@ public class InvoiceServiceTest {
         doReturn(console2).when(consoleDao).getConsole(1);
 
     }
-
-    // Helper method
 
     public void setUpGameDaoMock() {
 

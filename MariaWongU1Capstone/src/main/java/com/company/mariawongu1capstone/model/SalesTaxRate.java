@@ -10,7 +10,6 @@ public class SalesTaxRate {
 
     // getters and setters
 
-
     public String getState() {
         return state;
     }
@@ -46,6 +45,5 @@ public class SalesTaxRate {
     public int hashCode() {
         return Objects.hash(getState(), getRate());
     }
-
 
 }

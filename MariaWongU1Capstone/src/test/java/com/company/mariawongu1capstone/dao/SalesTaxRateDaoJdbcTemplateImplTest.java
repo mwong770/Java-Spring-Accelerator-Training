@@ -56,6 +56,7 @@ public class SalesTaxRateDaoJdbcTemplateImplTest {
         }
     }
 
+    // tests getSalesTaxRate()
     @Test
     public void getSalesTaxRate() {
 
@@ -65,4 +66,5 @@ public class SalesTaxRateDaoJdbcTemplateImplTest {
         rate = salesTaxRateDao.getSalesTaxRate("AL");
         assertEquals(new BigDecimal(0.05).setScale(2, RoundingMode.HALF_UP), rate);
     }
+
 }

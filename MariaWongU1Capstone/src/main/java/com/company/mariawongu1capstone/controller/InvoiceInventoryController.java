@@ -15,13 +15,15 @@ public class InvoiceInventoryController {
     @Autowired
     InvoiceService invoiceService;
 
-    @RequestMapping(value="/invoices", method = RequestMethod.POST)
+    // handles requests to add an invoice
+    @RequestMapping(value = "/invoices", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public InvoiceViewModel createInvoice(@RequestBody @Valid InvoiceViewModel invoice) {
         return invoiceService.saveInvoice(invoice);
     }
 
-    @RequestMapping(value="/invoices/{id}", method = RequestMethod.GET)
+    // handles requests to retrieve an invoice by id
+    @RequestMapping(value = "/invoices/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public InvoiceViewModel getInvoice(@PathVariable("id") int itemId) {
         InvoiceViewModel item = invoiceService.findInvoice(itemId);
@@ -30,7 +32,8 @@ public class InvoiceInventoryController {
         return item;
     }
 
-    @RequestMapping(value="/invoices/{id}", method = RequestMethod.PUT)
+    // handles requests to update an invoice with a matching id
+    @RequestMapping(value = "/invoices/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateInvoice(@PathVariable("id") int itemId, @RequestBody @Valid InvoiceViewModel itemViewModel) {
         if (itemViewModel.getInvoiceId() == 0)

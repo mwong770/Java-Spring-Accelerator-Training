@@ -20,8 +20,8 @@ public class TShirt {
     @NotBlank(message = "Please supply a value for description.")
     private String description;
 
-    @DecimalMin(value = "0.0", inclusive = true, message="The min value you can enter for price is {value}.")
-    @DecimalMax(value = "999.99", inclusive = true, message="The max value you can enter for price is {value}")
+    @DecimalMin(value = "0.0", inclusive = true, message = "The min value you can enter for price is {value}.")
+    @DecimalMax(value = "999.99", inclusive = true, message = "The max value you can enter for price is {value}")
     private BigDecimal price;
 
     @Min(value = 0, message = "You must select a quantity of at least {value}.")

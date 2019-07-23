@@ -37,9 +37,9 @@ public class TShirtServiceTest {
         tShirtService = new TShirtService(tShirtDao);
     }
 
+    // tests saveTShirt() and findTShirtById()
     @Test
-    public void saveFindTShirt()
-    {
+    public void saveFindTShirt() {
         TShirtViewModel tShirtVM = new TShirtViewModel();
         tShirtVM.setSize("small");
         tShirtVM.setColor("blue");
@@ -49,11 +49,12 @@ public class TShirtServiceTest {
 
         tShirtVM = tShirtService.saveTShirt(tShirtVM);
 
-        TShirtViewModel fromService  = tShirtService.findTShirtById(tShirtVM.gettShirtId());
+        TShirtViewModel fromService = tShirtService.findTShirtById(tShirtVM.gettShirtId());
 
         assertEquals(tShirtVM, fromService);
     }
 
+    // tests findAllTShirts()
     @Test
     public void findAllTShirts() {
 
@@ -81,6 +82,7 @@ public class TShirtServiceTest {
 
     }
 
+    // tests findTShirtsByColor()
     @Test
     public void findTShirtsByColor() {
 
@@ -112,18 +114,19 @@ public class TShirtServiceTest {
         tShirtService.saveTShirt(tShirtVM);
 
         List<TShirtViewModel> tList = tShirtService.findTShirtsByColor("black");
-        assertEquals(2,tList.size());
+        assertEquals(2, tList.size());
         assertEquals("black", tList.get(0).getColor());
 
         tList = tShirtService.findTShirtsByColor("blue");
-        assertEquals(1,tList.size());
+        assertEquals(1, tList.size());
         assertEquals("blue", tList.get(0).getColor());
 
         tList = tShirtService.findTShirtsByColor("red");
-        assertEquals(0,tList.size());
+        assertEquals(0, tList.size());
 
     }
-    
+
+    // tests findTShirtsBySize()
     @Test
     public void findTShirtsBySize() {
 
@@ -155,19 +158,19 @@ public class TShirtServiceTest {
         tShirtService.saveTShirt(tShirtVM);
 
         List<TShirtViewModel> tList = tShirtService.findTShirtsBySize("small");
-        assertEquals(2,tList.size());
+        assertEquals(2, tList.size());
         assertEquals("small", tList.get(0).getSize());
 
         tList = tShirtService.findTShirtsBySize("medium");
-        assertEquals(1,tList.size());
+        assertEquals(1, tList.size());
         assertEquals("medium", tList.get(0).getSize());
 
         tList = tShirtService.findTShirtsBySize("large");
-        assertEquals(0,tList.size());
+        assertEquals(0, tList.size());
 
     }
 
-    // Helper method
+    // Create mocks
 
     public void setUpTShirtDaoMock() {
 

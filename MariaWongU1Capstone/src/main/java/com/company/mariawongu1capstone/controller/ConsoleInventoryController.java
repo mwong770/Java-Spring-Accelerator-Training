@@ -16,12 +16,14 @@ public class ConsoleInventoryController {
     @Autowired
     ConsoleService consoleService;
 
+    // handles requests to add a console
     @RequestMapping(value="/consoles", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public ConsoleViewModel createConsole(@RequestBody @Valid ConsoleViewModel console) {
             return consoleService.saveConsole(console);
     }
 
+    // handles requests to retrieve a console by id
     @RequestMapping(value="/consoles/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public ConsoleViewModel getConsole(@PathVariable("id") int itemId) {
@@ -31,12 +33,14 @@ public class ConsoleInventoryController {
         return item;
     }
 
+    // handles requests to delete a console by id
     @RequestMapping(value="/consoles/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteConsole(@PathVariable("id") int itemId) {
         consoleService.removeConsole(itemId);
     }
 
+    // handles requests to update a console with a matching id
     @RequestMapping(value="/consoles/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateConsole(@PathVariable("id") int itemId, @RequestBody @Valid ConsoleViewModel itemViewModel) {
@@ -48,12 +52,15 @@ public class ConsoleInventoryController {
         consoleService.updateConsole(itemViewModel);
     }
 
+    // handles requests to retrieve a list of all consoles
     @RequestMapping(value="/consoles", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<ConsoleViewModel> getAllConsoles() {
         return consoleService.findAllConsoles();
     }
 
+
+    // handles requests to retrieve a list of consoles with a matching manufacturer
     @RequestMapping(value="/consoles/manufacturers/{manufacturer}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public List<ConsoleViewModel> findConsolesByManufacturer(@PathVariable String manufacturer) {

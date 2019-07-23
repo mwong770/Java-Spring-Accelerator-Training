@@ -33,6 +33,7 @@ public class GameServiceTest {
 
     }
 
+    // tests saveGame() and findGameById()
     @Test
     public void saveFindGame() {
 
@@ -46,12 +47,13 @@ public class GameServiceTest {
 
         gameVM = gameService.saveGame(gameVM);
 
-        GameViewModel fromService  = gameService.findGameById(gameVM.getGameId());
+        GameViewModel fromService = gameService.findGameById(gameVM.getGameId());
 
         assertEquals(gameVM, fromService);
 
     }
 
+    // tests findAllGames()
     @Test
     public void findAllGames() {
 
@@ -81,6 +83,7 @@ public class GameServiceTest {
 
     }
 
+    // tests findGamesByStudio()
     @Test
     public void findGamesByStudio() {
         GameViewModel gameVM = new GameViewModel();
@@ -113,18 +116,19 @@ public class GameServiceTest {
 
         gameService.saveGame(gameVM);
         List<GameViewModel> gList = gameService.findGamesByStudio("Nintendo");
-        assertEquals(2,gList.size());
+        assertEquals(2, gList.size());
         assertEquals("Nintendo", gList.get(0).getStudio());
 
         gList = gameService.findGamesByStudio("XBox One");
-        assertEquals(1,gList.size());
+        assertEquals(1, gList.size());
         assertEquals("XBox One", gList.get(0).getStudio());
 
         gList = gameService.findGamesByStudio("Sega");
-        assertEquals(0,gList.size());
+        assertEquals(0, gList.size());
 
     }
 
+    // tests findGamesByEsrbRating()
     @Test
     public void findGamesByEsrbRating() {
         GameViewModel gameVM = new GameViewModel();
@@ -158,18 +162,19 @@ public class GameServiceTest {
         gameService.saveGame(gameVM);
 
         List<GameViewModel> gList = gameService.findGamesByEsrbRating("E");
-        assertEquals(2,gList.size());
+        assertEquals(2, gList.size());
         assertEquals("E", gList.get(0).getEsrbRating());
 
         gList = gameService.findGamesByEsrbRating("M");
-        assertEquals(1,gList.size());
+        assertEquals(1, gList.size());
         assertEquals("M", gList.get(0).getEsrbRating());
 
         gList = gameService.findGamesByEsrbRating("T");
-        assertEquals(0,gList.size());
+        assertEquals(0, gList.size());
 
     }
 
+    // tests findGamesByTitle()
     @Test
     public void findGamesByTitle() {
 
@@ -192,7 +197,7 @@ public class GameServiceTest {
 
     }
 
-    // Helper method
+    // Create mocks
 
     public void setUpGameDaoMock() {
 

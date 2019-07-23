@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class GameDaoJdbcTemplateImpl implements GameDao{
+public class GameDaoJdbcTemplateImpl implements GameDao {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -49,6 +49,7 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
 
     //implement methods
 
+    // adds a game to the database
     @Override
     @Transactional
     public Game addGame(Game game) {
@@ -60,7 +61,7 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
                 game.getPrice(),
                 game.getStudio(),
                 game.getQuantity()
-                );
+        );
 
         int id = jdbcTemplate.queryForObject("select LAST_INSERT_ID()", Integer.class);
 
@@ -69,6 +70,7 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
         return game;
     }
 
+    // retrieves a game with a matching id
     @Override
     public Game getGame(int id) {
         try {
@@ -79,11 +81,13 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
         }
     }
 
+    // retrieves a list of all games
     @Override
     public List<Game> getAllGames() {
         return jdbcTemplate.query(SELECT_ALL_GAME_SQL, this::mapRowToGame);
     }
 
+    // updates a game with a matching id
     @Override
     @Transactional
     public void updateGame(Game game) {
@@ -105,6 +109,7 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
         );
     }
 
+    // deletes a game with a matching id
     @Override
     @Transactional
     public void deleteGame(int id) {
@@ -116,16 +121,19 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
         jdbcTemplate.update(DELETE_GAME_SQL, id);
     }
 
+    // retrieves a list of games with a matching studio
     @Override
     public List<Game> findGamesByStudio(String studio) {
         return jdbcTemplate.query(SELECT_GAME_BY_STUDIO_SQL, this::mapRowToGame, studio);
     }
 
+    // retrieves a list of games with a matching rating
     @Override
     public List<Game> findGamesByEsrbRating(String esrbRating) {
         return jdbcTemplate.query(SELECT_GAME_BY_ESRBRATING_SQL, this::mapRowToGame, esrbRating);
     }
 
+    // retrieves a list of games with a matching title
     @Override
     public List<Game> findGamesByTitle(String title) {
         return jdbcTemplate.query(SELECT_GAME_BY_TITLE_SQL, this::mapRowToGame, title);
@@ -135,7 +143,7 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
 
     private Game mapRowToGame(ResultSet rs, int rowNum) throws SQLException {
         Game game = new Game();
-        game.setGameId (rs.getInt("game_id"));
+        game.setGameId(rs.getInt("game_id"));
         game.setTitle(rs.getString("title"));
         game.setEsrbRating(rs.getString("esrb_rating"));
         game.setDescription(rs.getString("description"));

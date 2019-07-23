@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 
 public interface ProcessingFeeDao {
 
+    // needed to calculate invoice total
     BigDecimal getProcessingFee(String productType);
 
 }

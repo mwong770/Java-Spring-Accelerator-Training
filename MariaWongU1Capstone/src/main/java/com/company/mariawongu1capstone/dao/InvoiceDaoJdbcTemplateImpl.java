@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class InvoiceDaoJdbcTemplateImpl implements InvoiceDao{
+public class InvoiceDaoJdbcTemplateImpl implements InvoiceDao {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -44,6 +44,7 @@ public class InvoiceDaoJdbcTemplateImpl implements InvoiceDao{
 
     //implement methods
 
+    // adds an invoice to the database
     @Override
     @Transactional
     public Invoice addInvoice(Invoice invoice) {
@@ -71,6 +72,7 @@ public class InvoiceDaoJdbcTemplateImpl implements InvoiceDao{
         return invoice;
     }
 
+    // retrieves an invoice with a matching id
     @Override
     public Invoice getInvoice(int id) {
         try {
@@ -81,11 +83,15 @@ public class InvoiceDaoJdbcTemplateImpl implements InvoiceDao{
         }
     }
 
+    // retrieves a list of all invoices
+    // needed to retrieve all invoices during testing setup
     @Override
     public List<Invoice> getAllInvoices() {
         return jdbcTemplate.query(SELECT_ALL_INVOICE_SQL, this::mapRowToInvoice);
     }
 
+    // updates an invoice with a matching id
+    // needed to amend invoice in case of poor user input or customer requests a change in order
     @Override
     public void updateInvoice(Invoice invoice) {
         int largestId = jdbcTemplate.queryForObject("SELECT MAX(invoice_id) FROM invoice", Integer.class);
@@ -113,6 +119,8 @@ public class InvoiceDaoJdbcTemplateImpl implements InvoiceDao{
 
     }
 
+    // deletes an invoice with a matching id
+    // needed to delete invoices during testing setup
     @Override
     public void deleteInvoice(int id) {
         int largestId = jdbcTemplate.queryForObject("SELECT MAX(invoice_id) FROM invoice", Integer.class);

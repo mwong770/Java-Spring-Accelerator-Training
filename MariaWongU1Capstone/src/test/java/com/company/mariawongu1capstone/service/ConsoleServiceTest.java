@@ -31,6 +31,7 @@ public class ConsoleServiceTest {
 
     }
 
+    // tests saveConsole() and findConsoleById()
     @Test
     public void saveFindConsole() {
 
@@ -45,11 +46,12 @@ public class ConsoleServiceTest {
 
         consoleVM = consoleService.saveConsole(consoleVM);
 
-        ConsoleViewModel fromService  = consoleService.findConsoleById(consoleVM.getConsoleId());
+        ConsoleViewModel fromService = consoleService.findConsoleById(consoleVM.getConsoleId());
         assertEquals(consoleVM, fromService);
 
     }
 
+    // tests findAllConsoles()
     @Test
     public void findAllConsoles() {
 
@@ -81,6 +83,7 @@ public class ConsoleServiceTest {
 
     }
 
+    // tests findConsolesByManufacturer()
     @Test
     public void findConsolesByManufacturer() {
 
@@ -115,19 +118,19 @@ public class ConsoleServiceTest {
         consoleService.saveConsole(consoleVM);
 
         List<ConsoleViewModel> cList = consoleService.findConsolesByManufacturer("Nintendo");
-        assertEquals(2,cList.size());
+        assertEquals(2, cList.size());
         assertEquals("Nintendo", cList.get(0).getManufacturer());
 
         cList = consoleService.findConsolesByManufacturer("Microsoft");
-        assertEquals(1,cList.size());
+        assertEquals(1, cList.size());
         assertEquals("Microsoft", cList.get(0).getManufacturer());
 
         cList = consoleService.findConsolesByManufacturer("Sony");
-        assertEquals(0,cList.size());
+        assertEquals(0, cList.size());
 
     }
 
-    // Helper method
+    // Create mocks
 
     public void setUpConsoleDaoMock() {
 
