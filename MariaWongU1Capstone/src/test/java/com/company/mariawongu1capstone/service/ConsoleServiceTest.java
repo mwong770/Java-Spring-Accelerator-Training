@@ -81,58 +81,6 @@ public class ConsoleServiceTest {
 
     }
 
-    // FIND OUT IF THESE CAN BE TESTED NOW THAT WE ARE USING MOCKS *******************
-
-//    @Test
-//    public void updateConsole() {
-//
-//        ConsoleViewModel consoleVM = new ConsoleViewModel();
-//
-//        consoleVM.setModel("Switch");
-//        consoleVM.setManufacturer("Nintendo");
-//        consoleVM.setMemoryAmount("4GB");
-//        consoleVM.setProcessor("NVIDIA");
-//        consoleVM.setPrice(new BigDecimal(100.00).setScale(2));
-//        consoleVM.setQuantity(10);
-//
-//        consoleVM = consoleService.saveConsole(consoleVM);
-//
-//        consoleVM.setPrice(new BigDecimal(150.00).setScale(2));
-//        consoleVM.setQuantity(30);
-//
-//        consoleService.updateConsole(consoleVM);
-//
-//        ConsoleViewModel fromService  = consoleService.findConsoleById(consoleVM.getConsoleId());
-//        assertEquals(new BigDecimal(150.00).setScale(2), fromService.getPrice());
-//        assertEquals(30, fromService.getQuantity());
-//
-//    }
-
-//    @Test
-//    public void removeConsole() {
-//
-//        ConsoleViewModel consoleVM = new ConsoleViewModel();
-//        consoleVM.setModel("XBox One X");
-//        consoleVM.setManufacturer("Microsoft");
-//        consoleVM.setMemoryAmount("1 TB");
-//        consoleVM.setProcessor("8 Core AMD");
-//        consoleVM.setPrice(new BigDecimal(362.00).setScale(2));
-//        consoleVM.setQuantity(100);
-//
-//        consoleService.saveConsole(consoleVM);
-//
-//        List<ConsoleViewModel> fromService = consoleService.findAllConsoles();
-//
-//        assertEquals(1, fromService.size());
-//
-//        consoleService.removeConsole(fromService.get(0).getConsoleId());
-//
-//        fromService = consoleService.findAllConsoles();
-//
-//        assertEquals(0, fromService.size());
-//
-//    }
-
     @Test
     public void findConsolesByManufacturer() {
 

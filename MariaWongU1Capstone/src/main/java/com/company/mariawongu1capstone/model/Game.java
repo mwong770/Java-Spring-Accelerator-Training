@@ -1,16 +1,34 @@
 package com.company.mariawongu1capstone.model;
 
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Game {
 
     private int gameId;
+
+    @Size(min = 1, max = 50, message = "The size of title must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for title.")
     private String title;
+
+    @Size(min = 1, max = 50, message = "The size of ESRB rating must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for ESRB rating.")
     private String esrbRating;
+
+    @Size(min = 1, max = 255, message = "The size of description must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for description.")
     private String description;
+
+    @DecimalMin(value = "0.0", inclusive = true, message="The min value you can enter for price is {value}.")
+    @DecimalMax(value = "999.99", inclusive = true, message="The max value you can enter for price is {value}")
     private BigDecimal price;
+
+    @Size(min = 1, max = 50, message = "The size of studio must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for studio.")
     private String studio;
+
+    @Min(value = 0, message = "You must select a quantity of at least {value}.")
     private int quantity;
 
     // setters and getters
@@ -48,6 +66,10 @@ public class Game {
     }
 
     public BigDecimal getPrice() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (price == null) {
+            return new BigDecimal(0);
+        }
         return price;
     }
 
@@ -91,5 +113,6 @@ public class Game {
     public int hashCode() {
         return Objects.hash(getGameId(), getTitle(), getEsrbRating(), getDescription(), getPrice(), getStudio(), getQuantity());
     }
+
 
 }

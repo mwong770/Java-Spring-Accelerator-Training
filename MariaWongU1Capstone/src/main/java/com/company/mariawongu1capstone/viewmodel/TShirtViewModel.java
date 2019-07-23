@@ -2,68 +2,12 @@ package com.company.mariawongu1capstone.viewmodel;
 
 import com.company.mariawongu1capstone.model.TShirt;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
-// EXTEND BUT KEEP EQUALS
-public class TShirtViewModel {
-
-    private int tShirtId;
-    private String size;
-    private String color;
-    private String description;
-    private BigDecimal price;
-    private int quantity;
-
-    // getters and setters
-
-    public int gettShirtId() {
-        return tShirtId;
-    }
-
-    public void settShirtId(int tShirtId) {
-        this.tShirtId = tShirtId;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+/**
+ * This view is for employees
+ */
+public class TShirtViewModel extends TShirt {
 
     //override methods
 

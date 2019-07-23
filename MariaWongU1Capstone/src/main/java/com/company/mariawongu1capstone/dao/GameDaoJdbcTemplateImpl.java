@@ -87,6 +87,12 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
     @Override
     @Transactional
     public void updateGame(Game game) {
+
+        int largestId = jdbcTemplate.queryForObject("SELECT MAX(game_id) FROM game", Integer.class);
+
+        if (game.getGameId() > largestId) {
+            throw new IllegalArgumentException("The id provided does not exist.");
+        }
         jdbcTemplate.update(
                 UPDATE_GAME_SQL,
                 game.getTitle(),
@@ -102,6 +108,11 @@ public class GameDaoJdbcTemplateImpl implements GameDao{
     @Override
     @Transactional
     public void deleteGame(int id) {
+        int largestId = jdbcTemplate.queryForObject("SELECT MAX(game_id) FROM game", Integer.class);
+
+        if (id > largestId) {
+            throw new IllegalArgumentException("The id provided does not exist.");
+        }
         jdbcTemplate.update(DELETE_GAME_SQL, id);
     }
 

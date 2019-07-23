@@ -1,15 +1,30 @@
 package com.company.mariawongu1capstone.model;
 
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class TShirt {
 
     private int tShirtId;
+
+    @Size(min = 1, max = 20, message = "The size of size must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for size.")
     private String size;
+
+    @Size(min = 1, max = 20, message = "The size of color must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for color.")
     private String color;
+
+    @Size(min = 1, max = 255, message = "The size of description must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for description.")
     private String description;
+
+    @DecimalMin(value = "0.0", inclusive = true, message="The min value you can enter for price is {value}.")
+    @DecimalMax(value = "999.99", inclusive = true, message="The max value you can enter for price is {value}")
     private BigDecimal price;
+
+    @Min(value = 0, message = "You must select a quantity of at least {value}.")
     private int quantity;
 
     // getters and setters
@@ -47,10 +62,15 @@ public class TShirt {
     }
 
     public BigDecimal getPrice() {
+        // avoid NullPointer Exceptions when doing calculations
+        if (price == null) {
+            return new BigDecimal(0);
+        }
         return price;
     }
 
     public void setPrice(BigDecimal price) {
+
         this.price = price;
     }
 

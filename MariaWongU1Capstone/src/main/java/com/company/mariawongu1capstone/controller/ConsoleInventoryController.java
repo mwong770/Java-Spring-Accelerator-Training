@@ -1,7 +1,6 @@
 package com.company.mariawongu1capstone.controller;
 
 import com.company.mariawongu1capstone.exception.NotFoundException;
-import com.company.mariawongu1capstone.model.Console;
 import com.company.mariawongu1capstone.service.ConsoleService;
 import com.company.mariawongu1capstone.viewmodel.ConsoleViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class ConsoleInventoryController {
     @RequestMapping(value="/consoles", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public ConsoleViewModel createConsole(@RequestBody @Valid ConsoleViewModel console) {
-        return consoleService.saveConsole(console);
+            return consoleService.saveConsole(console);
     }
 
     @RequestMapping(value="/consoles/{id}", method = RequestMethod.GET)
@@ -60,4 +59,5 @@ public class ConsoleInventoryController {
     public List<ConsoleViewModel> findConsolesByManufacturer(@PathVariable String manufacturer) {
         return consoleService.findConsolesByManufacturer(manufacturer);
     }
+
 }

@@ -3,7 +3,6 @@ package com.company.mariawongu1capstone.controller;
 import com.company.mariawongu1capstone.exception.NotFoundException;
 import com.company.mariawongu1capstone.service.InvoiceService;
 import com.company.mariawongu1capstone.viewmodel.InvoiceViewModel;
-import com.company.mariawongu1capstone.viewmodel.TShirtViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -41,5 +40,6 @@ public class InvoiceInventoryController {
         }
         invoiceService.updateInvoice(itemViewModel);
     }
+
 }
 

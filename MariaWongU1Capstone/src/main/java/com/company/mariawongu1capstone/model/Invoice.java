@@ -1,19 +1,46 @@
 package com.company.mariawongu1capstone.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Invoice {
 
     private int invoiceId;
+
+    @Size(min = 1, max = 80, message = "The size of name must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a name.")
     private String name;
+
+    @Size(min = 1, max = 30, message = "The size of street must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a street.")
     private String street;
+
+    @Size(min = 1, max = 30, message = "The size of city must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a city.")
     private String city;
+
+    @Size(min = 1, max = 30, message = "The size of state must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a state.")
     private String state;
+
+    @Size(min = 5, max = 5, message = "The size of zip code must {max} Characters.")
+    @NotBlank(message = "Please supply a zip code.")
     private String zipCode;
+
+    @Size(min = 1, max = 20, message = "The size of item type must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply an item type.")
     private String itemType;
+
+    @Min(value = 1, message = "You must supply an item id value of at least {value}.")
     private int itemId;
+
+
     private BigDecimal unitPrice;
+
+    @Min(value = 1, message = "You must select a quantity of at least {value}.")
     private int quantity;
     private BigDecimal subtotal;
     private BigDecimal tax;
@@ -87,6 +114,10 @@ public class Invoice {
     }
 
     public BigDecimal getUnitPrice() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (unitPrice == null) {
+            return new BigDecimal(0);
+        }
         return unitPrice;
     }
 
@@ -103,6 +134,10 @@ public class Invoice {
     }
 
     public BigDecimal getSubtotal() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (subtotal == null) {
+            return new BigDecimal(0);
+        }
         return subtotal;
     }
 
@@ -111,6 +146,10 @@ public class Invoice {
     }
 
     public BigDecimal getTax() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (tax == null) {
+            return new BigDecimal(0);
+        }
         return tax;
     }
 
@@ -119,6 +158,10 @@ public class Invoice {
     }
 
     public BigDecimal getProcessingFee() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (processingFee == null) {
+            return new BigDecimal(0);
+        }
         return processingFee;
     }
 
@@ -127,6 +170,10 @@ public class Invoice {
     }
 
     public BigDecimal getTotal() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (total == null) {
+            return new BigDecimal(0);
+        }
         return total;
     }
 
@@ -161,5 +208,6 @@ public class Invoice {
     public int hashCode() {
         return Objects.hash(getInvoiceId(), getName(), getStreet(), getCity(), getState(), getZipCode(), getItemType(), getItemId(), getUnitPrice(), getQuantity(), getSubtotal(), getTax(), getProcessingFee(), getTotal());
     }
+
 
 }

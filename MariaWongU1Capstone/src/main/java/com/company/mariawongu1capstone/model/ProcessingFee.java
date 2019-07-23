@@ -19,6 +19,10 @@ public class ProcessingFee {
     }
 
     public BigDecimal getFee() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (fee == null) {
+            return new BigDecimal(0);
+        }
         return fee;
     }
 

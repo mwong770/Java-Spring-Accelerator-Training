@@ -64,8 +64,6 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
         return tShirt;
     }
 
-
-
     @Override
     public TShirt getTShirt(int id) {
         try {
@@ -84,6 +82,12 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
     @Override
     @Transactional
     public void updateTShirt(TShirt tShirt) {
+
+        int largestId = jdbcTemplate.queryForObject("SELECT MAX(t_shirt_id) FROM t_shirt", Integer.class);
+
+        if (tShirt.gettShirtId() > largestId) {
+            throw new IllegalArgumentException("The id provided does not exist.");
+        }
         jdbcTemplate.update(
                 UPDATE_TSHIRT_SQL,
                 tShirt.getSize(),
@@ -98,6 +102,11 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
     @Override
     @Transactional
     public void deleteTShirt(int id) {
+        int largestId = jdbcTemplate.queryForObject("SELECT MAX(t_shirt_id) FROM t_shirt", Integer.class);
+
+        if (id > largestId) {
+            throw new IllegalArgumentException("The id provided does not exist.");
+        }
         jdbcTemplate.update(DELETE_TSHIRT_SQL, id);
     }
 
@@ -124,5 +133,6 @@ public class TShirtDaoJdbcTemplateImpl implements TShirtDao {
 
         return tShirt;
     }
+
 }
 

@@ -12,7 +12,7 @@ create table if not exists game
     description varchar (255) not null,
     price decimal (5, 2) not null,
     studio varchar (50) not null,
-    quantity int (11)
+    quantity int (11) not null
 );
 
 create table if not exists console

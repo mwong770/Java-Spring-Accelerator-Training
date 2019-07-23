@@ -32,7 +32,6 @@ public class ProcessingFeeDaoJdbcTemplateImpl implements ProcessingFeeDao {
         try {
             ProcessingFee row =  jdbcTemplate.queryForObject(SELECT_PROCESSING_FEE_SQL, this::mapRowToProcessingFee, productType);
             return row.getFee();
-//            return jdbcTemplate.queryForObject(SELECT_PROCESSING_FEE_SQL, this::mapRowToProcessingFee, productType);
 
         } catch (EmptyResultDataAccessException e) {
             // if there is no match for this album id, return null

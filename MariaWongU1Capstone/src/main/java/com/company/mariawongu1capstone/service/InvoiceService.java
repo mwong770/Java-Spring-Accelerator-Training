@@ -1,11 +1,16 @@
 package com.company.mariawongu1capstone.service;
 
 import com.company.mariawongu1capstone.dao.*;
+import com.company.mariawongu1capstone.exception.InsufficientQuantityException;
+import com.company.mariawongu1capstone.exception.ValueNotSupportedException;
 import com.company.mariawongu1capstone.model.Console;
 import com.company.mariawongu1capstone.model.Game;
 import com.company.mariawongu1capstone.model.Invoice;
 import com.company.mariawongu1capstone.model.TShirt;
+import com.company.mariawongu1capstone.viewmodel.ConsoleInvoiceViewModel;
+import com.company.mariawongu1capstone.viewmodel.GameInvoiceViewModel;
 import com.company.mariawongu1capstone.viewmodel.InvoiceViewModel;
+import com.company.mariawongu1capstone.viewmodel.TShirtInvoiceViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -61,7 +66,6 @@ public class InvoiceService {
         invoice = invoiceDao.addInvoice(invoice);
         invoiceViewModel.setInvoiceId(invoice.getInvoiceId());
 
-        //invoiceViewModel = getItemDetails(invoiceViewModel);
         return invoiceViewModel;
     }
 
@@ -74,8 +78,15 @@ public class InvoiceService {
         BigDecimal quantityAsDecimal = new BigDecimal(invoiceViewModel.getQuantity()).setScale(2);
 
         BigDecimal subtotal = (invoiceViewModel.getUnitPrice().multiply(quantityAsDecimal)).setScale(2, RoundingMode.HALF_UP);
+
         BigDecimal taxRate = salesTaxRateDao.getSalesTaxRate(invoiceViewModel.getState());
+
+        if (taxRate == null) {
+            throw new IllegalArgumentException("The state code provided does not exist.");
+        }
+
         BigDecimal processingFee = processingFeeDao.getProcessingFee(invoiceViewModel.getItemType());
+
         BigDecimal additionalFee = new BigDecimal(00).setScale(2);
         if (invoiceViewModel.getQuantity() > 10) {
             additionalFee = new BigDecimal(15.49).setScale(2, RoundingMode.HALF_UP);
@@ -83,6 +94,13 @@ public class InvoiceService {
         }
         BigDecimal total = (subtotal.multiply(taxRate, mc)).add(processingFee).add(subtotal).setScale(2, RoundingMode.HALF_UP);
 
+        // max supported by database requirement of decimal(5,2)
+        BigDecimal maxSalesSupported = new BigDecimal(999.99).setScale(2, RoundingMode.FLOOR);
+
+        // if total greater than 999.99
+        if (total.compareTo(maxSalesSupported) >= 1) {
+            throw new ValueNotSupportedException("A sale transaction that large cannot be supported. Please divide your order into multiple orders.");
+        }
         invoiceViewModel.setSubtotal(subtotal);
         invoiceViewModel.setTax((subtotal.multiply(taxRate)).setScale(2, RoundingMode.HALF_UP));
         invoiceViewModel.setProcessingFee(processingFee);
@@ -100,17 +118,37 @@ public class InvoiceService {
             case "Consoles":
                 Console cItem = consoleDao.getConsole(invoiceViewModel.getItemId());
                 price = cItem.getPrice();
-                item = cItem;
+
+                ConsoleInvoiceViewModel console = new ConsoleInvoiceViewModel();
+                console.setManufacturer(cItem.getManufacturer());
+                console.setModel(cItem.getModel());
+                console.setMemoryAmount(cItem.getMemoryAmount());
+                console.setProcessor(cItem.getProcessor());
+
+                item = console;
                 break;
             case "Games":
                 Game gItem = gameDao.getGame(invoiceViewModel.getItemId());
                 price = gItem.getPrice();
-                item = gItem;
+
+                GameInvoiceViewModel game = new GameInvoiceViewModel();
+                game.setTitle(gItem.getTitle());
+                game.setEsrbRating(gItem.getEsrbRating());
+                game.setDescription(gItem.getDescription());
+                game.setStudio(gItem.getStudio());
+
+                item = game;
                 break;
             case "T-Shirts":
                 TShirt tItem = tShirtDao.getTShirt(invoiceViewModel.getItemId());
                 price = tItem.getPrice();
-                item = tItem;
+
+                TShirtInvoiceViewModel tShirt = new TShirtInvoiceViewModel();
+                tShirt.setSize(tItem.getSize());
+                tShirt.setColor(tItem.getColor());
+                tShirt.setDescription(tItem.getDescription());
+
+                item = tShirt;
                 break;
             default:
                 throw new IllegalArgumentException("You must select a valid item type.");
@@ -128,18 +166,18 @@ public class InvoiceService {
         switch (itemType) {
             case "Consoles":
                 Console cItem = consoleDao.getConsole(itemId);
+                int amountAvailable;
                 if (action == "subtract") {
                     if (quantity <= cItem.getQuantity()) {
                         cItem.setQuantity(cItem.getQuantity() - quantity);
                         consoleDao.updateConsole(cItem);
                     } else {
-                        // throw error - we don't have that many items ??
+                        amountAvailable = cItem.getQuantity();
+                        throw new InsufficientQuantityException("We do not have that quantity. We only have " + amountAvailable + " of that item.");
                     }
                 } else if (action == "add") {
                     cItem.setQuantity(cItem.getQuantity() + quantity);
                     consoleDao.updateConsole(cItem);
-                } else {
-                    // throw error - server error - invalid action programmatically ???
                 }
                 break;
             case "Games":
@@ -149,13 +187,12 @@ public class InvoiceService {
                         gItem.setQuantity(gItem.getQuantity() - quantity);
                         gameDao.updateGame(gItem);
                     } else {
-                        // throw error - we don't have that many items ??
+                        amountAvailable = gItem.getQuantity();
+                        throw new InsufficientQuantityException("We do not have that quantity. We only have " + amountAvailable + " of that item.");
                     }
                 } else if (action == "add") {
                     gItem.setQuantity(gItem.getQuantity() + quantity);
                     gameDao.updateGame(gItem);
-                } else {
-                    // throw error - server error - invalid action programmatically ???
                 }
                 break;
             case "T-Shirts":
@@ -165,13 +202,12 @@ public class InvoiceService {
                         tItem.setQuantity(tItem.getQuantity() - quantity);
                         tShirtDao.updateTShirt(tItem);
                     } else {
-                        // throw error - we don't have that many items ??
+                        amountAvailable = tItem.getQuantity();
+                        throw new InsufficientQuantityException("We do not have that quantity. We only have " + amountAvailable + " that item.");
                     }
                 } else if (action == "add") {
                     tItem.setQuantity(tItem.getQuantity() + quantity);
                     tShirtDao.updateTShirt(tItem);
-                } else {
-                    // throw error - server error - invalid action programmatically ???
                 }
                 break;
             default:
@@ -206,7 +242,16 @@ public class InvoiceService {
 
         String action;
         int quantity;
-        int originalQuantity = invoiceDao.getInvoice(invoiceViewModel.getInvoiceId()).getQuantity();
+
+        Invoice originalInvoice = invoiceDao.getInvoice(invoiceViewModel.getInvoiceId());
+
+        // thrown here to prevent null pointer exception when try to invoke methods on originalInvoice
+        if (originalInvoice == null)  {
+            throw new IllegalArgumentException("The id provided does not exist.");
+        }
+        //int originalQuantity = invoiceDao.getInvoice(invoiceViewModel.getInvoiceId()).getQuantity();
+        int originalQuantity = originalInvoice.getQuantity();
+
         if (originalQuantity < invoiceViewModel.getQuantity()) {
             action = "subtract";
             quantity = invoiceViewModel.getQuantity() - originalQuantity;

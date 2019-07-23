@@ -1,7 +1,6 @@
 package com.company.mariawongu1capstone.controller;
 
 import com.company.mariawongu1capstone.exception.NotFoundException;
-import com.company.mariawongu1capstone.service.ConsoleService;
 import com.company.mariawongu1capstone.service.GameService;
 import com.company.mariawongu1capstone.viewmodel.GameViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,5 +71,6 @@ public class GameInventoryController {
     public List<GameViewModel> findGamesByTitle(@PathVariable String title) {
         return gameService.findGamesByTitle(title);
     }
+
 }
 

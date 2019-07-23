@@ -88,6 +88,11 @@ public class InvoiceDaoJdbcTemplateImpl implements InvoiceDao{
 
     @Override
     public void updateInvoice(Invoice invoice) {
+        int largestId = jdbcTemplate.queryForObject("SELECT MAX(invoice_id) FROM invoice", Integer.class);
+
+        if (invoice.getInvoiceId() > largestId) {
+            throw new IllegalArgumentException("The invoice id provided does not exist.");
+        }
         jdbcTemplate.update(
                 UPDATE_INVOICE_SQL,
                 invoice.getName(),
@@ -105,10 +110,16 @@ public class InvoiceDaoJdbcTemplateImpl implements InvoiceDao{
                 invoice.getTotal(),
                 invoice.getInvoiceId()
         );
+
     }
 
     @Override
     public void deleteInvoice(int id) {
+        int largestId = jdbcTemplate.queryForObject("SELECT MAX(invoice_id) FROM invoice", Integer.class);
+
+        if (id > largestId) {
+            throw new IllegalArgumentException("The id provided does not exist.");
+        }
         jdbcTemplate.update(DELETE_INVOICE_SQL, id);
     }
 

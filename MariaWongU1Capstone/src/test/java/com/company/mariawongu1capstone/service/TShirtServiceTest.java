@@ -81,66 +81,6 @@ public class TShirtServiceTest {
 
     }
 
-    // FIND OUT IF UPDATE AND REMOVE CAN BE TESTED NOW THAT WE ARE USING MOCKS *******************
-
-//    @Test
-//    public void updateTShirt() {
-//        TShirtViewModel tShirtVM = new TShirtViewModel();
-//
-//        tShirtVM.setSize("small");
-//        tShirtVM.setColor("blue");
-//        tShirtVM.setDescription("my blue shirt");
-//        tShirtVM.setPrice(new BigDecimal(15.00).setScale(2, RoundingMode.HALF_UP);
-//        tShirtVM.setQuantity(2);
-//
-//        tShirtVM = tShirtService.saveTShirt(tShirtVM);
-//
-//        tShirtVM.setDescription("my ugly blue shirt");
-//        tShirtVM.setPrice(new BigDecimal(5.00).setScale(2, RoundingMode.HALF_UP);
-//
-//        tShirtService.updateTShirt(tShirtVM);
-//
-//        TShirtViewModel fromService  = tShirtService.findTShirtById(tShirtVM.gettShirtId());
-//
-//        assertEquals(tShirtVM, fromService);
-//
-//        assertEquals("my ugly blue shirt", fromService.getDescription());
-//        assertEquals(new BigDecimal(5.00).setScale(2, RoundingMode.HALF_UP, fromService.getPrice());
-//    }
-
-//    @Test
-//    public void removeTShirt() {
-//
-//        TShirtViewModel tShirtVM = new TShirtViewModel();
-//        tShirtVM.setSize("small");
-//        tShirtVM.setColor("blue");
-//        tShirtVM.setDescription("I Turn Coffee Into Code T-Shirt");
-//        tShirtVM.setPrice(new BigDecimal(19.99).setScale(2, RoundingMode.HALF_UP);
-//        tShirtVM.setQuantity(100);
-//
-//        tShirtService.saveTShirt(tShirtVM);
-//
-//        tShirtVM = new TShirtViewModel();
-//        tShirtVM.setSize("small");
-//        tShirtVM.setColor("black");
-//        tShirtVM.setDescription("Can't Hear You I'm Gaming T-Shirt");
-//        tShirtVM.setPrice(new BigDecimal(12.95).setScale(2, RoundingMode.HALF_UP);
-//        tShirtVM.setQuantity(100);
-//
-//        tShirtService.saveTShirt(tShirtVM);
-//
-//        List<TShirtViewModel> fromService = tShirtService.findAllTShirts();
-//
-//        assertEquals(2, fromService.size());
-//
-//        tShirtService.removeTShirt(fromService.get(0).gettShirtId());
-//
-//        fromService = tShirtService.findAllTShirts();
-//
-//        assertEquals(1, fromService.size());
-//
-//    }
-
     @Test
     public void findTShirtsByColor() {
 

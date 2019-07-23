@@ -81,55 +81,6 @@ public class GameServiceTest {
 
     }
 
-    // FIND OUT IF THESE CAN BE TESTED NOW THAT WE ARE USING MOCKS *******************
-
-//    //public void updateGame(GameViewModel gameViewModel) {
-//    @Test
-//    public void updateGame() {
-//        GameViewModel gameVM = new GameViewModel();
-//        gameVM.setTitle("title 1");
-//        gameVM.setEsrbRating("rating 1");
-//        gameVM.setDescription("my first game");
-//        gameVM.setPrice(new BigDecimal(100.00).setScale(2));
-//        gameVM.setStudio("studio 1");
-//        gameVM.setQuantity(10);
-//
-//        gameVM = gameService.saveGame(gameVM);
-//
-//        gameVM.setStudio("studio 3");
-//        gameVM.setQuantity(100);
-//        gameService.updateGame(gameVM);
-//
-//        GameViewModel fromService  = gameService.findGameById(gameVM.getGameId());
-//        assertEquals("studio 3", fromService.getStudio());
-//        assertEquals(100, fromService.getQuantity());
-//    }
-
-//    @Test
-//    public void removeGame() {
-//
-//        GameViewModel gameVM = new GameViewModel();
-//        gameVM.setTitle("titoe 1");
-//        gameVM.setEsrbRating("rating 1");
-//        gameVM.setDescription("my first game");
-//        gameVM.setPrice(new BigDecimal(100.00).setScale(2));
-//        gameVM.setStudio("studio 1");
-//        gameVM.setQuantity(10);
-//
-//        gameService.saveGame(gameVM);
-//
-//        List<GameViewModel> fromService = gameService.findAllGames();
-//
-//        assertEquals(1, fromService.size());
-//
-//        gameService.removeGame(fromService.get(0).getGameId());
-//
-//        fromService = gameService.findAllGames();
-//
-//        assertEquals(0, fromService.size());
-//
-//    }
-
     @Test
     public void findGamesByStudio() {
         GameViewModel gameVM = new GameViewModel();

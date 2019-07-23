@@ -46,6 +46,7 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
     @Override
     @Transactional
     public Console addConsole(Console console) {
+
         jdbcTemplate.update(
                 INSERT_CONSOLE_SQL,
                 console.getModel(),
@@ -81,6 +82,13 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
     @Override
     @Transactional
     public void updateConsole(Console console) {
+
+        int largestId = jdbcTemplate.queryForObject("SELECT MAX(console_id) FROM console", Integer.class);
+
+        if (console.getConsoleId() > largestId) {
+            throw new IllegalArgumentException("The id provided does not exist.");
+        }
+
         jdbcTemplate.update(
                 UPDATE_CONSOLE_SQL,
                 console.getModel(),
@@ -96,6 +104,12 @@ public class ConsoleDaoJdbcTemplateImpl implements ConsoleDao{
     @Override
     @Transactional
     public void deleteConsole(int id) {
+        int largestId = jdbcTemplate.queryForObject("SELECT MAX(console_id) FROM console", Integer.class);
+
+        if (id > largestId) {
+            throw new IllegalArgumentException("The id provided does not exist.");
+        }
+
         jdbcTemplate.update(DELETE_CONSOLE_SQL, id);
     }
 

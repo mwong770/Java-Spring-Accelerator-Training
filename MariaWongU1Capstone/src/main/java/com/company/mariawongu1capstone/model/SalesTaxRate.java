@@ -20,6 +20,10 @@ public class SalesTaxRate {
     }
 
     public BigDecimal getRate() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (rate == null) {
+            return new BigDecimal(0);
+        }
         return rate;
     }
 
@@ -42,5 +46,6 @@ public class SalesTaxRate {
     public int hashCode() {
         return Objects.hash(getState(), getRate());
     }
+
 
 }

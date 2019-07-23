@@ -1,16 +1,32 @@
 package com.company.mariawongu1capstone.model;
 
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Console {
 
     private int consoleId;
+
+    @Size(min = 1, max = 50, message = "The size of model must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for model.")
     private String model;
+
+    @Size(min = 1, max = 50, message = "The size of manufacturer must be between {min} and {max} Characters.")
+    @NotBlank(message = "Please supply a value for manufacturer.")
     private String manufacturer;
+
+    @Size(min = 1, max = 20, message = "The size of memory amount must be between {min} and {max} Characters.")
     private String memoryAmount;
+
+    @Size(min = 1, max = 20, message = "The size of processor must be between {min} and {max} Characters.")
     private String processor;
+
+    @DecimalMin(value = "0.0", inclusive = true, message="The min value you can enter for price is {value}.")
+    @DecimalMax(value = "999.99", inclusive = true, message="The max value you can enter for price is {value}")
     private BigDecimal price;
+
+    @Min(value = 0, message = "You must select a quantity of at least {value}.")
     private int quantity;
 
     // getters and setters
@@ -56,6 +72,10 @@ public class Console {
     }
 
     public BigDecimal getPrice() {
+        // helps avoid NullPointer Exceptions when doing calculations
+        if (price == null) {
+            return new BigDecimal(0);
+        }
         return price;
     }
 
@@ -91,5 +111,6 @@ public class Console {
     public int hashCode() {
         return Objects.hash(getConsoleId(), getModel(), getManufacturer(), getMemoryAmount(), getProcessor(), getPrice(), getQuantity());
     }
+
 
 }

@@ -92,8 +92,6 @@ public class TShirtService {
         return tShirtViewModels;
     }
 
-
-
     // Build View Model
 
     private TShirtViewModel buildTShirtViewModel(TShirt tShirt) {

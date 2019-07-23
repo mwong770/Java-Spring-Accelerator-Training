@@ -1,0 +1,555 @@
+openapi: 3.0.0
+info: 
+  title: Video Game Store Service
+  description: A simple service that returns data on consoles, games, tshirts, and invoices
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+    description: Local dev server
+paths:
+  /consoles:
+    get:
+      summary: Returns consoles' id, model, manufacturer, memory amount, processor, price and quantity 
+      responses:
+        '200':
+          description: All console objects
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Console'
+    post:
+      summary: Inputs a game model, manufacturer, memory amount, processor, price and quantity 
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Console'
+      responses:
+        '201':
+          description: A console object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Console'
+  /consoles/{id}:
+    get:
+      summary: Retrieves the entry for the console with the give ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the console you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Console object matching given ID successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Console'
+        '404':
+          description: A console with the given ID was not found.
+    put:
+      summary: Updates the entry for the console with the given ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the console you would like to update.
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Console'
+      responses:
+        '204':
+          description: Console successfully updated.
+        '422':
+          description: Console ID on path must match the ID in the Console object.
+    delete:
+      summary: Deletes the entry for the console with the given ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the console you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Console successfully deleted.
+        '422':
+          description: The id provided does not exist.
+  /consoles/manufacturers/{manufacturer}:
+    get:
+      summary: Returns all consoles with a matching manufacturer
+      parameters: 
+          - name: manufacturer
+            in: path
+            required: true
+            description: Manufacturer of the consoles you'd like to retrieve
+            schema:
+              type: string
+      responses:
+        '200':
+          description: All console objects with a matching manufacturer
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Console'
+  /games:
+    get:
+      summary: Returns games' id, title, esrb rating, description, price, studio and quantity
+      responses:
+        '200':
+          description: All game objects
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Game'
+    post:
+      summary: Inputs a games' title, esrb rating, description, price, studio and quantity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Game'
+      responses:
+        '201':
+          description: A game object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Game'
+  /games/{id}:
+    get:
+      summary: Retrieves the entry for the game with the give ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the game you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Game object matching given ID successfully retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Game'
+        '404':
+          description: A game with the given ID was not found.
+    put:
+      summary: Updates the entry for the game with the given ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the game you would like to update.
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Game'
+      responses:
+        '204':
+          description: Game successfully updated.
+        '422':
+          description: Game ID on path must match the ID in the Game object.
+    delete:
+      summary: Deletes the entry for the game with the given ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the game you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Game successfully deleted.
+        '422':
+          description: The id provided does not exist.
+  /games/studios/{studio}:
+    get:
+      summary: Returns all games with a matching studio
+      parameters: 
+          - name: studio
+            in: path
+            required: true
+            description: Studio of the games you'd like to retrieve
+            schema:
+              type: string
+      responses:
+        '200':
+          description: All game objects with a matching studio
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Game'
+  /games/ratings/{esrbRating}:
+    get:
+      summary: Returns all games with a matching esrb rating
+      parameters: 
+          - name: esrbRating
+            in: path
+            required: true
+            description: Esrb rating of the games you'd like to retrieve
+            schema:
+              type: string
+      responses:
+        '200':
+          description: All game objects with a matching esrb rating
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Game'
+  /games/titles/{title}:
+    get:
+      summary: Returns all games with a matching title
+      parameters: 
+          - name: title
+            in: path
+            required: true
+            description: Title of the games you would like to retrieve
+            schema:
+              type: string
+      responses:
+        '200':
+          description: All game objects with a matching title
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Game'
+  /tshirts:
+    get:
+      summary: Returns tshirts' id, size, color, description, price and quantity
+      responses:
+        '200':
+          description: All tshirt objects
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/TShirt'
+    post:
+      summary: Inputs a tshirts' size, color, description, price and quantity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TShirt'
+      responses:
+        '201':
+          description: A tshirt object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TShirt'
+  /tshirts/{id}:
+    get:
+      summary: Retrieves the entry for the tshirt with the give ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the tshirt you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: TShirt object matching given ID successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TShirt'
+        '404':
+          description: A tshirt with the given ID was not found.
+    put:
+      summary: Updates the entry for the tshirt with the given ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the tshirt you would like to update.
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TShirt'
+      responses:
+        '204':
+          description: Tshirt successfully updated.
+        '422':
+          description: Tshirt ID on path must match the ID in the tshirt object.
+    delete:
+      summary: Deletes the entry for the tshirt with the given ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the tshirt you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Tshirt successfully deleted.
+        '422':
+          description: The id provided does not exist.
+  /tshirts/colors/{color}:
+    get:
+      summary: Returns all tshirts with a matching color
+      parameters: 
+          - name: color
+            in: path
+            required: true
+            description: Color of the tshirts you would like to retrieve
+            schema:
+              type: string
+      responses:
+        '200':
+          description: All tshirt objects with a matching color
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/TShirt'
+  /tshirts/sizes/{size}:
+    get:
+      summary: Returns all tshirts with a matching size
+      parameters: 
+          - name: size
+            in: path
+            required: true
+            description: Size of the tshirts you would like to retrieve
+            schema:
+              type: string
+      responses:
+        '200':
+          description: All tshirt objects with a matching size
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/TShirt'
+  /invoices:
+    post:
+      summary: Inputs a name, street, city, state, zip, item type, item id, and quantity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+      responses:
+        '201':
+          description: An invoice object 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+        '422':
+          description: The state code provided does not exist, the item type does not exist, a sale transaction that large cannot be supported, or the quantity requested is not available. 
+    get:
+      summary: Retrieves the entry for the invoice with the give ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the invoice you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Invoice object matching given ID successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+        '404':
+          description: An invoice with the given ID was not found.
+    put:
+      summary: Updates the entry for the invoice with the given ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the invoice you would like to update.
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Invoice'
+      responses:
+        '204':
+          description: Invoice successfully updated.
+        '422':
+          description: Invoice ID on path does not match the ID in the invoice object, the state code provided does not exist, the item type does not exist, a sale transaction that large cannot be supported, or the quantity requested is not available. 
+components:
+  schemas:
+    Console:
+      properties:
+        consoleId:
+          type: integer
+        model:
+          type: string
+        manufacturer:
+          type: string
+        memoryAmount:
+          type: string
+        processor:
+          type: string
+        price:
+          type: number
+        quantity:
+          type: integer
+          format: int64
+      required: 
+        - model
+        - manufacturer
+        - price
+        - quantity
+    Game:
+      properties:
+        gameId:
+          type: integer
+        title:
+          type: string
+        esrbRating:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        studio:
+          type: string
+        quantity:
+          type: integer
+          format: int64
+      required: 
+        - title
+        - esrbRating
+        - description
+        - price
+        - studio
+        - quantity
+    TShirt:
+      properties:
+        tShirtId:
+          type: integer
+        size:
+          type: string
+        color:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        quantity:
+          type: integer
+          format: int64
+      required: 
+        - size
+        - color
+        - description
+        - price
+        - quantity
+    Invoice:
+      properties:
+        invoiceId:
+          type: integer
+        name:
+          type: string
+        street:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zipCode:
+          type: string
+        itemType:
+          type: string
+        itemId:
+          type: integer
+          format: int64
+        item: 
+          type: object
+        unitPrice:
+          type: number
+        quantity:
+          type: integer
+          format: int64
+        subtotal:
+          type: number
+        tax:
+          type: number
+        processingFee:
+          type: number
+        total:
+          type: number
+      required: 
+        - name
+        - street
+        - city
+        - state
+        - zipCode
+        - itemType
+        - itemId
+        - quantity
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+              
