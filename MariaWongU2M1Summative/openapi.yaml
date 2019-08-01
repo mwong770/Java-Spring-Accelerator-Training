@@ -1,0 +1,142 @@
+openapi: 3.0.0
+info: 
+  title: Tasker Service
+  description: A simple service that returns a task with an ad
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080
+    description: Local dev server
+paths:
+  /tasks:
+    get:
+      summary: Returns a list of tasks containing an id, description, creation date, due date, category, and advertisement
+      responses:
+        '200':
+          description: All task objects
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Task'
+    post:
+      summary: Inputs a description, creation date, due date and category of a task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskMinusId'
+      responses:
+        '201':
+          description: A task object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+    put:
+      summary: Updates the entry for the task with the given ID.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '204':
+          description: Task successfully updated.
+  /tasks/{id}:
+    get:
+      summary: Retrieves the entry for the task with the give ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the task you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Task object matching given ID successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '404':
+          description: A task with the given ID was not found.
+    delete:
+      summary: Deletes the entry for the task with the given ID.
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the task you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Task successfully deleted.
+        '422':
+          description: The id provided does not exist.
+  /tasks/category/{category}:
+    get:
+      summary: Returns all tasks with a matching category
+      parameters: 
+          - name: category
+            in: path
+            required: true
+            description: Category of the tasks you'd like to retrieve
+            schema:
+              type: string
+      responses:
+        '200':
+          description: All task objects with a matching category
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Task'
+components:
+  schemas:
+    Task:
+      properties:
+        id:
+          type: integer
+        description:
+          type: string
+        createDate:
+          type: string
+          format: date
+        dueDate:
+          type: string
+          format: date
+        category:
+          type: string
+        advertisement:
+          type: string
+      required: 
+        - description
+        - createDate
+        - dueDate
+    TaskMinusId:
+      properties:
+        description:
+          type: string
+        createDate:
+          type: string
+          format: date
+        dueDate:
+          type: string
+          format: date
+        category:
+          type: string
+        advertisement:
+          type: string
+      required: 
+        - description
+        - createDate
+        - dueDate
+    
