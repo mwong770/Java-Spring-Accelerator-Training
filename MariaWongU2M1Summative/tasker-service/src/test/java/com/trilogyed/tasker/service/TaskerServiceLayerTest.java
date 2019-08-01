@@ -53,7 +53,7 @@ public class TaskerServiceLayerTest {
     // tests fetchAllTasks()
     @Test
     public void fetchAllTasks() {
-        //L(TVM) fetchAllTasks()
+
         TaskViewModel taskVM = new TaskViewModel();
 
         taskVM.setDescription("go to doctor for physical");
@@ -61,7 +61,7 @@ public class TaskerServiceLayerTest {
         taskVM.setDueDate(LocalDate.of(2019, 8, 14));
         taskVM.setCategory("wellness");
 
-        taskVM = taskerService.newTask(taskVM);
+        taskerService.newTask(taskVM);
 
         taskVM = new TaskViewModel();
 
@@ -70,19 +70,17 @@ public class TaskerServiceLayerTest {
         taskVM.setDueDate(LocalDate.of(2019, 8, 07));
         taskVM.setCategory("work");
 
-        taskVM = taskerService.newTask(taskVM);
+        taskerService.newTask(taskVM);
 
         List<TaskViewModel> fromService = taskerService.fetchAllTasks();
 
         assertEquals(2, fromService.size());
-
 
     }
 
     // tests fetchTasksByCategory()
     @Test
     public void fetchTasksByCategory() {
-        //L(TVM) fetchTasksByCategory(category)
 
         TaskViewModel taskVM = new TaskViewModel();
 
@@ -91,7 +89,7 @@ public class TaskerServiceLayerTest {
         taskVM.setDueDate(LocalDate.of(2019, 8, 14));
         taskVM.setCategory("wellness");
 
-        taskVM = taskerService.newTask(taskVM);
+        taskerService.newTask(taskVM);
 
         taskVM = new TaskViewModel();
 
@@ -100,7 +98,7 @@ public class TaskerServiceLayerTest {
         taskVM.setDueDate(LocalDate.of(2019, 8, 07));
         taskVM.setCategory("work");
 
-        taskVM = taskerService.newTask(taskVM);
+        taskerService.newTask(taskVM);
 
         taskVM = new TaskViewModel();
 
@@ -109,7 +107,7 @@ public class TaskerServiceLayerTest {
         taskVM.setDueDate(LocalDate.of(2019, 8, 07));
         taskVM.setCategory("wellness");
 
-        taskVM = taskerService.newTask(taskVM);
+        taskerService.newTask(taskVM);
 
         List<TaskViewModel> tList = taskerService.fetchTasksByCategory("wellness");
         assertEquals(2, tList.size());
@@ -122,14 +120,13 @@ public class TaskerServiceLayerTest {
         tList = taskerService.fetchTasksByCategory("school");
         assertEquals(0, tList.size());
 
-
     }
 
     // create mocks
 
     public void setUpTaskerDaoMock() {
 
-        taskerDao =  mock(TaskerDaoJdbcTemplateImpl.class);
+        taskerDao = mock(TaskerDaoJdbcTemplateImpl.class);
 
         Task task = new Task();
         task.setDescription("go to doctor for physical");

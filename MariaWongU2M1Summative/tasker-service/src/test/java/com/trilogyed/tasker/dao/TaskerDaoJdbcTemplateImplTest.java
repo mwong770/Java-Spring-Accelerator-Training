@@ -37,10 +37,10 @@ public class TaskerDaoJdbcTemplateImplTest {
     public void addGetDeleteTask() {
 
         Task task = new Task();
-        task.setDescription("model 1");
-        task.setCreateDate(LocalDate.of(2018, 1, 28));
-        task.setDueDate(LocalDate.of(2018, 1, 28));
-        task.setCategory("best processor");
+        task.setDescription("go to doctor for physical");
+        task.setCreateDate(LocalDate.of(2019, 8, 01));
+        task.setDueDate(LocalDate.of(2019, 8, 14));
+        task.setCategory("wellness");
 
         task = taskerDao.createTask(task);
 
@@ -58,15 +58,15 @@ public class TaskerDaoJdbcTemplateImplTest {
     public void updateTask() {
 
         Task task = new Task();
-        task.setDescription("model 1");
-        task.setCreateDate(LocalDate.of(2018, 1, 28));
-        task.setDueDate(LocalDate.of(2018, 1, 28));
-        task.setCategory("best processor");
+        task.setDescription("make yaml");
+        task.setCreateDate(LocalDate.of(2019, 8, 01));
+        task.setDueDate(LocalDate.of(2019, 8, 07));
+        task.setCategory("work");
 
         task = taskerDao.createTask(task);
 
-        task.setDueDate(LocalDate.of(2019, 1, 28));
-        task.setCategory("asd");
+        task.setDueDate(LocalDate.of(2019, 8, 14));
+        task.setCategory("school");
 
         taskerDao.updateTask(task);
 
@@ -79,18 +79,18 @@ public class TaskerDaoJdbcTemplateImplTest {
     public void getAllTasks() {
 
         Task task = new Task();
-        task.setDescription("model 1");
-        task.setCreateDate(LocalDate.of(2018, 1, 28));
-        task.setDueDate(LocalDate.of(2018, 1, 28));
-        task.setCategory("best processor");
+        task.setDescription("go to doctor for physical");
+        task.setCreateDate(LocalDate.of(2019, 8, 01));
+        task.setDueDate(LocalDate.of(2019, 8, 14));
+        task.setCategory("wellness");
 
         taskerDao.createTask(task);
 
         task = new Task();
-        task.setDescription("model 1");
-        task.setCreateDate(LocalDate.of(2018, 1, 28));
-        task.setDueDate(LocalDate.of(2018, 1, 28));
-        task.setCategory("best processor");
+        task.setDescription("make yaml");
+        task.setCreateDate(LocalDate.of(2019, 8, 01));
+        task.setDueDate(LocalDate.of(2019, 8, 07));
+        task.setCategory("work");
 
         taskerDao.createTask(task);
 
@@ -103,39 +103,38 @@ public class TaskerDaoJdbcTemplateImplTest {
     public void getTasksByCategory() {
 
         Task task = new Task();
-        task.setDescription("model 1");
-        task.setCreateDate(LocalDate.of(2018, 1, 28));
-        task.setDueDate(LocalDate.of(2018, 1, 28));
-        task.setCategory("cat 1");
+        task.setDescription("go to doctor for physical");
+        task.setCreateDate(LocalDate.of(2019, 8, 01));
+        task.setDueDate(LocalDate.of(2019, 8, 14));
+        task.setCategory("wellness");
 
         taskerDao.createTask(task);
 
         task = new Task();
-        task.setDescription("model 1");
-        task.setCreateDate(LocalDate.of(2018, 1, 28));
-        task.setDueDate(LocalDate.of(2018, 1, 28));
-        task.setCategory("cat 2");
+        task.setDescription("make yaml");
+        task.setCreateDate(LocalDate.of(2019, 8, 01));
+        task.setDueDate(LocalDate.of(2019, 8, 07));
+        task.setCategory("work");
 
         taskerDao.createTask(task);
 
         task = new Task();
-        task.setDescription("model 1");
-        task.setCreateDate(LocalDate.of(2018, 1, 28));
-        task.setDueDate(LocalDate.of(2018, 1, 28));
-        task.setCategory("cat 1");
+        task.setDescription("buy better toothbrush");
+        task.setCreateDate(LocalDate.of(2019, 8, 01));
+        task.setDueDate(LocalDate.of(2019, 8, 07));
+        task.setCategory("wellness");
 
         taskerDao.createTask(task);
 
-        List<Task> tList = taskerDao.getTasksByCategory("cat 1");
+        List<Task> tList = taskerDao.getTasksByCategory("wellness");
         assertEquals(2, tList.size());
 
-        tList = taskerDao.getTasksByCategory("cat 2");
+        tList = taskerDao.getTasksByCategory("work");
         assertEquals(1, tList.size());
 
-        tList = taskerDao.getTasksByCategory("cat 3");
+        tList = taskerDao.getTasksByCategory("school");
         assertEquals(0, tList.size());
 
     }
-
 
 }

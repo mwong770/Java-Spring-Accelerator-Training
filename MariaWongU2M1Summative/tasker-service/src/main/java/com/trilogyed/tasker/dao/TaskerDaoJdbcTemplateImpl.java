@@ -1,22 +1,19 @@
 package com.trilogyed.tasker.dao;
 
 import com.trilogyed.tasker.model.Task;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.List;
 
 @Repository
 public class TaskerDaoJdbcTemplateImpl implements TaskerDao {
 
-    //??????????????????????????????????
-    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     // prepared statements
@@ -46,6 +43,7 @@ public class TaskerDaoJdbcTemplateImpl implements TaskerDao {
     @Override
     @Transactional
     public Task createTask(Task task) {
+        System.out.println("date: " + LocalDate.now());
         jdbcTemplate.update(
                 INSERT_TASK,
                 task.getDescription(),
@@ -120,15 +118,16 @@ public class TaskerDaoJdbcTemplateImpl implements TaskerDao {
     // Row Mapper
 
     private Task mapRowToTask(ResultSet rs, int rowNum) throws SQLException {
-        Task console = new Task();
-        console.setId(rs.getInt("task_id"));
-        console.setDescription(rs.getString("task_description"));
-        console.setCreateDate(rs.getDate("create_date").toLocalDate());
-        console.setDueDate(rs.getDate("due_date").toLocalDate());
-        console.setCategory(rs.getString("category"));
+        Task task = new Task();
+        task.setId(rs.getInt("task_id"));
+        task.setDescription(rs.getString("task_description"));
+        task.setCreateDate(rs.getDate("create_date").toLocalDate());
+        task.setDueDate(rs.getDate("due_date").toLocalDate());
+        task.setCategory(rs.getString("category"));
 
-        return console;
+        return task;
     }
+
 }
 
 

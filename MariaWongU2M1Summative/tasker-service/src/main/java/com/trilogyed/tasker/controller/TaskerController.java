@@ -4,13 +4,9 @@ import com.trilogyed.tasker.exception.NotFoundException;
 import com.trilogyed.tasker.model.TaskViewModel;
 import com.trilogyed.tasker.service.TaskerServiceLayer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
 import java.util.List;

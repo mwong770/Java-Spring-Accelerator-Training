@@ -41,42 +41,31 @@ public class TaskerServiceLayer {
 
     public String getAd() {
 
+        // retrieves an add from the ad server
         try {
             List<ServiceInstance> instances = discoveryClient.getInstances(adServiceName);
 
             String adServiceUri = serviceProtocol + instances.get(0).getHost() + ":" + instances.get(0).getPort() + servicePath;
 
-            // this converts the json coming in to java object
             String ad = restTemplate.getForObject(adServiceUri, String.class);
 
             return ad;
         }
-        catch(NullPointerException e) {
+        // returns null if an ad is not returned
+        catch (NullPointerException e) {
             return null;
         }
 
     }
 
-
     public TaskViewModel fetchTask(int id) {
 
         Task task = dao.getTask(id);
 
-        if(task == null )
+        if (task == null)
             return null;
         else
             return buildTaskViewModel(task);
-//        TaskViewModel tvm = new TaskViewModel();
-//
-//        tvm.setId(task.getId());
-//        tvm.setDescription(task.getDescription());
-//        tvm.setCreateDate(task.getCreateDate());
-//        tvm.setDueDate(task.getDueDate());
-//        tvm.setCategory(task.getCategory());
-//
-//        // TODO - get ad from Adserver and put in tvm
-//
-//        return tvm;
     }
 
     public List<TaskViewModel> fetchAllTasks() {
@@ -85,7 +74,7 @@ public class TaskerServiceLayer {
 
         List<TaskViewModel> taskViewModels = new ArrayList<>();
 
-        for (Task t: tasks) {
+        for (Task t : tasks) {
             taskViewModels.add(buildTaskViewModel(t));
         }
         return taskViewModels;
@@ -97,7 +86,7 @@ public class TaskerServiceLayer {
 
         List<TaskViewModel> taskViewModels = new ArrayList<>();
 
-        for (Task t: tasks) {
+        for (Task t : tasks) {
             taskViewModels.add(buildTaskViewModel(t));
         }
         return taskViewModels;
@@ -114,7 +103,7 @@ public class TaskerServiceLayer {
         task = dao.createTask(task);
         taskViewModel.setId(task.getId());
 
-        // TODO - get ad from Adserver and put in taskViewModel
+        // gets an ad and stores it in view model
         taskViewModel.setAdvertisement(getAd());
 
         return taskViewModel;
@@ -146,8 +135,11 @@ public class TaskerServiceLayer {
         taskViewModel.setCreateDate(task.getCreateDate());
         taskViewModel.setDueDate(task.getDueDate());
         taskViewModel.setCategory(task.getCategory());
+
+        // gets an ad and stores it in view model
         taskViewModel.setAdvertisement(getAd());
 
         return taskViewModel;
     }
+
 }

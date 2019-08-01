@@ -1,15 +1,29 @@
 package com.trilogyed.tasker.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class Task {
 
-    private int id;
-    private String description;
-    private LocalDate createDate;
-    private LocalDate dueDate;
-    private String category;
+    protected int id;
+
+    @Size(min = 1, max = 255, message = "The size of description must be between {min} and {max} characters.")
+    @NotBlank(message = "Please supply a value for description.")
+    protected String description;
+
+    @NotNull(message = "Please supply a value for create date.")
+    protected LocalDate createDate;
+
+    @NotNull(message = "Please supply a value for due date.")
+    protected LocalDate dueDate;
+
+    @Size(min = 1, max = 50, message = "The size of category must be between {min} and {max} characters.")
+    protected String category;
+
+    // getters and setters
 
     public int getId() {
         return id;
@@ -51,6 +65,8 @@ public class Task {
         this.category = category;
     }
 
+    // overriding methods
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,4 +94,5 @@ public class Task {
                 ", category='" + category + '\'' +
                 '}';
     }
+
 }
