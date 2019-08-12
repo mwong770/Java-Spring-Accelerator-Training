@@ -1,0 +1,220 @@
+openapi: 3.0.0
+info: 
+  title: Stwitter Service
+  description: A simple service that allows users to create and query posts and comments
+  version: 0.0.1
+servers:
+  - url: http://localhost:8889
+    description: Local dev server
+paths:
+  /posts:
+    post:
+      summary: Inputs a post date, poster name, and post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '201':
+          description: A post object successfully created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostViewModel'
+  /posts/{id}:
+    get:
+      summary: Returns a post with a matching post id, along with a list of comments with a matching post id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the post you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Post object matching given id successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostViewModel'
+        '404':
+          description: A post object with the given Id was not found.
+    put:
+      summary: Updates a post with a matching post id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the post you would like to update.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Post successfully updated.
+    delete:
+      summary: Deletes a post with a matching post id, and deletes comments with a matching post id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the post you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description:  Post successfully deleted.
+        '422':
+          description: The id provided does not exist.
+  /posts/user/{poster_name}:
+    get:
+      summary: Returns a list of posts with a matching poster name, each with comments with a matching post id
+      parameters: 
+        - name: poster_name
+          in: path
+          required: true
+          description: Poster name of the post you would like to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Post objects successfully retrieved
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/PostViewModel'
+  /comments:
+    post:
+      summary: Inputs a comment's post id, create date, commenter name and comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '201':
+          description: A comment object was successfully created.
+          content:
+            application/json:
+              schema:
+                type: 'string'
+  /comments/{id}:
+    get:
+      summary: Returns a comment with a matching comment id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the comment you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Comment object matching given id successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+        '404':
+          description: A comment object with the given Id was not found.
+    put:
+      summary: Updates a comment with a matching comment id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the comment you would like to update.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Comment successfully updated.
+    delete:
+      summary: Deletes a comment with a matching comment id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the comment you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description:  Comment successfully deleted.
+        '422':
+          description: The id provided does not exist.
+components:
+  schemas:
+    Comment:
+      properties:
+        commentId:
+          type: integer
+        postId:
+          type: integer
+        createDate:
+          type: string
+        commenterName:
+          type: string
+        comment:
+          type: string
+      required: 
+        - postId
+        - createDate
+        - commenterName
+        - comment
+    CommentViewModel:
+      properties:
+        commentId:
+          type: integer
+        createDate:
+          type: string
+        commenterName:
+          type: string
+        comment:
+          type: string
+      required: 
+        - createDate
+        - commenterName
+        - comment
+    Post:
+      properties:
+        postId:
+          type: integer
+        postDate:
+          type: string
+        posterName:
+          type: string
+        post:
+          type: string
+      required: 
+        - postDate
+        - posterName
+    PostViewModel:
+      properties:
+        postId:
+          type: integer
+        postDate:
+          type: string
+        posterName:
+          type: string
+        post:
+          type: string
+        comments:
+          type: array
+          items: 
+            $ref: '#/components/schemas/CommentViewModel'
+      required: 
+        - postDate
+        - posterName
+    

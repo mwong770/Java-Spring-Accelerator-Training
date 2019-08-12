@@ -1,6 +1,5 @@
 package com.trilogyed.stwitter.viewmodel;
 
-import com.trilogyed.stwitter.util.messages.Comment;
 import com.trilogyed.stwitter.util.messages.Post;
 
 import java.time.LocalDate;
@@ -9,25 +8,25 @@ import java.util.Objects;
 
 public class PostViewModel extends Post {
 
-    private List<Comment> comments;
+    private List<CommentViewModel> comments;
 
     // constructors
 
     public PostViewModel() {
     }
 
-    public PostViewModel(int postId, LocalDate postDate, String posterName, String post, List<Comment> comments) {
+    public PostViewModel(int postId, LocalDate postDate, String posterName, String post, List<CommentViewModel> comments) {
         super(postId, postDate, posterName, post);
         this.comments = comments;
     }
 
     // getters and setters
 
-    public List<Comment> getComments() {
+    public List<CommentViewModel> getComments() {
         return comments;
     }
 
-    public void setComments(List<Comment> comments) {
+    public void setComments(List<CommentViewModel> comments) {
         this.comments = comments;
     }
 

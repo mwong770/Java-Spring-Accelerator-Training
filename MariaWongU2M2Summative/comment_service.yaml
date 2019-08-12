@@ -1,0 +1,130 @@
+openapi: 3.0.0
+info: 
+  title: Comment Service
+  description: A simple service that allows users to create and query comments
+  version: 0.0.1
+servers:
+  - url: http://localhost:6868
+    description: Local dev server
+paths:
+  /comments:
+    post:
+      summary: Inputs a comment's post id, create date, commenter name and comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        '201':
+          description: A comment object was successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+  /comments/{id}:
+    get:
+      summary: Returns a comment with a matching comment id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the comment you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Comment object matching given id successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+        '404':
+          description: A comment object with the given Id was not found.
+    put:
+      summary: Updates a comment with a matching comment id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the comment you would like to update.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Comment successfully updated.
+    delete:
+      summary: Deletes a comment with a matching comment id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the comment you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description:  Comment successfully deleted.
+        '422':
+          description: The id provided does not exist.
+  /comments/post/{postId}:
+    get: 
+      summary: Retrieves a list of comments with a matching postId
+      parameters: 
+        - name: postId
+          in: path
+          required: true
+          description: Post id of the comments you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Comment objects successfully retrieved
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Comment'
+    delete:
+      summary: Deletes comments with a matching post id
+      parameters: 
+        - name: postId
+          in: path
+          required: true
+          description: Post id of the comments you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description:  Comments successfully deleted.
+        '422':
+          description: The post id provided does not exist.
+components:
+  schemas:
+    Comment:
+      properties:
+        commentId:
+          type: integer
+        postId:
+          type: integer
+        createDate:
+          type: string
+        commenterName:
+          type: string
+        comment:
+          type: string
+      required: 
+        - postId
+        - createDate
+        - commenterName
+        - comment
+
+
+    

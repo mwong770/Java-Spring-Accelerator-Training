@@ -20,7 +20,7 @@ public interface CommentDao {
 
     List<Comment> getCommentsByPostId(int postId);
 
-    void deleteCommentByPostId(int postId);
+    void deleteCommentsByPostId(int postId);
 
     // needed for testing
 

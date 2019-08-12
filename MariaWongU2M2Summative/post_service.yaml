@@ -1,0 +1,108 @@
+openapi: 3.0.0
+info: 
+  title: Post Service
+  description: A simple service that allows users to create and query posts
+  version: 0.0.1
+servers:
+  - url: http://localhost:1777
+    description: Local dev server
+paths:
+  /posts:
+    post:
+      summary: Inputs a post date, poster name, and post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post'
+      responses:
+        '201':
+          description: A post object was successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+  /posts/{id}:
+    get:
+      summary: Returns a post with a matching post id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the post you would like to retrieve.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Post object matching given id successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+        '404':
+          description: A post object with the given Id was not found.
+    put:
+      summary: Updates a post with a matching post id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: Id of the post you would like to update.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Post successfully updated.
+    delete:
+      summary: Deletes a post with a matching post id
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          description: ID of the post you would like to delete.
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description:  Post successfully deleted.
+        '422':
+          description: The id provided does not exist.
+  /posts/user/{poster_name}:
+    get:
+      summary: Returns a list of posts with a matching poster name
+      parameters: 
+        - name: poster_name
+          in: path
+          required: true
+          description: Poster name of the post you would like to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Post objects successfully retrieved
+          content:
+            '*/*':
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Post'
+components:
+  schemas:
+    Post:
+      properties:
+        postId:
+          type: integer
+        postDate:
+          type: string
+        posterName:
+          type: string
+        post:
+          type: string
+      required: 
+        - postDate
+        - posterName
+    

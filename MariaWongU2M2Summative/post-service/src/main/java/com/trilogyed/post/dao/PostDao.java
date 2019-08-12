@@ -8,7 +8,7 @@ public interface PostDao {
 
     // standard CRUD
 
-    Post addPost(Post comment);
+    Post addPost(Post post);
 
     Post getPost(int id);
 

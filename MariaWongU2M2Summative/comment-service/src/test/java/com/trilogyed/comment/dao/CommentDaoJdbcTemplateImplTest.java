@@ -1,5 +1,6 @@
 package com.trilogyed.comment.dao;
 
+import com.trilogyed.comment.exception.NotFoundException;
 import com.trilogyed.comment.model.Comment;
 import org.junit.Before;
 import org.junit.Test;
@@ -97,8 +98,8 @@ public class CommentDaoJdbcTemplateImplTest {
     }
 
     // tests if will throw exception if id provided does not exist when trying to delete comment
-    @Test(expected  = IllegalArgumentException.class)
-    public void deleteWithIllegalArgumentException() {
+    @Test(expected  = NotFoundException.class)
+    public void deleteCommentWithNonExistentId() {
 
         commentDao.deleteComment(2);
 
@@ -123,8 +124,67 @@ public class CommentDaoJdbcTemplateImplTest {
 
         commentDao.addComment(comment);
 
-        List<Comment> posts = commentDao.getAllComments();
+        List<Comment> comments = commentDao.getAllComments();
+        assertEquals(2, comments.size());
+    }
+
+    // tests getCommentsByPostId()
+    @Test
+    public void getCommentsByPostId() {
+
+        Comment comment = new Comment();
+        comment.setPostId(1);
+        comment.setCreateDate(LocalDate.of(2019, 8, 16));
+        comment.setCommenterName("Javian");
+        comment.setComment("I have one. if (sad() == true) {sad.stop();}");
+
+        commentDao.addComment(comment);
+
+        comment = new Comment();
+        comment.setCommentId(2);
+        comment.setPostId(1);
+        comment.setCreateDate(LocalDate.of(2019, 8, 16));
+        comment.setCommenterName("Javian");
+        comment.setComment("That's not funny!");
+
+        commentDao.addComment(comment);
+
+        comment = new Comment();
+        comment.setPostId(2);
+        comment.setCreateDate(LocalDate.of(2019, 8, 15));
+        comment.setCommenterName("CoderLife");
+        comment.setComment("Stealing!!!");
+
+        commentDao.addComment(comment);
+
+        List<Comment> posts = commentDao.getCommentsByPostId(1);
         assertEquals(2, posts.size());
+    }
+
+    // tests deleteCommentsByPostId()
+    @Test
+    public void deleteCommentsByPostId(){
+
+        Comment comment = new Comment();
+        comment.setPostId(1);
+        comment.setCreateDate(LocalDate.of(2019, 8, 16));
+        comment.setCommenterName("FeelingGood");
+        comment.setComment("I have one. if (sad() == true) {sad.stop(); beAwesome();}");
+
+        commentDao.addComment(comment);
+
+        List<Comment> comments = commentDao.getCommentsByPostId(1);
+
+        // shows successfully entered comment with post id of 1 before attempting to delete
+        assertEquals(1, comments.size());
+
+        commentDao.deleteCommentsByPostId(1);
+
+        comments = commentDao.getCommentsByPostId(1);
+
+        // shows successfully deleted comments with post id of 1
+        assertEquals(0, comments.size());
+
     }
 
 }

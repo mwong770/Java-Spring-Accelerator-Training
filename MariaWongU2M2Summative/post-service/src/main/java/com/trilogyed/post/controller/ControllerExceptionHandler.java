@@ -1,6 +1,5 @@
 package com.trilogyed.post.controller;
 
-
 import com.trilogyed.post.exception.NotFoundException;
 import org.springframework.hateoas.VndErrors;
 import org.springframework.http.HttpStatus;

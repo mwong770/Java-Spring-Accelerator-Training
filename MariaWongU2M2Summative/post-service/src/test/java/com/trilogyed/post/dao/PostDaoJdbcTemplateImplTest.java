@@ -1,5 +1,6 @@
 package com.trilogyed.post.dao;
 
+import com.trilogyed.post.exception.NotFoundException;
 import com.trilogyed.post.model.Post;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +12,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -95,8 +95,8 @@ public class PostDaoJdbcTemplateImplTest {
     }
 
     // tests if will throw exception if id provided does not exist when trying to delete post
-    @Test(expected  = IllegalArgumentException.class)
-    public void deleteWithIllegalArgumentException() {
+    @Test(expected  = NotFoundException.class)
+    public void deletePostWithNonExistentId() {
 
         postDao.deletePost(2);
 

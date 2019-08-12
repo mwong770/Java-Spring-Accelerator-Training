@@ -1,5 +1,6 @@
 package com.trilogyed.comment.dao;
 
+import com.trilogyed.comment.exception.NotFoundException;
 import com.trilogyed.comment.model.Comment;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -39,7 +40,6 @@ public class CommentDaoJdbcTemplateImpl implements CommentDao {
 
     // constructor
 
-
     public CommentDaoJdbcTemplateImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
@@ -74,11 +74,12 @@ public class CommentDaoJdbcTemplateImpl implements CommentDao {
         }
     }
 
-
     @Override
     @Transactional
     public void updateComment(Comment comment) {
 
+        // checks for id first so user knows if anything was updated
+        // user could have unknowingly entered the wrong id
         Comment commentInDB = getComment(comment.getCommentId());
         if (commentInDB == null) {
             throw new IllegalArgumentException("The id provided does not exist.");
@@ -99,18 +100,15 @@ public class CommentDaoJdbcTemplateImpl implements CommentDao {
     @Transactional
     public void deleteComment(int id) {
 
+        // checks for id first so user knows if anything was deleted
+        // user could have unknowingly entered the wrong id
         Comment commentInDB = getComment(id);
         if (commentInDB == null) {
-            throw new IllegalArgumentException("The id provided does not exist.");
+            throw new NotFoundException("The id provided does not exist.");
         }
 
         jdbcTemplate.update(DELETE_COMMENT_SQL, id);
 
-    }
-
-    @Override
-    public List<Comment> getCommentsByPostId(int postId) {
-        return jdbcTemplate.query(SELECT_ALL_COMMENTS_BY_POST_ID_SQL, this::mapRowToComment, postId);
     }
 
     @Override
@@ -119,13 +117,17 @@ public class CommentDaoJdbcTemplateImpl implements CommentDao {
     }
 
     @Override
-    @Transactional
-    public void deleteCommentByPostId(int postId) {
+    public List<Comment> getCommentsByPostId(int postId) {
+        return jdbcTemplate.query(SELECT_ALL_COMMENTS_BY_POST_ID_SQL, this::mapRowToComment, postId);
+    }
 
-//        Comment commentInDB = getComment(postId); // *** would need to use getCommentByPostId
-//        if (commentInDB == null) {
-//            throw new IllegalArgumentException("The id provided does not exist.");
-//        }
+    @Override
+    @Transactional
+    public void deleteCommentsByPostId(int postId) {
+
+        // does not first check for existing comments with indicated post id
+        // b/c do not want to throw exception when attempting to delete comments
+        // associated with a post the user is attempting to delete
 
         jdbcTemplate.update(DELETE_COMMENT_BY_POST_ID_SQL, postId);
 

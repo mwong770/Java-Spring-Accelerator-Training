@@ -1,7 +1,6 @@
 package com.trilogyed.stwitter.service;
 
 import com.trilogyed.stwitter.util.feign.CommentClient;
-import com.trilogyed.stwitter.util.feign.PostClient;
 import com.trilogyed.stwitter.util.messages.Comment;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,6 @@ public class CommentService {
     @Autowired
     private CommentClient commentClient;
 
-    @Autowired
-    private PostClient postClient;
-
     public static final String EXCHANGE = "comment-exchange";
     public static final String ROUTING_KEY = "comment.create.#";
 
@@ -27,21 +23,16 @@ public class CommentService {
 
     // constructors
 
-
     public CommentService() {
     }
 
-    public CommentService(CommentClient commentClient, PostClient postClient, RabbitTemplate rabbitTemplate) {
+    public CommentService(CommentClient commentClient, RabbitTemplate rabbitTemplate) {
         this.commentClient = commentClient;
-        this.postClient = postClient;
         this.rabbitTemplate = rabbitTemplate;
     }
 
-
     // rabbit
     public String addCommentViaQueue(@RequestBody Comment comment) {
-
-        try {
 
             // create message to send queue
             Comment msg = new Comment(comment.getCommentId(), comment.getPostId(), comment.getCreateDate(), comment.getCommenterName(), comment.getComment());
@@ -50,11 +41,11 @@ public class CommentService {
             rabbitTemplate.convertAndSend(EXCHANGE, ROUTING_KEY, msg);
 
             return "Comment Sent";
-        } catch (NullPointerException e) {
-            return null;
-        }
+
     }
 
+    // Returns Comment and not CommentViewModel b/c the response does not include post data
+    // Including the post id in the response acts as confirmation even though the post id is in the request
     public Comment getComment(int id) {
         return commentClient.getComment(id);
     }
@@ -67,12 +58,14 @@ public class CommentService {
         commentClient.deleteComment(id);
     }
 
+    // Returns Comment and not CommentViewModel b/c the response does not include post data
+    // Including the post id in the response acts as confirmation even though the post id is in the request
     public List<Comment> getCommentsByPostId(int id) {
         return commentClient.getCommentsByPostId(id);
     }
 
     public void deleteCommentByPostId(int postId) {
         commentClient.deleteCommentByPostId(postId);
-    };
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.trilogyed.stwitter.controller;
 
 import com.trilogyed.stwitter.exception.NotFoundException;
+import feign.FeignException;
 import org.springframework.hateoas.VndErrors;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @RestControllerAdvice
 @RequestMapping(produces = "application/vnd.error+json")
@@ -62,4 +61,22 @@ public class ControllerExceptionHandler {
         return responseEntity;
     }
 
+    // Handles exceptions returned from Feign
+    @ExceptionHandler(value = {FeignException.class})
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<VndErrors> feignNotFoundException(FeignException e, WebRequest request) {
+
+        // extracts exception message from remote service
+        int begIdx = e.contentUTF8().indexOf("message")+10;
+        int endIdx = e.contentUTF8().indexOf("links")-3;
+        String msg = e.contentUTF8().substring(begIdx, endIdx);
+
+        // displays Not Found Status and exception message from remote service
+        VndErrors error = new VndErrors(request.toString(), msg);
+        ResponseEntity<VndErrors> responseEntity = new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+        return responseEntity;
+    }
+
 }
+
+

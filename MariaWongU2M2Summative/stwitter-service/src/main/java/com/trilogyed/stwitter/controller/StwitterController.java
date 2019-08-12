@@ -4,9 +4,11 @@ import com.trilogyed.stwitter.service.CommentService;
 import com.trilogyed.stwitter.service.PostService;
 import com.trilogyed.stwitter.util.messages.Comment;
 import com.trilogyed.stwitter.util.messages.Post;
-import com.trilogyed.stwitter.service.ServiceLayer;
 import com.trilogyed.stwitter.viewmodel.PostViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,10 +18,9 @@ import java.util.List;
 
 @RestController
 @RefreshScope
+// specifies the name of the cache our code will use
+@CacheConfig(cacheNames = {"stwitter"})
 public class StwitterController {
-
-    @Autowired
-    ServiceLayer service;
 
     @Autowired
     CommentService commentService;
@@ -32,28 +33,25 @@ public class StwitterController {
     public StwitterController() {
     }
 
-    public StwitterController(ServiceLayer service, CommentService commentService, PostService postService) {
-        this.service = service;
+    public StwitterController(CommentService commentService, PostService postService) {
         this.commentService = commentService;
         this.postService = postService;
     }
 
-    // Post Routes
+    // *** POST ROUTES ***
+
+    // Posts were not cached here because the response includes comments
+    // that can change very frequently
+    // Posts are cached in the post service
 
     // handles requests to retrieve a post by post id
     @RequestMapping(value = "/posts/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public PostViewModel getPost(@PathVariable int id) {
+        Post post = postService.getPost(id);
+
         return postService.getPost(id);
     }
-
-
-//    public Post getPost(@PathVariable int id) {
-//        return postService.getPost(id);
-//
-//    }
-
-
 
     //handles requests to retrieve all posts with a matching poster name
     @RequestMapping(value = "/posts/user/{poster_name}", method = RequestMethod.GET)
@@ -89,23 +87,32 @@ public class StwitterController {
         postService.deletePost(id);
     }
 
-    // Comment Routes
+    // *** COMMENT ROUTES ***
 
-    //handles requests to add a comment - goes to queue
+    // Comments were cached even though the comment service implements cache
+    // to prevent running methods here when in cache and to not be dependent
+    // on the comment services implementing cache
+
+    // didn't cache b/c returns string, not object with comment id since going through queueu
+    // handles requests to add a comment - goes to queue
     @RequestMapping(value = "/comments", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public String addComment(@RequestBody @Valid Comment comment) {
         return commentService.addCommentViaQueue(comment);
     }
 
+    // caches the result of the method - it automatically uses id as the key
     // handles requests to retrieve a comment by comment id
+    @Cacheable
     @RequestMapping(value = "/comments/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public Comment getComment(@PathVariable int id) {
         return commentService.getComment(id);
     }
 
+    // removes comment with given comment id as the key from the cache
     // handles requests to update a comment with a matching id
+    @CacheEvict(key = "#comment.getCommentId()")
     @RequestMapping(value = "/comments/{id}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateComment(@PathVariable int id, @RequestBody @Valid Comment comment) {
@@ -117,7 +124,9 @@ public class StwitterController {
         commentService.updateComment(id, comment);
     }
 
+    // removes comment with given comment id as the key from the cache
     // handles requests to delete a comment by id
+    @CacheEvict
     @RequestMapping(value = "/comments/{id}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteComment(@PathVariable int id) {
@@ -126,20 +135,3 @@ public class StwitterController {
 
 }
 
-// *** MAYBE ADD REFERENTIAL INTEGRITY ****************
-
-/*
-Post:
-int: post ID
-String: post content
-LocalDate: post date
-String: poster name
-List<String>: comments
-
-Comment:
-int: comment ID
-int: post id
-String: commenter name
-LocalDate: comment date
-String: comment content
- */

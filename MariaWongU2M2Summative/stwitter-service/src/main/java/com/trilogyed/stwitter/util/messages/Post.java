@@ -3,10 +3,11 @@ package com.trilogyed.stwitter.util.messages;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Post {
+public class Post implements Serializable {
 
     protected int postId;
 

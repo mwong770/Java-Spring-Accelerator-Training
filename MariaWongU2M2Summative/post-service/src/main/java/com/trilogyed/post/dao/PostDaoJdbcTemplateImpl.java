@@ -1,5 +1,6 @@
 package com.trilogyed.post.dao;
 
+import com.trilogyed.post.exception.NotFoundException;
 import com.trilogyed.post.model.Post;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -37,7 +38,6 @@ public class PostDaoJdbcTemplateImpl implements PostDao {
 
     // constructor
 
-
     public PostDaoJdbcTemplateImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
@@ -74,6 +74,9 @@ public class PostDaoJdbcTemplateImpl implements PostDao {
     @Override
     @Transactional
     public void updatePost(Post post) {
+
+        // checks for id first so user knows if anything was updated
+        // user could have unknowingly entered the wrong id
         Post postInDB = getPost(post.getPostId());
         if (postInDB == null) {
             throw new IllegalArgumentException("The id provided does not exist.");
@@ -91,9 +94,12 @@ public class PostDaoJdbcTemplateImpl implements PostDao {
     @Override
     @Transactional
     public void deletePost(int id) {
+
+        // checks for id first so user knows if anything was deleted
+        // user could have unknowingly entered the wrong id
         Post postInDB = getPost(id);
         if (postInDB == null) {
-            throw new IllegalArgumentException("The id provided does not exist.");
+            throw new NotFoundException("The id provided does not exist.");
         }
 
         jdbcTemplate.update(DELETE_POST_SQL, id);

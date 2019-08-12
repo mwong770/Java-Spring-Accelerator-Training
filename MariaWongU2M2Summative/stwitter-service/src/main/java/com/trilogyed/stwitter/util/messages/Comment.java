@@ -1,6 +1,5 @@
 package com.trilogyed.stwitter.util.messages;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
@@ -9,10 +8,11 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Comment {
+public class Comment implements Serializable {
 
     private int commentId;
 
@@ -22,7 +22,6 @@ public class Comment {
 
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
-//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @NotNull(message = "Please supply a create date.")
     private LocalDate createDate;
 
