@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbb2e4b4-1e08-488b-8fcb-4db5a576d9ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/U1-M2-Summative-Wong-Maria/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MariaWongU2M2Summative/Stwitter UML.png" beforeDir="false" afterPath="$PROJECT_DIR$/MariaWongU2M2Summative/StwitterService UML.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +24,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -35,7 +36,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -70,14 +70,14 @@
   <component name="ToolWindowManager">
     <frame x="265" y="25" width="1175" height="798" extended-state="0" />
     <layout>
-      <window_info id="simpleUML" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27184466" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27625772" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="simpleUML" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
